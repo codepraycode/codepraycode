@@ -28,7 +28,8 @@ Hi,I'm Olusola Precious🙌, an evolving software engineer. Apart from that I lo
 - 👯 Part of Developer Community.
 - 💬 Ask me about anything , Would love to answer them.✌
 - 📫 How to reach me: Any of the Social-Media Platform 
-- <!--
+<!--
+- 
 - ⚡ Check out my recent [Blogs](https://medium.com/@saketprag322)
 - 📝[Portfolio](https://sakigo9.github.io/MyPortfolio/)
 - ✨ I can draw too.[ArtGallery](https://www.instagram.com/finding_my.way/)
@@ -42,6 +43,8 @@ Hi,I'm Olusola Precious🙌, an evolving software engineer. Apart from that I lo
 - Girlscript Foundation
 - Coding Ninja
 -->
+
+
 **Languages and Tools:**
 
 
