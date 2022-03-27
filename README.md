@@ -18,8 +18,7 @@
 
 Hi,I'm Olusola Precious🙌, an evolving software engineer. Apart from that I love getting involved in Competitive Programming, Problem Solving and Innovations.❤✌
 
-
-<img align="right" alt="GIF" src="https://media.giphy.com/media/USV0ym3bVWQJJmNu3N/giphy.gif" />
+<!-- <img align="right" alt="GIF" src="https://media.giphy.com/media/USV0ym3bVWQJJmNu3N/giphy.gif" /> -->
 
 
 **Talking about Personal Stuffs:**
