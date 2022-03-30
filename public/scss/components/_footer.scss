@@ -103,4 +103,8 @@
         font-size: 1rem;
         @include absoluteCenter;
     }
+    border: none;
+    &:hover {
+        color: $white;
+    }
 }

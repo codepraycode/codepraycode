@@ -4,7 +4,7 @@ import NavBar from './navbar';
 
 const Header = () => {
     return (
-        <header>
+        <header id="home">
             
             <NavBar/>
             <Hero/>
