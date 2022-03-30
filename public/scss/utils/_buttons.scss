@@ -8,6 +8,7 @@
     border: 0.1rem solid rgba($white, 0.6);
     background-color: $white;
     display: block;
+    @include transitionProperty;
     span {
         position: absolute;
         background-color: $primary;

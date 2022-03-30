@@ -11136,6 +11136,8 @@ textarea.form-control-lg {
   border: 0.1rem solid rgba(255, 255, 255, 0.6);
   background-color: #fff;
   display: block;
+  transition-duration: 1s;
+  transition-property: all;
 }
 .btn-rounded span {
   position: absolute;
@@ -11158,6 +11160,17 @@ textarea.form-control-lg {
 }
 .btn-rounded:hover span {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden !important;
+}
+
+header,
+footer {
+  width: 100% !important;
 }
 
 .display-2 {
@@ -11235,6 +11248,95 @@ textarea.form-control-lg {
 
 .gradient {
   background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+}
+
+.menu {
+  background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+}
+.menu li {
+  padding: 0 0.7rem;
+}
+.menu li a {
+  color: #fff;
+  padding: 0 0.7rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.menu li:hover {
+  color: #fff;
+}
+
+.intro-section {
+  background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+  padding: 10rem 0 0 0;
+  width: 100%;
+  height: 100%;
+}
+
+.intros .dp-box {
+  background: url("/assets/images/illustrations/intro-section-illustration.png") center center no-repeat;
+  background-size: cover;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+}
+.intros .dp-box .dp__container {
+  position: relative;
+  max-width: 100%;
+}
+.intros .dp-box .dp__container p.with_img {
+  max-width: 15rem;
+  max-height: 15rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: -4rem;
+  left: 2.5rem;
+}
+.intros .dp-box .dp__container p img {
+  height: auto;
+  width: 100%;
+  color: #d122e3;
+}
+
+.border-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18rem;
+  height: 18rem;
+  border: 0.55rem solid #fff;
+  border-radius: 50%;
+  animation: pulse-border 1.5s linear infinite;
+}
+.border-animation--border-1 {
+  animation-delay: 1s;
+}
+.border-animation--border-2 {
+  animation-delay: 1.5s;
+}
+
+@media (max-width: 930px) {
+  .dp-box {
+    width: 100%;
+    overflow-x: hidden;
+    width: 150px;
+    height: 150px;
+  }
+  .dp-box .dp__container p.with_img {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: -2rem;
+    left: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

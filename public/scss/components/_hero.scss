@@ -1,0 +1,87 @@
+@use '../custom' as *;
+@use '../utils/mixins' as *;
+.intro-section {
+    @include gradient;
+    padding: 10rem 0 0 0;
+    width: 100%;
+    height: 100%;
+}
+
+.intros {
+    .dp-box {
+        // position: relative;
+        // background: red;
+        background: url('/assets/images/illustrations/intro-section-illustration.png') center center no-repeat;
+        background-size: cover;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        width: 500px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 12;
+        .dp__container {
+            // @include absoluteCenter;
+            position: relative;
+            max-width: 100%;
+            p {
+                &.with_img {
+                    max-width: 15rem;
+                    max-height: 15rem;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    bottom: -4rem;
+                    left: 2.5rem;
+                }
+                img {
+                    height: auto;
+                    width: 100%;
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}
+
+.border-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18rem;
+    height: 18rem;
+    border: 0.55rem solid $white;
+    border-radius: 50%;
+    animation: pulse-border 1.5s linear infinite;
+    &--border-1 {
+        animation-delay: 1s;
+    }
+    &--border-2 {
+        animation-delay: 1.5s;
+    }
+}
+
+@media (max-width: 930px) {
+    .dp-box {
+        width: 100%;
+        overflow-x: hidden;
+        // position: relative;
+        // background: red;
+        width: 150px;
+        height: 150px;
+        .dp__container {
+            p {
+                &.with_img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    bottom: -2rem;
+                    left: 1.5rem;
+                }
+            }
+        }
+    }
+}

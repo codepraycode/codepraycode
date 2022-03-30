@@ -41,8 +41,8 @@ const NavBar = () => {
                     <button type="button" className="rounded-pill btn-rounded">
                         My Resume
                         <span>
-                            <i className="fas fa-phone-alt"></i>
-                            {/* <i class="fas fa-download" aria-hidden="true"></i> */}
+                            {/* <i className="fas fa-phone-alt"></i> */}
+                            <i className="fas fa-download" aria-hidden="true"></i>
                         </span>
                     </button>
                 </div>

@@ -1,15 +1,13 @@
 import React from 'react';
+import Hero from './hero';
 import NavBar from './navbar';
 
 const Header = () => {
     return (
         <header>
-            {/* 
-                ////////////////////////////////////////////////////////////////////////////////////////
-                                START SECTION 1 - THE NAVBAR SECTION  
-                ///////////////////////////////////////////////////////////////////////////////////////////// 
-            */}
+            
             <NavBar/>
+            <Hero/>
            
 
         </header>
