@@ -1,5 +1,5 @@
 @use '../custom' as *;
-@use '../components/mixins' as *;
+@use './mixins' as *;
 .btn-rounded {
     position: relative;
     padding: 0.8375rem 4.375rem 0.8375rem 1.25rem;
