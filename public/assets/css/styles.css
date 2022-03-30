@@ -11298,8 +11298,8 @@ footer {
   align-items: center;
   justify-content: center;
   position: relative;
-  bottom: -4rem;
-  left: 2.5rem;
+  bottom: -3rem;
+  left: 1.8rem;
 }
 .intros .dp-box .dp__container p img {
   height: auto;
@@ -11324,6 +11324,11 @@ footer {
   animation-delay: 1.5s;
 }
 
+@media (max-width: 766px) {
+  .hero_content {
+    flex-direction: column-reverse;
+  }
+}
 @media (max-width: 930px) {
   .dp-box {
     width: 100%;

@@ -5,7 +5,7 @@ const Hero = () => {
         <section id="home" className="intro-section">
             
             <div className="container">
-                <div className="row align-items-center text-white">
+                <div className="row align-items-center hero_content text-white">
                     {/* Start Intro Content */}
                     <div className="col-md-6 intros text-start">
                         <h1 className="display-2">
@@ -21,7 +21,9 @@ const Hero = () => {
 
                         <button type="button" className="rounded-pill btn-rounded">
                             Download My Resume
-                            <span><i className="fas fa-arrow-right"></i></span>
+                            <span>
+                                <i className="fas fa-download    "></i>
+                            </span>
                         </button>
                     </div>
 
