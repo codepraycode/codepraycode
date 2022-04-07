@@ -1,26 +1,30 @@
 export const Myinfo = {
     techStacks: [
+
+        'javascript',
+        'python',
+        'nodejs',
         'html',
         'css',
-        'javascript',
+
         'react',
-        'python',
-        'git',
+        'react-native',
         'electron',
         'bootstrap',
+        'django',
+        'jquery',
+        'sass',
+
         'mysql',
         'postgresql',
         'mongodb',
         'nedb',
-        'nodejs',
-        'django',
         'sqlite',
+
         'cpanel',
-        'jquery',
         'heroku',
-        'sass',
-        'react-native',
         'firebase',
+        'git',
         'github'
     ]
 }
