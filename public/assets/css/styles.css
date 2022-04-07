@@ -11478,4 +11478,67 @@ footer {
   color: #fff;
 }
 
+.contact {
+  padding: 4rem 0;
+  background-color: #e9ecef;
+}
+
+.cta-info {
+  padding: 3rem;
+  margin: 1rem 0;
+}
+.cta-info__list {
+  position: relative;
+  list-style-type: none;
+  display: block;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+.cta-info__list li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  font-weight: 600;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.form {
+  padding: 3rem;
+}
+.form button {
+  border: none;
+  color: #fff;
+  text-transform: capitalize;
+}
+.form button a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.techtools {
+  padding: 0 0 5rem 0;
+}
+.techtools .stack_listing {
+  max-width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.techtools .stack__logo-box {
+  height: 3rem;
+  margin: 10px;
+  padding: 0.5rem;
+  text-align: center;
+  position: relative;
+}
+.techtools .stack__logo-box img {
+  height: 100%;
+}
+.techtools .stack__logo-box img:hover {
+  filter: grayscale(120);
+}
+
 /*# sourceMappingURL=styles.css.map */
