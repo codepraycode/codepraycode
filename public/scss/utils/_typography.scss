@@ -84,3 +84,12 @@ footer {
 .gradient {
     background: linear-gradient(to right, rgba($primary, 0.95), rgba($secondary, 0.95));
 }
+
+// SECTIONS
+section {
+    margin: 100px 0;
+    .section_content {
+        margin-top: 30px;
+        max-width: 100%;
+    }
+}

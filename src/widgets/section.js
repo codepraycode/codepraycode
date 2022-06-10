@@ -8,13 +8,15 @@ const Lines = ({type, className}) => {
 
 const Section = ({header, className, id, children}) => {
     return (
-        <section id={id || ''} className={className || ''}>
-            <div className="container">
+        <section id={id || ''} className={`${className || ''} container`}>
+            <div className='section_title'>
                 <div className="row text-center">
                     <h4 className="fw-bold lead mb-3">{header}</h4>
                     <Lines/>
                 </div>
+            </div>
 
+            <div className="section_content">
                 {children}
             </div>
         </section>

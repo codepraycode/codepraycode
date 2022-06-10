@@ -1,0 +1,13 @@
+@use '../custom' as *;
+.about {
+    position: relative;
+    //pt-2 pb-2 mt-0 mb-3
+    padding: 20px 0;
+    margin-top: 0;
+    margin-bottom: 30px;
+    .section_content {
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+    }
+}
