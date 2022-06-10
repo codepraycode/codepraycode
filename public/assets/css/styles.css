@@ -11624,6 +11624,14 @@ section .section_content {
   max-width: 100%;
 }
 
+header section {
+  margin: 0;
+}
+header section .section_content {
+  margin: 0px;
+  max-width: 100%;
+}
+
 @media (max-width: 375px) {
   .about .section_content {
     flex-direction: column;

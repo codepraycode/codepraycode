@@ -117,3 +117,13 @@ section {
         max-width: 100%;
     }
 }
+
+header {
+    section {
+        margin: 0;
+        .section_content {
+            margin: 0px;
+            max-width: 100%;
+        }
+    }
+}
