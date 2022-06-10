@@ -1,14 +1,22 @@
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import BackToTop from './widgets/BackToTop';
-import Contact from './components/Contact';
-import TechTools from './components/TechTools';
+import BackToTop from './widgets/back2top';
+import Contact from './components/contact';
+import About from './components/about';
+import Education from './components/education';
+import Portfolio from './components/portfolio';
+import MyStacks from './components/mystacks';
+
+
 function App() {
   return (
     <>
      <Header/>
-     <TechTools/>
+     <About/>
+     <MyStacks/>
+     <Education/>
+     <Portfolio/>
      <Contact/>
      <BackToTop/>
      <Footer/>

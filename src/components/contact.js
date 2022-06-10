@@ -1,18 +1,10 @@
 import React from 'react';
-import Lines from '../../widgets/Lines';
+
+import Section from '../widgets/section';
 
 const Contact = () => {
     return (
-        <section id="contact" className="contact">
-            <div className="container">
-                <div className="row text-center">
-                    <h1 className="display-3 fw-bold text-capitalize">Contact Me</h1>
-                    <Lines/>
-                    {/* <p className="lh-lg">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero illum architecto modi.
-                    </p> */}
-                </div>
-
+        <Section id="contact" className="contact" header="Contact Me">
                 <div className="row text-white">
                     <div className="col-12 col-lg-6 gradient shadow p-3">
                         <div className="cta-info w-100">
@@ -61,8 +53,8 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+        </Section>
+        
     );
 };
 

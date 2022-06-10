@@ -6,9 +6,9 @@ const NavBar = () => {
             <div className="container">
                 <a className="navbar-brand" href="/">
                     {/* <img src="/aimages/logo.png" alt="logo image"> */}
-                    <span>
-                        My Logo
-                    </span>
+                    <b>
+                        CODEPRAYCODE
+                    </b>
                 </a>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
