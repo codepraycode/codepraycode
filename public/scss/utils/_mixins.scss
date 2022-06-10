@@ -17,3 +17,8 @@
     transition-duration: 1s;
     transition-property: all;
 }
+
+@mixin card {
+    border-radius: 15px;
+    padding: 13px;
+}

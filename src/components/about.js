@@ -4,7 +4,7 @@ const About = () => {
     return (
         <Section header="About Me" id="about" className="about">
             
-            <div className="bg-white p-3 border-right">
+            <div className="bg-white p-3  pic">
                 <img src="/assets/images/img_placeholder.png" alt="codepraycode" title="codepraycode"/>
             </div>
 

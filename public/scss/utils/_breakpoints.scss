@@ -1,0 +1,22 @@
+@media (max-width:375px) {
+    .about {
+        .section_content {
+            flex-direction: column;
+            .pic {
+                display: none;
+            }
+        }
+    }
+    .education {
+        .section_content {
+            text-align: center;
+            .row {
+                flex-direction: column-reverse;
+            }
+            button {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}

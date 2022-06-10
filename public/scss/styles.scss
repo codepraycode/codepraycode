@@ -1,17 +1,9 @@
 // @use 'custom';
-// IMPORT THE COMPONENTS 
+// IMPORT THE SECTIONS
+@use 'components/index';
+// IMPORT THE UTILITIES
 @use 'utils/animations';
 @use 'utils/buttons';
 @use 'utils/mixins';
 @use 'utils/typography';
-// IMPORT THE SECTIONS
-@use 'components/index';
-// @use 'sections/navbar';
-// @use 'sections/intro-section';
-// @use 'sections/campanies';
-// @use 'sections/services';
-// @use 'sections/testimonials';
-// @use 'sections/faq';
-// @use 'sections/portfolio';
-// @use 'sections/get-started';
-// @use 'sections/footer';
+@use 'utils/breakpoints';

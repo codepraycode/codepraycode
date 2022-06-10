@@ -8,6 +8,23 @@
     .section_content {
         display: flex;
         align-items: center;
+        width: 900px;
+        margin: 0 auto;
+        max-width: 80%;
+        &div {
+            margin-right: 25px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
         // justify-content: center;
+        .pic {
+            width: 800px;
+            max-width: 80%;
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
     }
 }

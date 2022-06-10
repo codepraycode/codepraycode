@@ -1,0 +1,32 @@
+@use '../custom' as *;
+@use '../utils/mixins' as *;
+.education {
+    position: relative;
+    //pt-2 pb-2 mt-0 mb-3
+    padding: 20px 0;
+    margin-top: 0;
+    margin-bottom: 30px;
+    .section_content {
+        width: 900px;
+        max-width: 80%;
+        padding: 13px;
+        margin: 20px auto;
+        // background: green;
+        .row {
+            align-items: center;
+            justify-content: center;
+        }
+        .content {
+            margin-left: 10px;
+        }
+        .pic {
+            width: 250px;
+            margin: 0 auto;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        @include card;
+    }
+}
