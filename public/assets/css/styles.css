@@ -11715,6 +11715,11 @@ header section .section_content {
     display: block;
     margin: 0 auto;
   }
+
+  .portfolio .section_content .portfolio__content {
+    width: 100%;
+    margin: 10px auto;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

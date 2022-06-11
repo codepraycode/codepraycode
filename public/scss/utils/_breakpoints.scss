@@ -19,4 +19,47 @@
             }
         }
     }
+    .portfolio {
+        .section_content {
+            .portfolio__content {
+                width: 100%;
+                margin: 10px auto;
+                // &--info {
+                //     margin-top: 10px;
+                //     .caption {
+                //         font-size: 20px;
+                //         text-align: center;
+                //     }
+                //     .category--platform {
+                //         margin: 10px 0;
+                //         display: flex;
+                //         align-items: center;
+                //         justify-content: space-between;
+                //         flex-wrap: wrap;
+                //         font-size: 14px;
+                //         color: $deep-grey;
+                //         .platform {
+                //             display: flex;
+                //             align-items: center;
+                //             justify-content: center;
+                //             i {
+                //                 margin-right: 5px;
+                //                 &:last-of-type {
+                //                     margin-right: 0;
+                //                 }
+                //             }
+                //         }
+                //     }
+                //     .info {
+                //         font-size: 18px;
+                //     }
+                //     .cta {
+                //         display: flex;
+                //         align-items: center;
+                //         justify-content: space-evenly;
+                //     }
+                // }
+            }
+        }
+    }
 }
