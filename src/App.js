@@ -5,7 +5,7 @@ import BackToTop from './widgets/back2top';
 import Contact from './components/contact';
 import About from './components/about';
 import Education from './components/education';
-import Portfolio from './components/portfolio';
+import Portfolio from './components/Portfolio';
 import MyStacks from './components/mystacks';
 
 
