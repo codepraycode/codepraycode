@@ -11346,8 +11346,14 @@ textarea.form-control-lg {
 }
 
 .contact {
-  padding: 4rem 0;
+  padding: 4rem 30px;
   background-color: #e9ecef;
+  max-width: 100%;
+  margin: 0 !important;
+}
+.contact .section_content {
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .cta-info {
