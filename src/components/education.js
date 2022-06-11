@@ -7,8 +7,6 @@ const Education = () => {
             <div className="row">
                 <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
                     <div className="content">
-                        <div className="icon d-block fas fa-paper-plane"></div>
-
                         <h3 className="display-4--intro mt-1">
                             federal university of technology akure
                         </h3>
