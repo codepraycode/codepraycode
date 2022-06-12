@@ -11700,7 +11700,7 @@ footer {
 }
 
 section {
-  margin: 100px 0;
+  margin: 150px 0;
 }
 section .section_content {
   margin-top: 30px;
@@ -11715,12 +11715,28 @@ header section .section_content {
   max-width: 100%;
 }
 
+footer {
+  background: #040f16ff;
+}
+footer .handles {
+  width: fit-content;
+  margin: 10px auto;
+}
+footer .footer_top {
+  background: #6c757d;
+  padding: 15px 0;
+}
+footer .footer_bottom {
+  background: transparent;
+}
+
 .handles {
   margin-top: -20px;
   margin-bottom: 5px;
   font-size: 30px;
   display: flex;
   align-items: center;
+  color: #fff !important;
 }
 .handles span {
   display: block;

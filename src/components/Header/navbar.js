@@ -2,6 +2,7 @@ import React from 'react';
 import SocialHandles from '../../widgets/social_handles';
 
 const NavBar = () => {
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
             <div className="container">
@@ -31,22 +32,23 @@ const NavBar = () => {
                     <ul className="navbar-nav">
                         
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/">Home</a>
+                            <a className="nav-link" aria-current="page" href="/">Home</a>
                         </li>
                         
                         <li className="nav-item">
-                            <a className="nav-link" href="#services">Projects</a>
+                            <a className="nav-link" href="#about">About me</a>
                         </li>
                         
                         <li className="nav-item">
-                            <a className="nav-link" href="#testimonials">About Me</a>
+                            <a className="nav-link" href="#skills">My Skills</a>
                         </li>
                         
-                        {/* <li className="nav-item"><a className="nav-link" href="#faq">faq</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#portfolio">portfolio</a></li> */}
+                        <li className="nav-item">
+                            <a className="nav-link" href="#education">Education</a>
+                        </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#contact">contact</a>
+                            <a className="nav-link" href="#contact">contact Me</a>
                         </li>
                     </ul>
 

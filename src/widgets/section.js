@@ -11,7 +11,7 @@ const Section = ({header, className, id, children}) => {
         <section id={id || ''} className={`${className || ''} container`}>
             <div className='section_title'>
                 <div className="row text-center">
-                    <h4 className="fw-bold lead mb-3">{header}</h4>
+                    <h2 className="fw-bold lead mb-3">{header}</h2>
                     <Lines/>
                 </div>
             </div>

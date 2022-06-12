@@ -5,7 +5,7 @@ import { Myinfo } from '../myinfo';
 
 const MyStacks = () => {
     return (
-        <Section header="My Tools and Stacks" id="techtools" className="techtools">
+        <Section header="My skill set" id="skills" className="techtools">
             <TeachStack stacks={Myinfo.techStacks}/>
         </Section>
     );
