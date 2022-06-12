@@ -11132,6 +11132,8 @@ textarea.form-control-lg {
 .menu .navbar-toggler {
   border: 0 !important;
   width: fit-content;
+  padding: 0 5px 0 0;
+  margin: 0;
 }
 .menu .navbar-toggler:focus {
   border: 0 !important;
@@ -11172,7 +11174,33 @@ textarea.form-control-lg {
 .menu li:hover {
   color: #fff;
 }
+.menu .nav__handles {
+  color: #fff;
+  margin-top: 0;
+  font-size: 20px;
+  display: none;
+}
 
+@media (max-width: 375px) {
+  .menu {
+    max-width: 100%;
+    text-align: center;
+  }
+  .menu .navbar-collapse {
+    padding: 10px 0;
+    justify-content: flex-start !important;
+  }
+  .menu .navbar-collapse ul li {
+    padding: 10px 0;
+  }
+  .menu button {
+    margin-top: 10px;
+    display: inline-block;
+  }
+  .menu .nav__handles {
+    display: flex;
+  }
+}
 .intro {
   background: linear-gradient(to right, rgba(4, 15, 22, 0.95), rgba(108, 117, 125, 0.55));
   padding: 10rem 0 0 0;
@@ -11187,23 +11215,6 @@ textarea.form-control-lg {
   width: 100%;
   align-items: center;
   justify-content: space-around;
-}
-.intro--info .links {
-  margin-top: -20px;
-  margin-bottom: 5px;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-}
-.intro--info .links span {
-  display: block;
-  margin: 15px;
-}
-.intro--info .links span:last-of-type {
-  margin: 0;
-}
-.intro--info .links span a {
-  display: flex;
 }
 .intro--info .dp__container {
   display: flex;
@@ -11234,9 +11245,6 @@ textarea.form-control-lg {
     margin-bottom: 20px;
     max-height: 300px;
     overflow: hidden;
-  }
-  .intro--info .links {
-    justify-content: center;
   }
   .intro--info button {
     margin: 0 auto;
@@ -11707,6 +11715,29 @@ header section .section_content {
   max-width: 100%;
 }
 
+.handles {
+  margin-top: -20px;
+  margin-bottom: 5px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+.handles span {
+  display: block;
+  margin: 15px;
+}
+.handles span:last-of-type {
+  margin-right: 0;
+}
+.handles span a {
+  display: flex;
+}
+
+@media (max-width: 375px) {
+  .handles {
+    justify-content: center;
+  }
+}
 @media (max-width: 375px) {
   .about .section_content {
     flex-direction: column;

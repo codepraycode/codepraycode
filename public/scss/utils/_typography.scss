@@ -134,3 +134,27 @@ header {
         }
     }
 }
+
+.handles {
+    margin-top: -20px;
+    margin-bottom: 5px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    span {
+        display: block;
+        margin: 15px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+        a {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .handles {
+        justify-content: center;
+    }
+}

@@ -5,6 +5,8 @@
     .navbar-toggler {
         border: 0 !important;
         width: fit-content;
+        padding: 0 5px 0 0;
+        margin: 0;
         &:focus {
             border: 0 !important;
             outline: 0 !important;
@@ -29,12 +31,14 @@
                 display: none;
             }
         }
-        &[aria-expanded="true"] i {
-            &:first-of-type {
-                display: none;
-            }
-            &:last-of-type {
-                display: block;
+        &[aria-expanded="true"] {
+            i {
+                &:first-of-type {
+                    display: none;
+                }
+                &:last-of-type {
+                    display: block;
+                }
             }
         }
     }
@@ -48,6 +52,33 @@
         }
         &:hover {
             color: $white;
+        }
+    }
+    .nav__handles {
+        color: $white;
+        margin-top: 0;
+        font-size: 20px;
+        display: none;
+    }
+}
+
+@media (max-width:375px) {
+    .menu {
+        max-width: 100%;
+        text-align: center;
+        .navbar-collapse {
+            padding: 10px 0;
+            justify-content: flex-start !important;
+            ul li {
+                padding: 10px 0;
+            }
+        }
+        button {
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .nav__handles {
+            display: flex;
         }
     }
 }

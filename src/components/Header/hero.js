@@ -1,4 +1,5 @@
 import React from 'react';
+import SocialHandles from '../../widgets/social_handles';
 
 
 const Hero = () => {
@@ -20,28 +21,7 @@ const Hero = () => {
                             </h1>
 
 
-                            <div className="links">
-                                <span>
-                                    <i class="fab fa-facebook"></i>
-                                </span>
-
-                                <span>
-                                    <i class="fab fa-instagram"></i>
-                                </span>
-
-                                <span>
-                                    <i class="fab fa-twitter"></i>
-                                </span>
-                                <span>
-                                    <i class="fab fa-linkedin-in"></i>
-                                </span>
-
-                                <span>
-                                    <i class="fab fa-github"></i>
-                                </span>
-
-
-                            </div>
+                            <SocialHandles/>
 
                                 <button type="button" className="rounded-pill btn-rounded">
                                     My Resume

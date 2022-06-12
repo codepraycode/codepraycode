@@ -1,4 +1,5 @@
 import React from 'react';
+import SocialHandles from '../../widgets/social_handles';
 
 const NavBar = () => {
     return (
@@ -48,6 +49,9 @@ const NavBar = () => {
                             <a className="nav-link" href="#contact">contact</a>
                         </li>
                     </ul>
+
+                    <SocialHandles className={"nav__handles"}/>
+                    
 
                     <button type="button" className="rounded-pill btn-rounded">
                         My Resume
