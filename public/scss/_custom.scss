@@ -1,3 +1,4 @@
+@import './utils/colors';
 // MY THEME COLORS 
 $purple-dark: #9926f0;
 $purple-light: #BB6EF5;
@@ -5,28 +6,32 @@ $pink: #d122e3;
 $grey:#e7e8f096;
 $deep-grey:#54577296;
 $footer: #151414;
-$primary: $purple-dark;
-$secondary: $pink;
-*::-webkit-scrollbar {
-    width: 9px;
-    /* width of the entire scrollbar */
-}
-
-*::-webkit-scrollbar-track {
-    background: $grey;
-    /*transparent;
-    #858686;*/
-    /* color of the tracking area */
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: $deep-grey;
-    /* color of the scroll thumb */
-    border-radius: 20px;
-    /* roundness of the scroll thumb */
-    width: 3px;
-    border: 3px solid transparent;
-    /* creates padding around scroll thumb */
+// $primary: $purple-dark;
+// $secondary: $pink;
+// *::-webkit-scrollbar {
+//     width: 9px;
+//     /* width of the entire scrollbar */
+// }
+// *::-webkit-scrollbar-track {
+//     background: $grey;
+//     /*transparent;
+//     #858686;*/
+//     /* color of the tracking area */
+// }
+// *::-webkit-scrollbar-thumb {
+//     background-color: $deep-grey;
+//     /* color of the scroll thumb */
+//     border-radius: 20px;
+//     /* roundness of the scroll thumb */
+//     width: 3px;
+//     border: 3px solid transparent;
+//     /* creates padding around scroll thumb */
+// }
+body {
+    margin: 0;
+    padding: 0;
+    color: $primary;
+    font-family: 'Poppins', sans-serif;
 }
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

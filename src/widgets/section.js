@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Lines = ({type, className}) => {
+const Lines = ({className}) => {
     return (
         <div className={`heading-line ${!className ? '' :className}`}></div>
     );
