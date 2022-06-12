@@ -11127,7 +11127,7 @@ textarea.form-control-lg {
   }
 }
 .menu {
-  background: linear-gradient(to right, rgba(4, 15, 22, 0.95), rgba(108, 117, 125, 0.55));
+  background: #040f16ff;
 }
 .menu .navbar-toggler {
   border: 0 !important;
@@ -11202,7 +11202,7 @@ textarea.form-control-lg {
   }
 }
 .intro {
-  background: linear-gradient(to right, rgba(4, 15, 22, 0.95), rgba(108, 117, 125, 0.55));
+  background: #040f16ff;
   padding: 10rem 0 0 0;
   width: 100%;
   max-width: 100%;
@@ -11473,6 +11473,7 @@ textarea.form-control-lg {
   margin: 20px auto;
   border-radius: 15px;
   padding: 13px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .education .section_content .row {
   align-items: center;
@@ -11501,6 +11502,7 @@ textarea.form-control-lg {
   margin: 10px;
   border-radius: 15px;
   padding: 13px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .portfolio .section_content .portfolio__content .image {
   height: 210;
@@ -11586,7 +11588,7 @@ textarea.form-control-lg {
   line-height: 2.5rem;
 }
 .btn-rounded:hover {
-  background: linear-gradient(to right, rgba(4, 15, 22, 0.95), rgba(108, 117, 125, 0.55));
+  background: #040f16ff;
   color: #fff;
 }
 .btn-rounded:hover span {
@@ -11696,11 +11698,12 @@ footer {
 }
 
 .gradient {
-  background: linear-gradient(to right, rgba(4, 15, 22, 0.95), rgba(108, 117, 125, 0.95));
+  background: #040f16ff;
 }
 
 section {
-  margin: 150px 0;
+  margin-top: 100px;
+  padding: 150px 0 0 0 !important;
 }
 section .section_content {
   margin-top: 30px;
@@ -11716,6 +11719,7 @@ header section .section_content {
 }
 
 footer {
+  margin-top: 100px;
   background: #040f16ff;
 }
 footer .handles {
