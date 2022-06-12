@@ -12,7 +12,18 @@ const NavBar = () => {
                 </a>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon open">
+                        <i className="fa fa-bars" aria-hidden="true"></i>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </span>
+                    {/* <span className="navbar-toggler-icon open">
+                        <i class="far fa-bars"></i>
+                        
+                    </span> */}
+                    {/* <span className="navbar-toggler-icon close"></span> */}
+                    {/* <span className="close">
+                        <i class="far fa-times"></i>
+                    </span> */}
                 </button>
 
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">

@@ -2,6 +2,42 @@
 @use '../utils/mixins' as *;
 .menu {
     @include gradient;
+    .navbar-toggler {
+        border: 0 !important;
+        width: fit-content;
+        &:focus {
+            border: 0 !important;
+            outline: 0 !important;
+            box-shadow: none;
+        }
+        &-icon {
+            background: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // padding: 20px;
+            font-size: 25px;
+            i {
+                display: none;
+            }
+        }
+        &:not([aria-expanded="true"]) i {
+            &:first-of-type {
+                display: block;
+            }
+            &:last-of-type {
+                display: none;
+            }
+        }
+        &[aria-expanded="true"] i {
+            &:first-of-type {
+                display: none;
+            }
+            &:last-of-type {
+                display: block;
+            }
+        }
+    }
     li {
         padding: 0 0.7rem;
         a {

@@ -11129,6 +11129,37 @@ textarea.form-control-lg {
 .menu {
   background: linear-gradient(to right, rgba(4, 15, 22, 0.95), rgba(108, 117, 125, 0.55));
 }
+.menu .navbar-toggler {
+  border: 0 !important;
+  width: fit-content;
+}
+.menu .navbar-toggler:focus {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none;
+}
+.menu .navbar-toggler-icon {
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+.menu .navbar-toggler-icon i {
+  display: none;
+}
+.menu .navbar-toggler:not([aria-expanded=true]) i:first-of-type {
+  display: block;
+}
+.menu .navbar-toggler:not([aria-expanded=true]) i:last-of-type {
+  display: none;
+}
+.menu .navbar-toggler[aria-expanded=true] i:first-of-type {
+  display: none;
+}
+.menu .navbar-toggler[aria-expanded=true] i:last-of-type {
+  display: block;
+}
 .menu li {
   padding: 0 0.7rem;
 }
