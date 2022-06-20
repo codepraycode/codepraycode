@@ -34,4 +34,9 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    font-size: 15px;
+}
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

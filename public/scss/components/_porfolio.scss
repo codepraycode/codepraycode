@@ -6,23 +6,28 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        column-gap: 25px;
+        row-gap: 30px;
         .portfolio__content {
-            width: 300px;
-            margin: 10px;
             @include card;
+            width: 300px;
+            max-width: 80%;
+            padding: 0;
             .image {
-                height: 210;
-                overflow-y: hidden;
+                height: 210px;
+                overflow: hidden;
+                border-radius: 15px 15px 0 0;
                 img {
                     width: 100%;
                     height: auto;
                 }
             }
             &:last-of-type {
-                justify-self: start;
+                align-self: start;
             }
             &--info {
-                margin-top: 10px;
+                // margin-top: 10px;
+                padding: 13px;
                 .caption {
                     font-size: 20px;
                     text-align: center;
