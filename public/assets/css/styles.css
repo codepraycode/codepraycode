@@ -11186,7 +11186,7 @@ textarea.form-control-lg {
   display: none;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 760px) {
   .menu {
     max-width: 100%;
     text-align: center;
@@ -11233,7 +11233,7 @@ textarea.form-control-lg {
   border-radius: 10px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 760px) {
   .intro--info {
     justify-items: center;
     text-align: center;
@@ -11479,7 +11479,6 @@ textarea.form-control-lg {
 }
 .education .section_content .content {
   margin-left: 10px;
-  width: 80%;
 }
 .education .section_content .duration {
   margin: 0;
@@ -11487,6 +11486,7 @@ textarea.form-control-lg {
 }
 .education .section_content .pic {
   width: 250px;
+  max-width: 90%;
   margin: 0 auto;
 }
 .education .section_content .pic img {
@@ -11521,7 +11521,7 @@ textarea.form-control-lg {
   border-radius: 15px;
   padding: 13px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  width: 300px;
+  width: 350px;
   max-width: 80%;
   padding: 0;
 }
@@ -11570,9 +11570,27 @@ textarea.form-control-lg {
 .portfolio .section_content .portfolio__content--info .cta {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.portfolio .section_content .portfolio__content--info .cta a {
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  background: #040f16ff;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
 }
 
+@media (max-width: 880px) {
+  .portfolio .section_content {
+    justify-content: center;
+  }
+}
 @keyframes pulse-border {
   0% {
     transform: scale(1);
@@ -11636,7 +11654,7 @@ p {
 
 header,
 footer {
-  width: 100% !important;
+  width: 100vw !important;
 }
 
 .heading-line::before {
@@ -11736,7 +11754,8 @@ footer {
 
 section {
   margin-top: 100px;
-  padding: 150px 0 0 0 !important;
+  margin-bottom: 100px;
+  padding: 150px 0 50px 0 !important;
 }
 section .section_content {
   margin-top: 30px;
@@ -11786,12 +11805,12 @@ footer .footer_bottom {
   display: flex;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 760px) {
   .handles {
     justify-content: center;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 760px) {
   .about .section_content {
     flex-direction: column;
   }

@@ -10,7 +10,7 @@
         row-gap: 30px;
         .portfolio__content {
             @include card;
-            width: 300px;
+            width: 350px;
             max-width: 80%;
             padding: 0;
             .image {
@@ -58,9 +58,31 @@
                 .cta {
                     display: flex;
                     align-items: center;
-                    justify-content: space-evenly;
+                    // justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    a {
+                        padding: 10px;
+                        width: 40px;
+                        height: 40px;
+                        font-size: 18px;
+                        background: $primary;
+                        color: $white;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 10px;
+                    }
                 }
             }
+        }
+    }
+}
+
+@media (max-width:880px) {
+    .portfolio {
+        .section_content {
+            justify-content: center;
         }
     }
 }

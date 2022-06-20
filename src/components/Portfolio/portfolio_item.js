@@ -25,8 +25,31 @@ const PortfolioItem = (props) => {
                 </p>
 
                 <div className="cta">
-                    <a href="/" >Visit</a>
-                    <a href="/" >github</a>
+
+                    <a 
+                        href="/" 
+                    >
+                        <span>
+                            <i className="fab fa-github"></i>
+                        </span>
+                    </a>
+
+
+                    <a 
+                        href="/" 
+                    >
+                        <span>
+                            <i className="fab fa-github"></i>
+                        </span>
+                    </a>
+
+                    <a 
+                        href="/" 
+                    >
+                        <span>
+                            <i className="fab fa-github"></i>
+                        </span>
+                    </a>
                 </div>
 
             </div>

@@ -17,7 +17,7 @@
         }
         .content {
             margin-left: 10px;
-            width: 80%;
+            // width: 80%;
         }
         .duration {
             margin: 0;
@@ -25,6 +25,7 @@
         }
         .pic {
             width: 250px;
+            max-width: 90%;
             margin: 0 auto;
             img {
                 width: 100%;
