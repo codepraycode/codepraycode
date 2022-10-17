@@ -1,5 +1,5 @@
 import React from 'react';
-import Hero from './hero';
+import Hero from './Hero';
 import NavBar from './navbar';
 
 const Header = () => {
@@ -7,6 +7,7 @@ const Header = () => {
         <header id="home">
             
             <NavBar/>
+
             <Hero/>
            
 

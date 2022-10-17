@@ -4,32 +4,32 @@ import SocialHandles from '../../widgets/social_handles';
 
 const Hero = () => {
     return (
-        <div className="intro">
+        <div className="hero">
+
             <div className="container">
+
                 <div className="row intro--info">
                         {/* Start Intro Content */}
-                        <div className="col-md-6">
-                            <h1 className="display-2">
-                                <span className="display-2--intro">
-                                    Hey!, I'm Precious
+                        <div className="col-md-6 short">
+                            
+                            <h3>
+                                Lo!, Good to have you here
+                            </h3>
+
+                            <p className="display-2--description lh-base">
+                                I'm Precious, a fullstack software engineer.
+                                Apart from that I love getting involved in Competitive Programming,
+                                Problem Solving and Innovations.
+                            </p>
+
+                            <SocialHandles />
+
+                            <button type="button" className="rounded-pill btn-rounded">
+                                My Resume
+                                <span>
+                                    <i className="fas fa-download"></i>
                                 </span>
-
-                                <span className="display-2--description lh-base">
-                                    An evolving <q>Software Engineer</q>.
-                                    Apart from that I love getting involved in Competitive Programming, Problem Solving and Innovations.
-                                </span>
-                            </h1>
-
-
-                            <SocialHandles/>
-
-                                <button type="button" className="rounded-pill btn-rounded">
-                                    My Resume
-                                    <span>
-                                        <i className="fas fa-download"></i>
-                                    </span>
-                                </button>
-
+                            </button>
                             
                         </div>
 
@@ -37,13 +37,14 @@ const Hero = () => {
                         {/* My Picture */}
                         <div className="col-md-6 dp__container">
                             
-                            <img src="/assets/images/img_placeholder.png" alt="codepraycode"/>
+                            {/* <img src="/assets/images/img_placeholder.png" alt="codepraycode"/> */}
 
                             {/* <span className="border-animation border-animation--border-1"></span>
                             <span className="border-animation border-animation--border-2"></span> */}
                             
                         </div>
                 </div>
+
             </div>
 
             <svg 
