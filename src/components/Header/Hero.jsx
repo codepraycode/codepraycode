@@ -16,7 +16,7 @@ const Hero = () => {
                                 Lo!, Good to have you here
                             </h3>
 
-                            <p className="display-2--description lh-base">
+                            <p>
                                 I'm Precious, a fullstack software engineer.
                                 Apart from that I love getting involved in Competitive Programming,
                                 Problem Solving and Innovations.
@@ -24,7 +24,7 @@ const Hero = () => {
 
                             <SocialHandles />
 
-                            <button type="button" className="rounded-pill btn-rounded">
+                            <button type="button" className="btn-rounded">
                                 My Resume
                                 <span>
                                     <i className="fas fa-download"></i>
@@ -39,9 +39,6 @@ const Hero = () => {
                             
                             {/* <img src="/assets/images/img_placeholder.png" alt="codepraycode"/> */}
 
-                            {/* <span className="border-animation border-animation--border-1"></span>
-                            <span className="border-animation border-animation--border-2"></span> */}
-                            
                         </div>
                 </div>
 

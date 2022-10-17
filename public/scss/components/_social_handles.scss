@@ -1,0 +1,32 @@
+@use '../utils/variables' as *;
+
+.handles {
+    margin: 10px 0;
+    // margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    color: $white !important;
+
+    span {
+        display: block;
+        margin:5px 15px;
+        font-size: $medium+5;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        a {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .handles {
+        justify-content: center;
+    }
+}
