@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from '../../widgets/section';
+import Section from '../../widgets/Section';
 import PortfolioItem from './portfolio_item';
 
 

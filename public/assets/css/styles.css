@@ -11558,34 +11558,6 @@ nav:not(.standard) {
   filter: grayscale(120);
 }
 
-.about {
-  position: relative;
-  padding: 20px 0;
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-.about .section_content {
-  display: flex;
-  align-items: center;
-  width: 900px;
-  margin: 0 auto;
-  max-width: 80%;
-}
-.about .section_contentdiv {
-  margin-right: 25px;
-}
-.about .section_contentdiv:last-of-type {
-  margin-right: 0;
-}
-.about .section_content .pic {
-  width: 800px;
-  max-width: 80%;
-}
-.about .section_content .pic img {
-  max-width: 100%;
-  height: auto;
-}
-
 .education .section_content {
   width: 780px;
   max-width: 80%;
@@ -11825,12 +11797,6 @@ footer {
   margin-top: 1.2rem;
   text-transform: none;
 }
-@media (min-width: 992px) {
-  .display-2--description {
-    font-size: 1.4rem;
-    display: inline-block;
-  }
-}
 
 .display-3 {
   font-family: "Poppins", sans-serif;
@@ -11845,11 +11811,6 @@ footer {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-@media (min-width: 992px) {
-  .display-3--title {
-    font-size: 1.8rem;
-  }
 }
 
 .display-4 {
@@ -11873,12 +11834,6 @@ footer {
 .border-right {
   border-right: 0;
 }
-@media (min-width: 576px) {
-  .border-right {
-    border-right: 0.1rem solid #dee2e6;
-    height: 100%;
-  }
-}
 
 .gradient {
   background: #252f40;
@@ -11886,20 +11841,33 @@ footer {
 
 section {
   margin-top: 100px;
-  margin-bottom: 100px;
-  padding: 150px 0 50px 0 !important;
+}
+section .anchor {
+  height: 150px;
+}
+section:first-of-type {
+  margin-top: 0;
+}
+section:first-of-type .anchor {
+  height: 100px;
 }
 section .section_content {
-  margin-top: 30px;
+  margin-top: 50px;
   max-width: 100%;
 }
-
-header section {
-  margin: 0;
+section.splitted .section_content {
+  display: grid;
+  grid-template-columns: auto auto;
+  position: relative;
 }
-header section .section_content {
-  margin: 0px;
-  max-width: 100%;
+section.splitted .section_content::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: 1px;
+  background-color: #e9ecef;
+  height: 150%;
 }
 
 footer {
@@ -11918,6 +11886,21 @@ footer .footer_bottom {
   background: transparent;
 }
 
+@media (max-width: 760px) {
+  section {
+    margin-top: 10px;
+  }
+  section .anchor {
+    height: 90px;
+  }
+  section.splitted .section_content {
+    grid-template-columns: auto;
+    row-gap: 25px;
+  }
+  section.splitted .section_content::after {
+    display: none;
+  }
+}
 @media (max-width: 760px) {
   .about .section_content {
     flex-direction: column;
