@@ -6,7 +6,7 @@ import Contact from './components/contact';
 import About from './components/About';
 import Education from './components/education';
 import Portfolio from './components/Portfolio';
-import MyStacks from './components/mystacks';
+import Skills from './components/Skills';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <>
      <Header/>
      <About/>
-     <MyStacks/>
+     <Skills/>
      <Education/>
      <Portfolio/>
      <Contact/>
