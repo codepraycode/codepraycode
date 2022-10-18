@@ -11742,20 +11742,20 @@ nav:not(.standard) {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  column-gap: 25px;
-  row-gap: 30px;
+  justify-content: space-evenly;
+  row-gap: 50px;
 }
 .portfolio .section_content .portfolio__content {
   border-radius: 15px;
   padding: 13px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  width: 350px;
-  max-width: 80%;
+  width: 320px;
+  min-height: 460px;
+  max-width: 90%;
   padding: 0;
 }
 .portfolio .section_content .portfolio__content .image {
-  height: 210px;
+  height: 200px;
   overflow: hidden;
   border-radius: 15px 15px 0 0;
 }
@@ -11763,59 +11763,63 @@ nav:not(.standard) {
   width: 100%;
   height: auto;
 }
-.portfolio .section_content .portfolio__content:last-of-type {
-  align-self: start;
-}
 .portfolio .section_content .portfolio__content--info {
   padding: 13px;
 }
 .portfolio .section_content .portfolio__content--info .caption {
   font-size: 20px;
   text-align: center;
+  font-weight: 500;
 }
 .portfolio .section_content .portfolio__content--info .category--platform {
   margin: 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  font-size: 14px;
-  color: #54577296;
+  flex-wrap: nowrap;
+  font-size: 13px;
+  color: #ced4da;
 }
 .portfolio .section_content .portfolio__content--info .category--platform .platform {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.portfolio .section_content .portfolio__content--info .category--platform .platform i {
-  margin-right: 5px;
+.portfolio .section_content .portfolio__content--info .category--platform .platform .ifon {
+  margin: 0 5px;
+  display: block;
 }
-.portfolio .section_content .portfolio__content--info .category--platform .platform i:last-of-type {
+.portfolio .section_content .portfolio__content--info .category--platform .platform .ifon:last-of-type {
   margin-right: 0;
 }
 .portfolio .section_content .portfolio__content--info .info {
-  font-size: 18px;
+  font-size: 14px;
+  padding: 5px 0;
+  color: #adb5bd;
 }
 .portfolio .section_content .portfolio__content--info .cta {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 5px;
 }
 .portfolio .section_content .portfolio__content--info .cta a {
   padding: 10px;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
+  border-radius: 10px;
+  font-size: 13px;
   background: #252f40;
   color: #fff;
-  border-radius: 50%;
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
-  justify-content: center;
-  margin: 0 10px;
+  justify-content: space-evenly;
+}
+.portfolio .section_content .portfolio__content--info .cta a i {
+  margin-right: 10px;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 760px) {
   .portfolio .section_content {
     justify-content: center;
   }
