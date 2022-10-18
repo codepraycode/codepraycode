@@ -11130,6 +11130,73 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+nav:not(.standard) {
+  position: fixed;
+  top: 10%;
+  right: 5px;
+  background-color: #252f40;
+  color: #fff;
+  border-radius: 20px;
+  z-index: 5;
+}
+nav:not(.standard) a {
+  position: relative;
+  transition: all 0.3s ease;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #252f40;
+  border-radius: 15px;
+}
+nav:not(.standard) a span {
+  display: none;
+  margin: 0;
+  font-weight: 400;
+  font-size: 17px;
+}
+nav:not(.standard) ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2px;
+}
+nav:not(.standard) ul li {
+  display: block;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+nav:not(.standard) ul li:hover > a {
+  transform: translateX(-50%);
+  justify-content: flex-start;
+  width: 130% !important;
+  min-width: 120px;
+}
+nav:not(.standard) ul li:hover > a i {
+  margin: 0 10px;
+}
+nav:not(.standard) ul li:hover > a::after {
+  content: attr(data-name);
+  position: absolute;
+  left: 55px;
+  top: 10%;
+  width: 100%;
+}
+nav:not(.standard) ul li:first-of-type:hover > a {
+  transform: translate(-48%, -22%);
+}
+nav:not(.standard) ul li:last-of-type:hover > a {
+  transform: translate(-48%, 22%);
+}
+
 .menu {
   background: #252f40;
 }
@@ -11167,7 +11234,7 @@ textarea.form-control-lg {
   display: block;
 }
 .menu li {
-  padding: 0 0.7rem;
+  padding: 0.7rem;
 }
 .menu li a {
   color: #fff;
@@ -11183,9 +11250,24 @@ textarea.form-control-lg {
   margin-top: 0;
   font-size: 20px;
   display: none;
+  margin: 15px 0;
+}
+
+nav.standard {
+  display: none;
+}
+nav:not(.standard) {
+  display: block;
 }
 
 @media (max-width: 760px) {
+  nav.standard {
+    display: block;
+  }
+  nav:not(.standard) {
+    display: none;
+  }
+
   .menu {
     max-width: 100%;
     text-align: center;
@@ -11698,6 +11780,13 @@ p {
 header,
 footer {
   width: 100vw !important;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.rotate-90 {
+  transform: rotate(90deg);
 }
 
 .heading-line::before {

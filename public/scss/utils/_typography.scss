@@ -1,4 +1,5 @@
 @use '../custom' as *;
+@use './mixins' as mixin;
 
 *{
     box-sizing: border-box;
@@ -22,6 +23,15 @@ p {
 header,
 footer {
     width: 100vw !important;
+}
+
+.rotate{
+    &-180{
+        @include mixin.rotate(180);
+    }
+    &-90{
+        @include mixin.rotate(90);
+    }
 }
 
 // HEADING LINE 
