@@ -4,7 +4,7 @@ import Techstack from '../widgets/Techstack';
 import { Myinfo } from '../myinfo';
 import Image from '../widgets/Image';
 
-const MyStacks = () => {
+const Skills = () => {
     return (
         <Section header="My skill set" id="skills" className="techstacks">            
             <>
@@ -47,4 +47,4 @@ const MyStacks = () => {
     );
 };
 
-export default MyStacks;
+export default Skills;

@@ -11687,47 +11687,55 @@ nav:not(.standard) {
   }
 }
 .education .section_content {
-  width: 780px;
-  max-width: 80%;
-  margin: 20px auto;
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: 20px;
+}
+.education .section_content .ercept {
+  min-width: 300px;
+  max-width: 100%;
   border-radius: 15px;
   padding: 13px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
 }
-.education .section_content .row {
+.education .section_content .ercept .logo {
+  height: 80px;
+  width: 80px;
+  display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px;
 }
-.education .section_content .content {
-  margin-left: 10px;
-}
-.education .section_content .duration {
-  margin: 0;
-  font-size: 14px;
-}
-.education .section_content .pic {
-  width: 250px;
-  max-width: 90%;
-  margin: 0 auto;
-}
-.education .section_content .pic img {
+.education .section_content .ercept .logo img {
   width: 100%;
   height: auto;
+}
+.education .section_content .ercept h3 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600;
+}
+.education .section_content .ercept span {
+  font-size: 14px;
+  color: #dee2e6;
+  margin-left: 10px;
+  font-style: italic;
 }
 
 @media (max-width: 760px) {
   .education .section_content {
-    border-radius: 15px;
-    padding: 13px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    flex-direction: column;
+    row-gap: 20px;
   }
-  .education .section_content .content {
-    margin: 20px 0;
+  .education .section_content .ercept {
+    min-width: 80%;
+  }
+  .education .section_content .ercept span {
     margin-left: 0px;
-    width: 100%;
-  }
-  .education .section_content .content h3 {
-    font-size: 20px;
+    text-align: left;
   }
 }
 .portfolio .section_content {
