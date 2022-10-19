@@ -11133,7 +11133,7 @@ textarea.form-control-lg {
 nav:not(.standard) {
   position: fixed;
   top: 10%;
-  right: 5px;
+  right: 0px;
   background-color: #252f40;
   color: #fff;
   border-radius: 20px;
@@ -11424,7 +11424,7 @@ nav:not(.standard) {
   margin: 5px 0;
 }
 .contact_modal .content p {
-  padding: 10px 15px;
+  padding: 10px 0px 5px 15px;
   font-size: 13px;
   font-weight: 500;
 }

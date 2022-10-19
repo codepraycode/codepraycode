@@ -22,7 +22,10 @@ const Contact = ({ onClose }) => {
 
                 <div className="body">
                     <p>You can go ahead to send a message directly to me here</p>
-
+                    {/* <p className="text-danger text-center p-0">Error message</p> */}
+                    {/* <p className="text-success text-center p-0">
+                        Message sent <i className="fas fa-check    "></i>
+                    </p> */}
                     <form>
                         
                         <div className="input_group">
@@ -31,8 +34,14 @@ const Contact = ({ onClose }) => {
                         </div>
 
                         <div className="input_group">
-                            <input name="email" required={true} type="email" placeholder='I could respond to you via this mail'/>
-                            <label htmlFor="email">What's your email</label>
+                            <input 
+                                name="email" 
+                                required={true} 
+                                type="email" 
+                                placeholder='I could respond to you via this mail address'
+                            />
+
+                            <label htmlFor="email">What's your email address</label>
                         </div>
 
                         <div className="input_group">
@@ -49,7 +58,10 @@ const Contact = ({ onClose }) => {
                         <button className="btn-rounded">
                             Send
                             <span>
-                                <i className="fa fa-telegram" aria-hidden="true"></i>
+                                <i className="fa fa-paper-plane" aria-hidden="true"></i>
+                                {/* <i className="fas fa-spinner"></i> */}
+                                {/* <i className="fas fa-check"></i> */}
+                                {/* <i className="fa fa-exclamation-triangle" aria-hidden="true"></i> */}
                             </span>
                         </button>
                     </form>
