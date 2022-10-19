@@ -1,9 +1,9 @@
 // Import all the components into this file 
-@use './navbar';
-@use './hero';
-@use './footer';
+@use './navigation';
+@use './header';
+@use './social_handles';
 @use './contact';
-@use './techtools';
-@use './about';
+@use './tech_tools';
 @use './education';
 @use './porfolio';
+@use './footer';

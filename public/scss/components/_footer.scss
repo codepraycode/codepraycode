@@ -1,110 +1,100 @@
-@use '../custom' as *;
-@use '../utils/mixins' as *;
-.footer {
-    padding-top: 1rem;
-    background-color: $footer;
-}
 
-// STYLE THE CONTACT-BOX CONTENT 
-.contact-box {
-    position: relative;
-    &__icon {
-        width: 2rem;
-        stroke: $primary;
-        padding-top: 0.5rem;
-        @include media-breakpoint-up(sm) {
-            width: 4rem;
+@use '../utils/variables' as *;
+
+
+footer {
+    margin-top: 200px;
+    background-color: $primary;
+
+
+    width: 100%;
+    
+
+    .footer_top {
+        background: $secondary;
+        padding: 5px 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p{
+            margin: 5px 0;
+            font-size: $regular;
+            font-weight: 500;
+            color:$gray-400;
+        }
+
+        .right{
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
         }
     }
-    &__info {
-        padding: 0.4rem;
-        font-weight: 600;
-        &--title {
-            color: $white;
-            text-decoration: none;
-            font-size: 1rem;
-            @include media-breakpoint-up(sm) {
-                font-size: 1.4rem;
-            }
-        }
-        &--subtitle {
-            font-size: 0.8rem;
-            color: $gray-600;
-            text-decoration: none;
-            @include media-breakpoint-up(sm) {
-                font-size: 1rem;
-            }
-        }
-    }
-}
 
-// STYLE THE SOCIAL MEDIA CONTENT 
-.footer-sm {
-    a {
-        color: $white;
-        i {
-            font-size: 1rem;
-            margin-left: 1rem;
-            @include media-breakpoint-up(sm) {
-                font-size: 1.6rem;
-            }
-        }
-        &:hover {
-            color: $primary;
-        }
-    }
-}
+    .footer_bottom {
+        background: transparent;
+        background-color: $primary;
+        width: 100%;
+        padding: 15px 25px;
 
-// STYLE THE CAMPANY INFO CONTENT 
-.campany-list {
-    display: block;
-    list-style-type: none;
-    position: relative;
-    li {
-        margin-bottom: 0.5rem;
-        text-decoration: none;
-        a {
-            color: $white;
-            text-decoration: none;
-            &:hover {
-                color: $primary;
-            }
+        color: $gray-200;
+        font-weight: 700;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__copyright{
+            color: $gray-200;
+            font-weight: 500;
+            font-size: $small;
+            font-style: italic;
+        }
+
+        span{
+            margin: 0;
+            min-width: 100px;
         }
     }
 }
 
-// STYLE THE COPYRIGHT  CONTENT 
-.footer-bottom {
-    background-color: $black;
-    &__copyright {
-        color: $gray-600;
-        font-weight: 400;
-        a {
-            color: $gray-300;
-            text-decoration: none;
-            &:hover {
-                color: $primary;
-                text-decoration: underline;
+
+@media (max-width:760px) {
+    footer {
+            margin-top: 100px;
+    
+    
+            .footer_top {
+                background: $secondary;
+                padding: 5px 20px;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: center;
+                row-gap: 15px;
+    
+                .right {
+                    align-items: stretch;
+                }
+                .handles {
+                    justify-content: flex-start;
+                }
+            }
+    
+            .footer_bottom {
+                background: transparent;
+                background-color: $primary;
+                width: 100%;
+                padding: 15px 25px;
+    
+                color: $gray-200;
+                font-weight: 700;
+    
+                display: flex;
+                align-items: center;
+                flex-direction: column-reverse;
+                justify-content: center;
+    
+                
             }
         }
-    }
-}
-
-// STYLE THE BACK TO TOP BUTTON 
-.back-to-top {
-    position: fixed;
-    width: 3rem;
-    height: 3rem;
-    right: 1.875rem;
-    bottom: 1.875rem;
-    z-index: 9999;
-    i {
-        color: $white;
-        font-size: 1rem;
-        @include absoluteCenter;
-    }
-    border: none;
-    &:hover {
-        color: $white;
-    }
 }

@@ -13,13 +13,19 @@
 }
 
 // TRANSITION PROPERTY 
-@mixin transitionProperty {
-    transition-duration: .5s;
-    transition-property: all;
+@mixin transitionProperty($props: all, $secs:0.3s) {
+    // transition-duration: .5s;
+    // transition-property: all;
+
+    transition: $props $secs ease;
 }
 
 @mixin card {
     border-radius: 15px;
     padding: 13px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+@mixin rotate($deg:360) {
+    transform: rotate(#{$deg}deg);
 }

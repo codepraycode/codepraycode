@@ -1,33 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SocialHandles from '../../widgets/social_handles';
+import Contact from '../Contact';
 
-const Footer = () => {
+const Footer = ({id}) => {
+    const [showContact, setShowContact] = useState(false);
+
     return (
-        <footer>
-            
+        <>
+            {showContact && <Contact onClose={()=>setShowContact(false)}/>}
 
-            {/* <!-- SOCIAL MEDIA HANDLES  --> */}
-            <div className="footer_top">
-                <SocialHandles/>
-            </div>
+            <footer>
+                
 
-  
-
-            {/* <!-- COPYRIGHT INFO  --> */}
-            <div className="footer_bottom pt-5 pb-5">
-                <div className="container">
-                <div className="row text-center text-white">
-                    <div className="col-12">
-                    <div className="footer-bottom__copyright">
-                        ✌ | &copy; Copyright 2021 <br/><br/>
-
-                        Made with 💗 by <a href="/" >codepraycode</a>
+                {/* <!-- SOCIAL MEDIA HANDLES  --> */}
+                <div className="footer_top" id={id}>
+                    <div>
+                        <p>Connect with me on</p>
+                        <SocialHandles/>
                     </div>
+
+                    <div className="right">
+                        <p>send a mail to preciousolusola16@gmail.com, or </p>
+                        <button className="btn-rounded sm" onClick={()=>setShowContact(true)}>
+                            Send a message here
+                            <span>
+                                <i className="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                        </button>
                     </div>
                 </div>
+
+
+
+    
+
+                {/* <!-- COPYRIGHT INFO  --> */}
+                <div className="footer_bottom">
+                    <span className="footer_bottom__copyright">
+                        codepraycode &copy; copyright
+                    </span>
+
+                    <span>
+                        Jesus loves you | God bless you | <i className="fa fa-heart text-danger" aria-hidden="true"></i>
+                    </span>
+                    
+                    <span>&nbsp;</span>
                 </div>
-            </div>
-        </footer>
+            </footer>
+        </>
     );
 };
 

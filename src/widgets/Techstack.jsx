@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from './Image';
 // import fs from 'fs';
 /* 
     Component to Display Tech Stacks
@@ -22,10 +23,11 @@ const TeachStack = ({stacks}) => {
 
             return (
                 <div key={i} className="stack__logo-box">
-                    <img 
-                        src={pathname} 
+                    <Image 
+                        src={each} 
+                        stack={true}
                         alt={each} 
-                        title={each} 
+                        title={each.at(0).toUpperCase()+each.slice(1,)} 
                         className="img-fluid"
                     />
                 </div>
@@ -35,7 +37,7 @@ const TeachStack = ({stacks}) => {
         return template;
     }
     return (
-        <div className='container stack_listing'>
+        <div className='stack_listing'>
             {renderStacks()}
         </div>
     );
