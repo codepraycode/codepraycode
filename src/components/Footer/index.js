@@ -14,7 +14,7 @@ const Footer = () => {
                 </div>
 
                 <div className="right">
-                    <p>send me a mail to preciousolusola16@gmail.com, or </p>
+                    <p>send a mail to preciousolusola16@gmail.com, or </p>
                     <button className="btn-rounded sm">
                         Send a message here
                         <span>
