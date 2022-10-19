@@ -1,8 +1,8 @@
 import React from 'react';
 import Section from '../widgets/Section';
-const About = () => {
+const About = ({id}) => {
     return (
-        <Section header="About Me" id="about" className="splitted">
+        <Section header="About Me" id={id} className="splitted">
 
             <p className="fw-light px-4 text-center">
                 Lorem ipsum dolor sit amet consectetur architecto magni,

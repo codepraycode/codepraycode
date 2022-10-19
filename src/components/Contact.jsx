@@ -21,7 +21,7 @@ const Contact = ({ onClose }) => {
 
 
                 <div className="body">
-                    <p>You can go ahead to send a message directly to me here</p>
+                    <p className="text-muted">You can go ahead to send a message directly to me here</p>
                     {/* <p className="text-danger text-center p-0">Error message</p> */}
                     {/* <p className="text-success text-center p-0">
                         Message sent <i className="fas fa-check    "></i>

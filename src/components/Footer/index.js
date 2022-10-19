@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SocialHandles from '../../widgets/social_handles';
 import Contact from '../Contact';
 
-const Footer = () => {
+const Footer = ({id}) => {
     const [showContact, setShowContact] = useState(false);
 
     return (
@@ -13,7 +13,7 @@ const Footer = () => {
                 
 
                 {/* <!-- SOCIAL MEDIA HANDLES  --> */}
-                <div className="footer_top">
+                <div className="footer_top" id={id}>
                     <div>
                         <p>Connect with me on</p>
                         <SocialHandles/>

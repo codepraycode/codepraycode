@@ -3,6 +3,39 @@ import SocialHandles from '../../widgets/social_handles';
 
 const NavBar = () => {
 
+    const appNavigation = [
+        {
+            name:"Home",
+            link:"#home",
+            icon: <i className="fas fa-home"></i>
+        },
+        {
+            name:"About me",
+            link:"#about",
+            icon: <i className="fa fa-info" aria-hidden="true"></i>
+        },
+        {
+            name:"My Skills",
+            link:"#skills",
+            icon: <i className="fas fa-code"></i>
+        },
+        {
+            name:"Education",
+            link:"#education",
+            icon: <i className="fa fa-graduation-cap" aria-hidden="true"></i>
+        },
+        {
+            name:"Projects",
+            link:"#projects",
+            icon: <i className="fas fa-project-diagram    "></i>
+        },
+        {
+            name:"Contact me",
+            link:"#contact",
+            icon: <i className="fas fa-phone rotate-90"></i>
+        },
+    ]
+
     return (
         <>
             {/* Mobile navigations (normal) */}
@@ -24,26 +57,17 @@ const NavBar = () => {
 
                     <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul className="navbar-nav">
-                            
-                            <li className="nav-item">
-                                <a className="nav-link" aria-current="page" href="/">Home</a>
-                            </li>
-                            
-                            <li className="nav-item">
-                                <a className="nav-link" href="#about">About me</a>
-                            </li>
-                            
-                            <li className="nav-item">
-                                <a className="nav-link" href="#skills">My Skills</a>
-                            </li>
-                            
-                            <li className="nav-item">
-                                <a className="nav-link" href="#education">Education</a>
-                            </li>
 
-                            <li className="nav-item">
-                                <a className="nav-link" href="#contact">contact Me</a>
-                            </li>
+                            {
+                                appNavigation.map((nav) => (
+                                    <li className="nav-item">
+                                        <a className="nav-link" aria-current="page" href={nav.link} data-name={nav.name}>
+                                            {nav.name}
+                                        </a>
+                                    </li>
+                                ))
+                            }
+                            
                         </ul>
 
                         <SocialHandles className={"nav__handles"}/>
@@ -64,38 +88,23 @@ const NavBar = () => {
             <nav>
 
                 <ul>
-                    <li>
-                        <a href="/" data-name="Home">
-                            <i className="fas fa-home"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/" data-name="About me">
-                            <i className="fa fa-info" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/" data-name="My Skills">
-                            <i className="fas fa-code    "></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/" data-name="Education">
-                            <i className="fa fa-graduation-cap" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/" data-name="Projects">
-                            <i className="fas fa-project-diagram    "></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/" data-name="Contacts">
-                            <i className="fas fa-phone rotate-90"></i>
-                        </a>
-                    </li>
+                    {
+                        appNavigation.map((nav)=>(
+                            <li>
+                                <a href={nav.link} data-name={nav.name}>
+                                    {nav.icon}
+                                </a>
+                            </li>
+                        ))
+                    }
+                    
                 </ul>
             </nav>
+
+            {/* Back to top */}
+            <a href="#home" className="shadow btn-primary rounded-circle back-to-top">
+                <i className="fas fa-chevron-up"></i>
+            </a>
         </>
     );
 };

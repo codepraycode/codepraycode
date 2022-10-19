@@ -4,9 +4,9 @@ import Techstack from '../widgets/Techstack';
 import { Myinfo } from '../myinfo';
 import Image from '../widgets/Image';
 
-const Skills = () => {
+const Skills = ({id}) => {
     return (
-        <Section header="My skill set" id="skills" className="techstacks">            
+        <Section header="My skill set" id={id} className="techstacks">            
             <>
                 <span className="control">
                     <i className="fa fa-chevron-left" aria-hidden="true"></i>

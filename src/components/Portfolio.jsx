@@ -76,9 +76,9 @@ const PortfolioItem = (props) => {
     );
 };
 
-const Portfolio = () => {
+const Portfolio = ({id}) => {
     return (
-        <Section header="Portfolio" id="portfolio" className={"portfolio"}>
+        <Section header="Portfolio" id={id} className={"portfolio"}>
 
             {
                 [1,2,3,4,5,6].map((each)=>{

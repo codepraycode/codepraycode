@@ -2,9 +2,9 @@ import React from 'react';
 import Image from '../widgets/Image';
 import Section from '../widgets/Section';
 
-const Education = () => {
+const Education = ({id}) => {
     return (
-        <Section header="Education" id="education" className="education">
+        <Section header="Education" id={id} className="education">
             <div className="ercept">
                 <div className="logo">
                     <Image src="img_placeholder.png" alt="School"/>
