@@ -1,5 +1,6 @@
-@use '../custom' as *;
-@use '../utils/mixins' as *;
+@use '../utils/variables' as *;
+@use '../utils/mixins' as mixins;
+
 .portfolio {
     .section_content {
         display: flex;
@@ -10,7 +11,7 @@
         row-gap: 50px;
 
         .portfolio__content {
-            @include card;
+            @include mixins.card;
 
             width: 320px;
             min-height: 460px;

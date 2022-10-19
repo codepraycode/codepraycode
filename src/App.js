@@ -2,7 +2,7 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BackToTop from './widgets/back2top';
-import Contact from './components/contact';
+// import Contact from './components/contact';
 import About from './components/About';
 import Education from './components/Education';
 import Portfolio from './components/Portfolio';
@@ -17,7 +17,7 @@ function App() {
      <Skills/>
      <Education/>
      <Portfolio/>
-     <Contact/>
+     {/* <Contact/> */}
      <BackToTop/>
      <Footer/>
     </>

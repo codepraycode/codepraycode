@@ -8,24 +8,37 @@ const Footer = () => {
 
             {/* <!-- SOCIAL MEDIA HANDLES  --> */}
             <div className="footer_top">
-                <SocialHandles/>
+                <div>
+                    <p>Connect with me on</p>
+                    <SocialHandles/>
+                </div>
+
+                <div className="right">
+                    <p>send me a mail to preciousolusola16@gmail.com, or </p>
+                    <button className="btn-rounded sm">
+                        Send a message here
+                        <span>
+                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
             </div>
+
+
 
   
 
             {/* <!-- COPYRIGHT INFO  --> */}
-            <div className="footer_bottom pt-5 pb-5">
-                <div className="container">
-                <div className="row text-center text-white">
-                    <div className="col-12">
-                    <div className="footer-bottom__copyright">
-                        ✌ | &copy; Copyright 2021 <br/><br/>
+            <div className="footer_bottom">
+                <span className="footer_bottom__copyright">
+                    codepraycode &copy; copyright
+                </span>
 
-                        Made with 💗 by <a href="/" >codepraycode</a>
-                    </div>
-                    </div>
-                </div>
-                </div>
+                <span>
+                    Jesus loves you | God bless you | <i className="fa fa-heart text-danger" aria-hidden="true"></i>
+                </span>
+                
+                <span>&nbsp;</span>
             </div>
         </footer>
     );

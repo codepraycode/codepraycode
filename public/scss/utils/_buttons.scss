@@ -1,5 +1,5 @@
-@use '../custom' as *;
-@use './mixins' as *;
+@use '../utils/variables' as *;
+@use './mixins' as mixins;
 
 
 .btn-rounded {
@@ -16,7 +16,7 @@
     
     display: block;
     width: fit-content;
-    @include transitionProperty;
+    @include mixins.transitionProperty;
 
     span {
         position: absolute;
@@ -37,7 +37,18 @@
         }
     }
     &:hover {
-        @include gradient;
+        @include mixins.gradient;
         color: $white;
+    }
+
+
+    &.sm {
+        padding: 10px 45px 10px 15px;
+        font-size: $regular;
+
+        span {
+            width: 30px;
+            height: 30px;
+        }
     }
 }
