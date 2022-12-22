@@ -60,7 +60,7 @@ I have experiences in various libraries, tools, database management systems, of 
 <div align="center">
   <img height="200px" width="400px" align="left" src="https://github-readme-stats.vercel.app/api?username=codepraycode&count_private=true&show_icons=true&theme=radical" />
   <img height="200px" width="400px" align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=codepraycode&theme=react&border=61dafb" />
-  <img height="200px" width="350px" align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=codepraycode&layout=compact&theme=aura&langs_count=9" />
+  <img height="200px" width="350px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=codepraycode&layout=compact&theme=aura&langs_count=9" />
 </div>
 
 <h1></h1>
