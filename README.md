@@ -1,4 +1,4 @@
-<h1 align="center">Lo 👋, I'm Precious Olusola</h1>
+<h1 align="center">Lo!👋, I'm Precious Olusola</h1>
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=435&lines=I+am+codepraycode;A+web+developer;A+mobile+app+developer;A+desktop+app+developer;An+evolving+software+engineer)](https://git.io/typing-svg)
 
