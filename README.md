@@ -1,4 +1,4 @@
-<h1 align="center">Lo 👋, I'm Precious Olusola</h2>
+<h1 align="center">Lo 👋, I'm Precious Olusola</h1>
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=435&lines=I+am+codepraycode;A+web+developer;A+mobile+app+developer;A+desktop+app+developer;An+evolving+software+engineer)](https://git.io/typing-svg)
 
@@ -6,7 +6,7 @@
 
 <h2>About me</h2>
 <p>
-I'm a software developer with 3+ years experience in analysis, design, development, testing and implementing applications, with solid programming experience. Proven ability to leverage full-stack experience in designing user-centered applications, and quick to master new tools/technologies. Currently seeking solid work experience through internship, part time or full-time jobs.
+I'm a software developer with 3+ years experience in analysis, design, development, testing and implementing applications, with solid programming experience. Proven ability to leverge full-stack experience in designing user-centered applications, and quick to master new tools/technologies. Currently seeking solid work experience through internship, part time or full-time jobs.
 </p>
 
 <br/>
