@@ -1,23 +1,293 @@
 /* -------------------- */
 /* Custom propertise    */
 /* -------------------- */
+:root{
+    /* Colors */
+    --martinique: hsl(240, 24%, 29%);
+    --alabaster: hsl(0, 0%, 98%);
+    --mandy: hsl(352, 82%, 62%);
+    --ronchi: hsl(47, 85%, 63%);
+    --santas-gray: hsl(244, 9%, 64%);
+    --tonys-pink: hsl(356, 59%, 76%);
+
+    --primary: var(--martinique);
+    --white: var(--alabaster);
+    --red: var(--mandy);
+    --yellow: var(--ronchi);
+    --gray: var(--santas-gray);
+    --pink: var(--tonys-pink);
+
+    /* font sizes -- divided by 16 */
+    --fs-700: 3.2rem;
+    --fs-600: 2rem;
+    --fs-500: 1.5rem;
+    --fs-400: 1rem; /* 16px */
+    --fs-300: 0.9375rem; /* 15px */
+    --fs-200: 0.875rem; /* 14px */
+
+    /* font families */
+    font-family: "Jost", serif;
+    line-height: 1.5;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    /* Font weights */
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+}
+/* @media (min-width: 35em){
+    :root{
+        --fs-700: 2.5rem;
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 1rem;
+    }
+} */
 
 /* -------------------- */
 /* Reset                */
 /* -------------------- */
 /* https://piccalil.li/blog/a-modern-css-reset/ */
 
+/* Box sizing */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+
+/* Rest margins */
+body,
+h1, h2, h3, h4, h5, h6,
+p, figure, picture {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* Links */
+
+a {
+  font-weight: 500;
+  color: var(--gray);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--primary);
+  outline: 1px solid var(--gray);
+}
+
+a[role="button"],
+a[role="button"]:hover{
+    color: inherit;
+    outline: none;
+}
+
+
+/* set up body */
+body{
+    font-family: var(--ff-serif);
+    font-size: var(--fs-400);
+    
+    background-color: var(--primary); /* #242424; */
+    color: var(--white); /* rgba(255, 255, 255, 0.87); */
+
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+/* Make images easier to work with */
+img, picture{
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier */
+input, button, textarea, select{
+    font: inherit;
+}
+
+/* remove animations for people who turn them off */
+@media (prefers-reduced-motion: reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 /* -------------------- */
 /* Utility classes      */
 /* -------------------- */
 
+.debug {
+    background-color: red;
+}
+.debug-outline {
+    outline: 1px solid red;
+    /* outline-offset: 3px; */
+}
+
+.container {
+    padding-inline: 2em;
+    margin-inline: auto;
+    max-width: 80rem;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line*/
+    border: 0;
+}
+
+.skip-to-content {
+    position: absolute;
+    background: hsl( var(--clr-white) );
+    color: hsl( var(--clr-dark) );
+    padding: .5em 1em;
+    margin-inline: auto;
+    z-index: 500;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0%);
+}
+
+/* Text utility */
+.text-center {
+    text-align: center;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+
 /* -------------------- */
 /* Layout               */
 /* -------------------- */
+.flex {
+    display: flex; 
+}
+
+.flex.flex--column {
+    flex-direction: column;
+}
+
+.flex.flex--center {
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Dimensions */
+.h-full {
+    height: 100vh;
+}
+.h-50 {
+    height: 50vh;
+}
+
+/* Font sizes */
+.fs-700{
+    font-size: var(--fs-700);
+}
+.fs-600{
+    font-size: var(--fs-600);
+}
+.fs-500{
+    font-size: var(--fs-500);
+}
+.fs-400{
+    font-size: var(--fs-400);
+}
+.fs-300{
+    font-size: var(--fs-300);
+}
+.fs-200{
+    font-size: var(--fs-200);
+}
+
+/* Line heights */
+.line-h-1 {
+    line-height: 1.1;
+}
+
+/* Spaces */
+.my-1 {
+    margin-block: 1rem;
+}
+.my-2 {
+    margin-block: 2rem;
+}
 
 /* -------------------- */
 /* Components           */
 /* -------------------- */
+button, .btn {
+    border-radius: .5rem;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+
+    color: var(--white);
+    background-color: var(--red);
+    
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+button:hover,
+.btn:hover {
+  border-color: var(--ronchi);
+}
+button:focus,
+button:focus-visible,
+.btn:hover,
+.btn:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+/* --padding: 2rem; */
+.container {
+    --padding: .2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--padding, 2rem);
+}
 
 /* -------------------- */
 /* Page specific        */

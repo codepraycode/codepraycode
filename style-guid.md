@@ -4,8 +4,8 @@ This website style guide
 
 This site supports the following widths:
 
-- Mobile: 375px
-- Desktop: 1440px
+- Mobile: 375px or 23.4375em
+- Desktop: 1440px or 90em
 
 ## Colors
 
