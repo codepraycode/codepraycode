@@ -114,7 +114,8 @@ a[role="button"]:hover{
 body{
     font-family: var(--ff-serif);
     font-size: var(--fs-400);
-    
+    font-weight: var(--fw-400);
+
     background-color: var(--primary); /* #242424; */
     color: var(--white); /* rgba(255, 255, 255, 0.87); */
 
@@ -275,6 +276,17 @@ input, button, textarea, select{
     font-size: var(--fs-200);
 }
 
+/* Font weigths */
+.fw-400 {
+    font-weight: 400;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.fw-700 {
+    font-weight: 700;
+}
+
 /* Line heights */
 .line-h-1 {
     line-height: 1.1;
@@ -361,6 +373,19 @@ button:focus-visible,
 }
 .socials a[data-medium="github"]{
     background-image: url("./assets/icons/github.svg");
+}
+
+.avatar {
+    width: var(--width, 15rem);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: calc(var(--width) / 2);
+}
+.avatar.avatar--md {
+    --width: 10rem;
 }
 
 /* -------------------- */

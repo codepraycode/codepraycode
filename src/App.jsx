@@ -3,8 +3,12 @@ function App() {
 
   return (
     <main className="h-full container flex flex--center flex--column " id="main">
-    
-      <h1 className="line-h-1 fs-700 uppercase">Codepraycode!</h1>
+
+      <div className="avatar avatar--md my-1">
+        <img  alt="Codepraycode's github avatar" src="https://avatars.githubusercontent.com/u/51521181?s=400&u=4ec6b15bc10506a890bcc35cd6d8bf4e67cb50c7&v=4" />
+      </div>
+
+      <h1 className="line-h-1 fs-500 fw-500 uppercase">Codepraycode!</h1>
 
       <ul className="socials my-1" role="list">
         <li>
