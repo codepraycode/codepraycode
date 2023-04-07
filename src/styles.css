@@ -79,6 +79,17 @@ p {
     font-weight: 400;
 }
 
+
+/* Lists */
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],
+ul[role='tab'],
+ol[role='tab'] {
+    list-style: none;
+    padding: 0;
+}
+
 /* Links */
 
 a {
@@ -210,6 +221,31 @@ input, button, textarea, select{
     justify-content: center;
 }
 
+.flex.align-center {
+    align-items: center;
+}
+.flex.align-start {
+    align-items: flex-start;
+}
+.flex.align-end {
+    align-items: flex-end;
+}
+
+.flex.justify-center {
+    justify-content: center;
+}
+
+.flex.justify-around {
+    justify-content: space-around;
+}
+
+.flex.justify-evenly {
+    justify-content: space-evenly;
+}
+.flex.justify-between{
+    justify-content: space-between;
+}
+
 
 /* Dimensions */
 .h-full {
@@ -287,6 +323,44 @@ button:focus-visible,
     max-width: 1280px;
     margin: 0 auto;
     padding: var(--padding, 2rem);
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: .3rem;
+}
+.socials li {
+    margin-inline: .5rem;
+}
+.socials a {
+    display: block;
+    width: 1.9rem;
+    aspect-ratio: 1;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+
+    transition: transform 250ms ease-in-out;
+}
+
+.socials a:hover,
+.socials a:focus {
+    top: -.3rem;
+    transform: scale(1.3);
+    outline: 0;
+}
+.socials a[data-medium="twitter"]{
+    background-image: url("./assets/icons/twitter.svg");
+}
+.socials a[data-medium="linkedin"]{
+    background-image: url("./assets/icons/linkedin.svg");
+}
+.socials a[data-medium="github"]{
+    background-image: url("./assets/icons/github.svg");
 }
 
 /* -------------------- */
