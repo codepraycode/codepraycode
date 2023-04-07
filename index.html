@@ -16,10 +16,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-primary">
+  <body class="bg-linear">
     <a class="skip-to-content" href="#main">Skip to content</a>
+    <div id="particles-js">
+      <div id="root"></div>
+    </div>
 
-    <div id="root"></div>
+    <!-- Import Particles.js and app.js files -->
+    <script src=
+        "/node_modules/particles.js/particles.js">
+    </script>
     <script type="module" src="/src/main.jsx"></script>
+
+    <script src=
+        "/particles-app.js">
+    </script>
   </body>
 </html>

@@ -328,6 +328,8 @@ button, .btn {
     
     cursor: pointer;
     transition: border-color 0.25s;
+
+    user-select: none;
 }
 button:hover,
 .btn:hover {
@@ -405,7 +407,8 @@ button:focus-visible,
     /* background-color: var(--primary); */
     min-width: 320px;
     max-width: 90%;
-    padding-block: 1.9rem;
+    padding-block: 1rem;
+    /* background-color: red; */
 
     row-gap: .5rem;
 
@@ -415,3 +418,65 @@ button:focus-visible,
 /* -------------------- */
 /* Page specific        */
 /* -------------------- */
+
+
+
+/* -------------------- */
+/* Animations           */
+/* -------------------- */
+
+.bg-linear {
+    background: linear-gradient(90deg,var(--santas-gray), var(--primary));
+    /* background-color: black; */
+    color: var(--gray);
+}
+
+.absolute {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+    z-index: 99999;
+}
+
+
+#root::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  
+  margin-inline: auto;
+  margin-block: auto;
+  
+  width: 450px;
+  height: 450px;
+  
+  background: var(--martinique);
+  border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+  will-change: border-radius, transform, opacity;
+  animation: sliderShape 5s linear infinite;
+  display: block;
+  z-index: 9999;
+  -webkit-animation: sliderShape 5s linear infinite;
+}
+
+@keyframes sliderShape{
+  0%,100%{
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  34%{
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+  }
+  50%{
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  67%{
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+  }
+}
