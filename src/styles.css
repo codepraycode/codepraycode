@@ -116,8 +116,9 @@ body{
     font-size: var(--fs-400);
     font-weight: var(--fw-400);
 
-    background-color: var(--primary); /* #242424; */
-    color: var(--white); /* rgba(255, 255, 255, 0.87); */
+    /* background-color: var(--white); #242424; */
+    /* color: var(--gray); rgba(255, 255, 255, 0.87); */
+    color: var(--primary);
 
     padding: 0;
     margin: 0;
@@ -204,6 +205,17 @@ input, button, textarea, select{
 }
 .uppercase {
     text-transform: uppercase;
+}
+
+/* Colors utility */
+.bg-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.bg-light {
+    background-color: var(--white);
+    color: var(--santas-gray);
 }
 
 /* -------------------- */
@@ -311,7 +323,7 @@ button, .btn {
     font-weight: 500;
     font-family: inherit;
 
-    color: var(--white);
+    color: var(--white) !important;
     background-color: var(--red);
     
     cursor: pointer;
@@ -386,6 +398,18 @@ button:focus-visible,
 }
 .avatar.avatar--md {
     --width: 10rem;
+}
+
+/* Card */
+.card {
+    /* background-color: var(--primary); */
+    min-width: 320px;
+    max-width: 90%;
+    padding-block: 1.9rem;
+
+    row-gap: .5rem;
+
+    border-radius: .8rem;
 }
 
 /* -------------------- */
