@@ -15,17 +15,17 @@ function App() {
         <ul className="socials" role="list">
           <li>
             <a href="https://github.com/codepraycode" title="@codepraycode on Github" data-medium="github">
-                <span class="sr-only">Github</span>
+                <span className="sr-only">Github</span>
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/codepraycode" title="@codepraycode on Linkedin" data-medium="linkedin">
-              <span class="sr-only">Linkedin</span>
+              <span className="sr-only">Linkedin</span>
             </a>
           </li>
           <li>
             <a href="https://twitter.com/codepraycode" title="@codepraycode on Twitter" data-medium="twitter">
-                <span class="sr-only">Twitter</span>
+                <span className="sr-only">Twitter</span>
             </a>
           </li>
         </ul>
