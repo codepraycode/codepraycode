@@ -13,7 +13,7 @@ I'm a software developer with 4+ years experience in analysis, design, developme
 
 # 🔥 Tools and skillsets
 
-I have experiences in various libraries, tools, database management systems, of which if I start mentioning them here, you'll scroll alot, but with this few I've listed, I suppose you have an idea of my skills.
+I have experiences in various libraries, tools, database management systems, of which if I start mentioning them here, you'll scroll alot, but with this few I've listed, I suppose you have an idea of my capabilities.
 
  ## Programming languages:
 
