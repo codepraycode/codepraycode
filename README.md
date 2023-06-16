@@ -6,7 +6,7 @@
 
 <h2>About me</h2>
 <p>
-I'm a software developer with 3+ years experience in analysis, design, development, testing and implementing applications, with solid programming experience. Proven ability to leverge full-stack experience in designing user-centered applications, and quick to master new tools/technologies. Currently seeking solid work experience through internship, part time or full-time jobs.
+I'm a software developer with 4+ years experience in analysis, design, development, testing and implementing applications, with solid programming experience. Proven ability to leverge full-stack experience in designing user-centered applications, and quick to master new tools/technologies. Currently seeking solid work experience through internship, part time or full-time jobs.
 </p>
 
 <br/>
