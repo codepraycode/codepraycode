@@ -2,12 +2,25 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=435&lines=I+am+codepraycode;A+web+developer;A+mobile+app+developer;A+desktop+app+developer;An+evolving+software+engineer)](https://git.io/typing-svg)
 
-
+Thank you for your interest, I'll tell about me.
 
 ## About me
 
-I'm a software developer with over 4 years experience in analysis, engineering, design, development, testing and implementing software, with solid programming experience.
- I'm experience with software engineering practice to build effecient and effective products, and I'm quick to master new tools/technologies.
+I'm a seasoned full-stack software engineer committed to crafting user-centric software solutions. I have a strong foundation in software engineering principles and proficiency in languages such as JavaScript/Typescript and Python, and frameworks/libraries like: REACT, NEXTJS, TAILWIND CSS, NESTJS, DJANGO, etc.
+
+### What I Bring to the Table?
+
+💻 Full-Stack Prowess: As a full-stack engineer, I specialize in both front-end and back-end development, crafting seamless and engaging experiences for end-users.
+
+🚀 Tech Enthusiast: Proficient in JavaScript/Typescript and Python, I leverage my deep understanding of various tools and libraries to build scalable and efficient software.
+
+🏆 Results-Oriented: I thrive on delivering results that meets and exceed expectations. I approach every project with a commitment to not just meet but surpass your requirements.
+
+### Key Achievements:
+
+📈 Project Success: I've successfully delivered projects, turning concepts into tangible, impactful solutions.
+
+📧 Effective Communication: Clear and open communication is at the heart of my work. I ensure you're informed and involved at every step of the development process.
 
 
 <br/>
@@ -39,7 +52,14 @@ I have experiences with various libraries, tools, database management systems, i
 ### Miscellaneous: ![Docker](https://img.icons8.com/color/58/docker.png) ![Postman](https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo.png)
 
 
+
+
 <br/> <br/> <br/>
+
+
+Let's Connect:
+If you're looking to hire or collaborate on innovative projects, optimize existing systems, or explore full-stack development, I'm eager to connect and discuss how we can achieve your goals together 🚀
+
 
 ![README STATS](https://github-readme-stats.vercel.app/api?username=codepraycode&count_private=true&show_icons=true&theme=radical)
 
