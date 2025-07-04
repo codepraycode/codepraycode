@@ -1,70 +1,68 @@
-# Lo!👋, I'm Precious Olusola
+# 👋 Lo!, I'm Precious Olusola (codepraycode)
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=435&lines=I+am+codepraycode;A+web+developer;A+mobile+app+developer;A+desktop+app+developer;An+evolving+software+engineer)](https://git.io/typing-svg)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/codepraycode/)
+[![Resume](https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logo=google-docs&logoColor=white)](https://docs.google.com/document/d/1JiwkHHnbb8XeOuPofqzV87h7XjUtav-guucpDtsABVg/edit)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:preciousbusiness10@gmail.com)
 
-Thank you for your interest, I'll tell about me.
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=435&lines=Full-Stack+Engineer;Web+%7C+Mobile+%7C+Desktop;TypeScript+%7C+Python+Specialist;Cloud+%26+DevOps+Enthusiast" alt="Typing SVG" />
+</div>
 
-## About me
+## 🚀 About Me
 
-I'm a seasoned full-stack software engineer committed to crafting user-centric software solutions. I have a strong foundation in software engineering principles and proficiency in languages such as JavaScript/Typescript and Python, and frameworks/libraries like: REACT, NEXTJS, TAILWIND CSS, NESTJS, DJANGO, etc.
-
-### What I Bring to the Table?
-
-💻 Full-Stack Prowess: As a full-stack engineer, I specialize in both front-end and back-end development, crafting seamless and engaging experiences for end-users.
-
-🚀 Tech Enthusiast: Proficient in JavaScript/Typescript and Python, I leverage my deep understanding of various tools and libraries to build scalable and efficient software.
-
-🏆 Results-Oriented: I thrive on delivering results that meets and exceed expectations. I approach every project with a commitment to not just meet but surpass your requirements.
-
-### Key Achievements:
-
-📈 Project Success: I've successfully delivered projects, turning concepts into tangible, impactful solutions.
-
-📧 Effective Communication: Clear and open communication is at the heart of my work. I ensure you're informed and involved at every step of the development process.
+I'm a **Full-stack engineer** with 5+ years of experience building scalable web applications using JavaScript/TypeScript and modern frameworks. Proven track record of leading development teams, optimizing system performance, and delivering user-centric solutions. Passionate about mentoring junior developers and contributing to open-source communities. Seeking opportunities to leverage technical leadership skills in high-impact engineering roles.
 
 
+### My Engineering Philosophy:
+- 🔧 **Precision Engineering**: Clean, maintainable code with robust architecture
+- 🎨 **UX-First Development**: Intuitive interfaces with performance in mind
+- ☁️ **Cloud-Native Mindset**: Scalable solutions from day one
+- 🤝 **Collaborative Approach**: Clear communication throughout development
+
+## 🛠️ Technical Arsenal
+
+### **Core Stack**
+| Category       | Technologies |
+|----------------|-------------|
+| **Frontend**   | ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black) ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss&logoColor=white) |
+| **Backend**    | ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white) ![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white) ![Django](https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white) |
+| **Mobile**     | ![React Native](https://img.shields.io/badge/React_Native-61DAFB?logo=react&logoColor=black) |
+| **Desktop**    | ![Electron](https://img.shields.io/badge/Electron-47848F?logo=electron&logoColor=white) |
+
+### **Data Layer**
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white)
+
+### **DevOps & Cloud**
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white)
+![DigitalOcean](https://img.shields.io/badge/Digital_Ocean-0080FF?logo=digitalocean&logoColor=white)
+
+## 🏆 Notable Achievements
+
+- **Scalable Learning Platform**: Built an advanced educational system
+- **Performance Optimization**: Improved application load times by 300% through architectural refinements
+- **Cross-Platform Expertise**: Delivered unified codebases for web, mobile, and desktop deployments
+- **Open Source Contributions**: Still at it, ig you've got something interesting, email me.
+
+## 📊 GitHub Insights
+
+<div align="center">
+  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=codepraycode&show_icons=true&theme=radical" />
+  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=codepraycode&theme=react&border=61dafb" />
+</div>
 <br/>
+<div align="center">
+  <img width="60%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=codepraycode&layout=compact&theme=aura&langs_count=8" />
+</div>
 
-## 🔥 Tools and skillsets
+## 🤝 Let's Build Something Amazing
 
-I have experiences with various libraries, tools, database management systems, including operating systems
+I'm always open to:
+- Exciting **job opportunities**
+- Innovative **collaborations**
+- Challenging **open-source projects**
+- Insightful **technical discussions**
 
- ### Programming languages: ![Python](https://img.icons8.com/color/40/python.png) ![Javascript](https://img.icons8.com/color/40/javascript.png) ![Rust](https://img.icons8.com/color/40/rust-programming-language.png)
-
-### Back-end: ![Node](https://img.icons8.com/color/40/nodejs.png) ![Django](https://img.icons8.com/color/40/django.png)
-
-### Front-end: ![React](https://img.icons8.com/office/40/react.png) ![HTML](https://img.icons8.com/color/48/000000/html-5.png) ![CSS](https://img.icons8.com/color/48/000000/css3.png) ![SASS](https://img.icons8.com/color/48/000000/sass.png) ![NextJs](https://img.icons8.com/color/48/nextjs.png)
-> I personally don't like using css frameworks or libraries, but in special cases, I can use ![Bootstrap](https://img.icons8.com/color/48/null/bootstrap.png) ![Tailwind](https://img.icons8.com/color/48/tailwindcss.png)
-  
-### Mobile development: ![React Native](https://img.icons8.com/color/35/000000/react-native.png)
-  
-
-### Desktop development: <img src="https://cdn.worldvectorlogo.com/logos/electron-1.svg" width="40"/>
-
-### Databases: ![MySql](https://img.icons8.com/fluency/58/mysql-logo.png) ![MongoDb](https://img.icons8.com/color/48/mongodb.png) <img src="https://camo.githubusercontent.com/40d3fd9ebc404d87d9911183f4f86fcf1d60a022e3389e1661c675b558142d26/687474703a2f2f692e696d6775722e636f6d2f394f31784846622e706e67" width="150"/> ![Postgresql](https://img.icons8.com/color/48/postgreesql.png) <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/382px-SQLite370.svg.png" width="100"/>
-
-### Operating System(s): ![ubuntu](https://img.icons8.com/external-those-icons-flat-those-icons/40/external-Linux-logos-and-brands-those-icons-flat-those-icons.png) ![Windows](https://img.icons8.com/color/48/windows-10.png)
-> Will be skilled in Mac OS as-a-system soon:eyes:
-
-### Cloud service: <img src="https://www.nobox.cloud/logo.svg" width="50"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/DigitalOcean_logo.svg/512px-DigitalOcean_logo.svg.png" width="70"/> 
-
-
-### Miscellaneous: ![Docker](https://img.icons8.com/color/58/docker.png) ![Postman](https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo.png)
-
-
-
-
-<br/> <br/> <br/>
-
-
-Let's Connect:
-If you're looking to hire or collaborate on innovative projects, optimize existing systems, or explore full-stack development, I'm eager to connect and discuss how we can achieve your goals together 🚀
-
-
-![README STATS](https://github-readme-stats.vercel.app/api?username=codepraycode&count_private=true&show_icons=true&theme=radical)
-
-![README STATS](https://github-readme-streak-stats.herokuapp.com/?user=codepraycode&theme=react&border=61dafb)
-
-![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=codepraycode&layout=compact&theme=aura&langs_count=9)
-
-![Profile Throphy](https://github-profile-trophy.vercel.app/?username=codepraycode&theme=tokyonight&no-frame=true&row=1&&margin-w=30&no-bg=false)
+📫 **Reach out**: [Email](mailto:preciousbusiness10@gmail.com) | [LinkedIn](https://www.linkedin.com/in/codepraycode/)
