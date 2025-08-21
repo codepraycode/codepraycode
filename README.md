@@ -10,14 +10,21 @@
 
 ## 🚀 About Me
 
-I'm a **Full-stack engineer** with 5+ years of experience building scalable web applications using JavaScript/TypeScript and modern frameworks. Proven track record of leading development teams, optimizing system performance, and delivering user-centric solutions. Passionate about mentoring junior developers and contributing to open-source communities. Seeking opportunities to leverage technical leadership skills in high-impact engineering roles.
+I’m a **Full-stack Engineer** with 5+ years of experience crafting scalable web applications using **JavaScript, TypeScript, Next.js, and modern backend stacks**.  
 
+I enjoy turning ideas into production-ready systems — from designing architecture to polishing the final UI. Over the years, I’ve:  
+- 🚀 Led engineering efforts on large projects, improving usability and performance.  
+- 🛠 Built platforms (check my pins bellow).
+- 📈 Helped teams ship faster with clean, maintainable code and thoughtful tooling.  
 
-### My Engineering Philosophy:
-- 🔧 **Precision Engineering**: Clean, maintainable code with robust architecture
-- 🎨 **UX-First Development**: Intuitive interfaces with performance in mind
-- ☁️ **Cloud-Native Mindset**: Scalable solutions from day one
-- 🤝 **Collaborative Approach**: Clear communication throughout development
+When I’m not coding, I enjoy mentoring developers, contributing to open-source, and exploring new tech like **Rust** and scalable backend design.  
+
+### 💡 My Engineering Philosophy  
+- 🔧 **Precision Engineering** → Code should be clean, maintainable, and future-proof.  
+- 🎨 **UX-First Development** → Interfaces that delight users without sacrificing speed.  
+- ☁️ **Cloud-Native Mindset** → Systems that scale from day one.  
+- 🤝 **Collaborative Approach** → Strong communication and team synergy win every time.  
+
 
 ## 🛠️ Technical Arsenal
 
