@@ -1,7 +1,7 @@
 # 👋 Lo!, I'm Precious Olusola (codepraycode)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/codepraycode/)
-[![Resume](https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logo=google-docs&logoColor=white)](https://docs.google.com/document/d/1l6-tZDWlhA_BDbF5QYGz1JoVXayWffS9TBRHiqSSZY8/edit)
+[![Resume](https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logo=google-docs&logoColor=white)](https://docs.google.com/document/d/1QptSYKa2e3M7xk-DPDG-5qw2syPmh97HkA31vKJaDCA/edit?usp=sharing)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:preciousbusiness10@gmail.com)
 
 <div align="center">
