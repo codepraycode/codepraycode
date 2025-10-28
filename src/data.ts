@@ -173,21 +173,56 @@ export const portfolioData = {
       ],
       github: "https://github.com/codepraycode/probify",
       featured: true,
-      link: "#"
+      link: "probify.vercel.app"
     },
     {
-      name: "RCF FUTA ICT Portal",
-      tagline: "Comprehensive Student Fellowship Management System",
-      description:
-        "Central platform managing all ICT operations for the RCF FUTA fellowship, including member management, yearbooks, and digital libraries.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
-      highlights: [
-        "Architected multi-module platform for organizational use",
-        "Implemented secure authentication and SSO verification",
-        "Developed reusable form and dashboard components",
-      ],
-      link: "#"
-    },
+  name: "RCF FUTA ICT Portal",
+  tagline: "Digital Infrastructure Ecosystem for Fellowship Management",
+  description:
+    "A comprehensive ICT ecosystem built for The Redeemed Christian Fellowship, FUTA Chapter — serving over 1,000 members. The platform powers all internal digital operations, including member databases, email infrastructure, and dashboard. It represents a complete digital transformation effort within the fellowship.",
+  tech: [
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "Tailwind CSS",
+    "Prisma",
+    "PostgreSQL"
+  ],
+  highlights: [
+    "Spearheaded the ICT transformation for the entire fellowship community",
+    "Developed multiple interconnected systems — Oracle (member management), FYB Hive (yearbook), ICT Lib (data management), and internal email system",
+    "Architected and maintained centralized databases, authentication, and admin tools",
+    "Led a small technical team to ensure system reliability",
+    "Integrated custom SSO verification and reusable admin UI components for scalability"
+  ],
+  link: "https://ict.rcffuta.com",
+  featured: true
+}
+,
+    {
+    name: "EdgerRouteX",
+    tagline: "Edge Computing Advisory Framework for Transportation",
+    description:
+      "A web-based advisory tool that helps transportation stakeholders explore and plan edge computing implementations through tailored recommendations and roadmaps. The system captures user goals, constraints, and infrastructure details to generate actionable strategies and downloadable roadmaps for deployment.",
+    tech: [
+      "Next.js 15",
+      "TypeScript",
+      "Supabase",
+      "Tailwind CSS",
+      "React",
+      "Vercel"
+    ],
+    highlights: [
+      "Developed multi-step advisory form with validation and data persistence",
+      "Built recommendation engine mapping goals to tailored edge strategies",
+      "Implemented roadmap generator with PDF export and case study integration",
+      "Designed domain-driven architecture based on transportation research requirements"
+    ],
+    github: "https://github.com/codepraycode/edgeroutex",
+    link: "https://edgerx.vercel.app/", // (or live link when available)
+    featured: true
+},
     {
       name: "InternCity",
       tagline: "Mobile Internship Discovery Platform",

@@ -303,47 +303,53 @@ export default function Portfolio() {
                         </div>
                     </div>
 
-                    <div className="space-y-8">
+                    <div className="space-y-6">
                         {data.experience.map((exp, idx) => (
                             <div key={idx} className="group relative">
-                                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" />
-                                <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-cyan-500/50 transition-all duration-500 group-hover:scale-[1.02]">
-                                    <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-3 mb-2">
-                                                <h3 className="text-3xl font-bold text-white">
+                                <div className="absolute -inset-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" />
+                                <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-500 group-hover:scale-[1.01]">
+                                    {/* Header - More compact */}
+                                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-3 mb-4">
+                                        <div className="flex-1 min-w-0">
+                                            <div className="flex flex-wrap items-center gap-2 mb-1">
+                                                <h3 className="text-xl lg:text-2xl font-bold text-white truncate">
                                                     {exp.role}
                                                 </h3>
                                                 {idx === 0 && (
-                                                    <span className="px-3 py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-xs text-yellow-400 font-medium">
+                                                    <span className="px-2 py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-xs text-yellow-400 font-medium whitespace-nowrap">
                                                         Current
                                                     </span>
                                                 )}
                                             </div>
-                                            <p className="text-xl text-cyan-400 font-semibold">
-                                                {exp.company}
-                                            </p>
-                                            <p className="text-lg text-white/60">
-                                                {exp.industry}
-                                            </p>
+                                            <div className="flex flex-wrap items-center gap-2 text-sm lg:text-base">
+                                                <p className="text-cyan-400 font-semibold">
+                                                    {exp.company}
+                                                </p>
+                                                <span className="text-white/40">
+                                                    •
+                                                </span>
+                                                <p className="text-white/60">
+                                                    {exp.industry}
+                                                </p>
+                                            </div>
                                         </div>
-                                        <span className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-sm text-cyan-400 font-medium">
+                                        <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-xs text-cyan-400 font-medium whitespace-nowrap self-start">
                                             {exp.period}
                                         </span>
                                     </div>
 
-                                    {/* Enhanced metrics */}
+                                    {/* Metrics - More compact grid */}
                                     {exp.metrics && (
-                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
                                             {exp.metrics.map((metric, i) => (
                                                 <div
                                                     key={i}
-                                                    className="bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-colors group/metric"
+                                                    className="bg-white/5 rounded-lg p-3 hover:bg-white/10 transition-colors group/metric text-center"
                                                 >
-                                                    <div className="text-2xl font-bold text-cyan-400 group-hover/metric:scale-110 transition-transform">
+                                                    <div className="text-lg font-bold text-cyan-400 group-hover/metric:scale-105 transition-transform">
                                                         {metric.value}
                                                     </div>
-                                                    <div className="text-sm text-white/50 font-medium">
+                                                    <div className="text-xs text-white/50 font-medium mt-1">
                                                         {metric.label}
                                                     </div>
                                                 </div>
@@ -351,27 +357,29 @@ export default function Portfolio() {
                                         </div>
                                     )}
 
-                                    <div className="space-y-4 mb-6">
+                                    {/* Highlights - More compact list */}
+                                    <div className="space-y-2 mb-4">
                                         {exp.highlights.map((highlight, i) => (
                                             <div
                                                 key={i}
-                                                className="flex items-start gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group/highlight"
+                                                className="flex items-start gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 group/highlight"
                                             >
-                                                <div className="p-2 bg-cyan-500/20 rounded-lg group-hover/highlight:scale-110 transition-transform">
-                                                    <Zap className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                                                <div className="p-1.5 bg-cyan-500/20 rounded-md group-hover/highlight:scale-110 transition-transform flex-shrink-0 mt-0.5">
+                                                    <Zap className="w-3 h-3 text-cyan-400" />
                                                 </div>
-                                                <p className="text-white/80 leading-relaxed group-hover/highlight:text-white transition-colors">
+                                                <p className="text-white/80 text-sm leading-relaxed group-hover/highlight:text-white transition-colors">
                                                     {highlight}
                                                 </p>
                                             </div>
                                         ))}
                                     </div>
 
-                                    <div className="flex flex-wrap gap-2">
+                                    {/* Tags - More compact */}
+                                    <div className="flex flex-wrap gap-1.5">
                                         {exp.tags.map((tag) => (
                                             <span
                                                 key={tag}
-                                                className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-sm text-cyan-400 font-medium hover:bg-cyan-500/20 transition-all duration-300 hover:scale-105"
+                                                className="px-2.5 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-xs text-cyan-400 font-medium hover:bg-cyan-500/20 transition-all duration-300 hover:scale-105"
                                             >
                                                 {tag}
                                             </span>
@@ -609,7 +617,7 @@ export default function Portfolio() {
                         <div className="text-center lg:text-left">
                             <p className="text-white/60 text-lg">
                                 © {new Date().getFullYear()}{" "}
-                                {data.personal.name}
+                                {data.personal.nickId}
                             </p>
                             <p className="text-white/40 text-sm mt-2">
                                 Crafting scalable, impactful software solutions
