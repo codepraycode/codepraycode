@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, type JSX } from "react";
+import { useState, useEffect, useRef, type JSX, useCallback } from "react";
 import {
     Github,
     Linkedin,
@@ -15,6 +15,9 @@ import {
     Database,
     Cloud,
     TrendingUp,
+    Trophy,
+    Users,
+    Sparkles,
 } from "lucide-react";
 import { portfolioData } from "./data";
 
@@ -22,41 +25,110 @@ export default function Portfolio() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [activeSection, setActiveSection] = useState("home");
     const [isVisible, setIsVisible] = useState(false);
+    const [scrollProgress, setScrollProgress] = useState(0);
     const heroRef = useRef(null);
+    const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+    // Throttled mouse move handler
+    const handleMouseMove = useCallback((e: MouseEvent) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+    }, []);
+
+    // Scroll progress handler
+    const handleScroll = useCallback(() => {
+        const winHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight - winHeight;
+        const scrollTop = window.pageYOffset;
+        setScrollProgress((scrollTop / docHeight) * 100);
+    }, []);
+
+    // Intersection Observer for active section
+    const setupIntersectionObserver = useCallback(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.5, rootMargin: "-20% 0px -20% 0px" }
+        );
+
+        Object.values(sectionRefs.current).forEach((section) => {
+            if (section) observer.observe(section);
+        });
+
+        return observer;
+    }, []);
 
     useEffect(() => {
         setIsVisible(true);
 
-        const handleMouseMove = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
+        // Set up section refs
+        sectionRefs.current = {
+            home: document.getElementById("home"),
+            experience: document.getElementById("experience"),
+            projects: document.getElementById("projects"),
+            skills: document.getElementById("skills"),
+            contact: document.getElementById("contact"),
         };
 
+        const observer = setupIntersectionObserver();
+
         window.addEventListener("mousemove", handleMouseMove);
-        return () => window.removeEventListener("mousemove", handleMouseMove);
-    }, []);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("scroll", handleScroll);
+            observer.disconnect();
+        };
+    }, [handleMouseMove, handleScroll, setupIntersectionObserver]);
 
     const data = portfolioData;
 
     const scrollToSection = (sectionId: string) => {
         setActiveSection(sectionId);
-        document
-            .getElementById(sectionId)
-            ?.scrollIntoView({ behavior: "smooth" });
+        document.getElementById(sectionId)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
     };
 
     const SkillIcon = ({ category }: { category: string }) => {
         const icons: Record<string, JSX.Element> = {
-            languages: <Cpu className="w-5 h-5" />,
-            webBackend: <Code2 className="w-5 h-5" />,
+            leadership: <Users className="w-5 h-5" />,
+            backend: <Code2 className="w-5 h-5" />,
+            frontend: <Sparkles className="w-5 h-5" />,
+            mobile: <Code2 className="w-5 h-5" />,
+            cloud: <Cloud className="w-5 h-5" />,
             databases: <Database className="w-5 h-5" />,
-            devops: <Cloud className="w-5 h-5" />,
-            algorithms: <TrendingUp className="w-5 h-5" />,
+            ai: <Cpu className="w-5 h-5" />,
+            architecture: <TrendingUp className="w-5 h-5" />,
+            systems: <Terminal className="w-5 h-5" />,
         };
         return icons[category] || <Code2 className="w-5 h-5" />;
     };
 
+    // Stats for impact section - Fixed to match your actual experience
+    // const impactStats = [
+    //     { value: "3+", label: "Years Experience", icon: Calendar },
+    //     { value: "600+", label: "Users Served", icon: Users },
+    //     { value: "10+", label: "Projects Built", icon: Code2 },
+    //     { value: "ICT Lead", label: "Leadership", icon: Trophy },
+    // ];
+
     return (
         <div className="min-h-screen bg-black text-white overflow-x-hidden">
+            {/* Scroll progress bar */}
+            <div className="fixed top-0 left-0 w-full h-1 z-50 bg-white/10">
+                <div
+                    className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-300"
+                    style={{ width: `${scrollProgress}%` }}
+                />
+            </div>
+
             {/* Enhanced gradient background */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 <div
@@ -69,13 +141,13 @@ export default function Portfolio() {
                 <div className="absolute top-1/4 -right-48 size-96 bg-purple-500/15 rounded-full blur-[120px] animate-pulse" />
                 <div className="absolute -bottom-32 -left-32 size-96 bg-blue-500/10 rounded-full blur-[120px]" />
 
-                {/* Grid overlay */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
+                {/* Enhanced grid overlay */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black,transparent)]" />
             </div>
 
             {/* Enhanced floating nav */}
             <nav className="fixed top-8 start-1/2 -translate-x-1/2 z-50">
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-8 py-3 shadow-2xl shadow-cyan-500/10">
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-8 py-3 shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/20 transition-all duration-500">
                     <div className="flex gap-8 items-center">
                         {[
                             "home",
@@ -87,12 +159,15 @@ export default function Portfolio() {
                             <button
                                 key={item}
                                 onClick={() => scrollToSection(item)}
-                                className={`text-sm font-medium transition-all duration-300 ${
+                                className={`relative text-sm font-medium transition-all duration-300 ${
                                     activeSection === item
-                                        ? "text-cyan-400 scale-110 bg-cyan-400/10 px-4 py-1 rounded-full"
+                                        ? "text-cyan-400 scale-110"
                                         : "text-white/60 hover:text-white hover:scale-105"
                                 }`}
                             >
+                                {activeSection === item && (
+                                    <div className="absolute -inset-2 bg-cyan-400/10 rounded-full -z-10" />
+                                )}
                                 {item.charAt(0).toUpperCase() + item.slice(1)}
                             </button>
                         ))}
@@ -107,12 +182,13 @@ export default function Portfolio() {
                 className="relative min-h-screen flex items-center justify-center px-6 pt-20"
             >
                 {/* Availability badge */}
-                <div className="fixed z-50 hidden md:inline-flex top-8 right-4 items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500/20 to-cyan-500/20 backdrop-blur-sm border border-green-400/30 rounded-full mb-8 animate-pulse">
+                <div className="fixed z-50 hidden md:inline-flex top-8 right-4 items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500/20 to-cyan-500/20 backdrop-blur-sm border border-green-400/30 rounded-full mb-8 animate-pulse hover:scale-105 transition-transform cursor-pointer">
                     <div className="size-3 bg-green-400 rounded-full animate-ping" />
                     <span className="text-sm font-medium text-green-400">
                         🚀 Available for roles & projects
                     </span>
                 </div>
+
                 <div className="max-w-6xl mx-auto text-center relative z-10">
                     {/* Main headline */}
                     <div
@@ -122,13 +198,17 @@ export default function Portfolio() {
                                 : "opacity-0 translate-y-10"
                         }`}
                     >
-                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tighter">
+                        {/* <div className="mb-8">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-sm font-medium mb-6">
+                                <Sparkles className="w-4 h-4" />
+                                {data.personal.title}
+                            </div>
+                        </div> */}
+
+                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tighter leading-[0.9]">
                             <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-400 bg-clip-text text-transparent">
-                                {data.personal.name.split(" ")[0]}
-                            </span>
-                            <br />
-                            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                                {data.personal.name.split(" ")[1]}
+                                {data.personal.nickId}{" "}
+                                {/* First name only for large display */}
                             </span>
                         </h1>
 
@@ -136,7 +216,7 @@ export default function Portfolio() {
                             <p className="text-2xl md:text-4xl font-light text-white/80 mb-4">
                                 {data.personal.title}
                             </p>
-                            <div className="h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" />
+                            <div className="h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transform origin-left scale-x-100" />
                         </div>
                     </div>
 
@@ -146,27 +226,31 @@ export default function Portfolio() {
                     </p>
 
                     {/* Impact-focused stats */}
-                    {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16 max-w-4xl mx-auto">
-                        {data.stats.map((stat, idx) => (
-                            <div
-                                key={idx}
-                                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-cyan-500/30"
-                            >
-                                <div className="text-2xl md:text-3xl font-bold text-cyan-400 mb-2 group-hover:scale-110 transition-transform">
-                                    {stat.value}
+                    {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16 max-w-4xl mx-auto">
+                        {impactStats.map((stat, idx) => {
+                            const Icon = stat.icon;
+                            return (
+                                <div
+                                    key={idx}
+                                    className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-cyan-500/30"
+                                >
+                                    <Icon className="w-8 h-8 text-cyan-400 mb-3 group-hover:scale-110 transition-transform" />
+                                    <div className="text-2xl md:text-3xl font-bold text-cyan-400 mb-2 group-hover:scale-110 transition-transform">
+                                        {stat.value}
+                                    </div>
+                                    <div className="text-xs md:text-sm text-white/60 font-medium">
+                                        {stat.label}
+                                    </div>
                                 </div>
-                                <div className="text-xs md:text-sm text-white/60 font-medium">
-                                    {stat.label}
-                                </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div> */}
 
                     {/* Enhanced CTA Buttons */}
                     <div className="flex flex-wrap gap-4 justify-center mb-16">
                         <a
                             href={`mailto:${data.personal.email}`}
-                            className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105 hover:gap-4"
+                            className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105 hover:gap-4 shadow-lg"
                         >
                             <Mail className="size-5" />
                             Let's Build Something Amazing
@@ -176,10 +260,11 @@ export default function Portfolio() {
                             href={data.personal.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                            className="group flex items-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-cyan-500/30"
                         >
                             <Github className="size-5" />
-                            Explore My work
+                            Explore My Work
+                            <ExternalLink className="size-4 opacity-60" />
                         </a>
                     </div>
 
@@ -189,13 +274,13 @@ export default function Portfolio() {
                             <MapPin className="size-4" />
                             {data.personal.location}
                         </div>
-                        {/* <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3">
                             <Trophy className="size-4 text-yellow-400" />
-                            1st Place Hackathon Winner
-                        </div> */}
+                            Full-Stack Developer
+                        </div>
                         {/* <div className="flex items-center gap-3">
                             <Users className="size-4 text-cyan-400" />
-                            Team Leadership
+                            Full-Stack Developer
                         </div> */}
                     </div>
                 </div>
@@ -210,10 +295,10 @@ export default function Portfolio() {
                         </div>
                         <div>
                             <h2 className="text-5xl font-bold bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
-                                Leadership & Impact
+                                Professional Journey
                             </h2>
                             <p className="text-white/60 mt-2">
-                                Where vision meets execution
+                                Where technical excellence meets business impact
                             </p>
                         </div>
                     </div>
@@ -225,9 +310,16 @@ export default function Portfolio() {
                                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-cyan-500/50 transition-all duration-500 group-hover:scale-[1.02]">
                                     <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
                                         <div className="flex-1">
-                                            <h3 className="text-3xl font-bold text-white mb-2">
-                                                {exp.role}
-                                            </h3>
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <h3 className="text-3xl font-bold text-white">
+                                                    {exp.role}
+                                                </h3>
+                                                {idx === 0 && (
+                                                    <span className="px-3 py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-xs text-yellow-400 font-medium">
+                                                        Current
+                                                    </span>
+                                                )}
+                                            </div>
                                             <p className="text-xl text-cyan-400 font-semibold">
                                                 {exp.company}
                                             </p>
@@ -240,16 +332,35 @@ export default function Portfolio() {
                                         </span>
                                     </div>
 
+                                    {/* Enhanced metrics */}
+                                    {exp.metrics && (
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                            {exp.metrics.map((metric, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-colors group/metric"
+                                                >
+                                                    <div className="text-2xl font-bold text-cyan-400 group-hover/metric:scale-110 transition-transform">
+                                                        {metric.value}
+                                                    </div>
+                                                    <div className="text-sm text-white/50 font-medium">
+                                                        {metric.label}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
                                     <div className="space-y-4 mb-6">
                                         {exp.highlights.map((highlight, i) => (
                                             <div
                                                 key={i}
-                                                className="flex items-start gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                                                className="flex items-start gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group/highlight"
                                             >
-                                                <div className="p-2 bg-cyan-500/20 rounded-lg">
+                                                <div className="p-2 bg-cyan-500/20 rounded-lg group-hover/highlight:scale-110 transition-transform">
                                                     <Zap className="w-4 h-4 text-cyan-400 flex-shrink-0" />
                                                 </div>
-                                                <p className="text-white/80 leading-relaxed">
+                                                <p className="text-white/80 leading-relaxed group-hover/highlight:text-white transition-colors">
                                                     {highlight}
                                                 </p>
                                             </div>
@@ -260,7 +371,7 @@ export default function Portfolio() {
                                         {exp.tags.map((tag) => (
                                             <span
                                                 key={tag}
-                                                className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-sm text-cyan-400 font-medium hover:bg-cyan-500/20 transition-colors"
+                                                className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-sm text-cyan-400 font-medium hover:bg-cyan-500/20 transition-all duration-300 hover:scale-105"
                                             >
                                                 {tag}
                                             </span>
@@ -285,10 +396,10 @@ export default function Portfolio() {
                         </div>
                         <div>
                             <h2 className="text-5xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-                                Innovation Showcase
+                                Featured Projects
                             </h2>
                             <p className="text-white/60 mt-2">
-                                From concept to production
+                                From concept to production-scale solutions
                             </p>
                         </div>
                     </div>
@@ -299,7 +410,7 @@ export default function Portfolio() {
                                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" />
                                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-purple-500/50 transition-all duration-500 group-hover:scale-[1.02] h-full flex flex-col">
                                     {project.featured && (
-                                        <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full p-3 shadow-lg">
+                                        <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full p-3 shadow-lg animate-pulse">
                                             <Star className="w-5 h-5 text-black" />
                                         </div>
                                     )}
@@ -314,58 +425,61 @@ export default function Portfolio() {
                                         {project.description}
                                     </p>
 
-                                    {/* Enhanced Metrics */}
-                                    <div className="grid grid-cols-2 gap-4 mb-6">
-                                        {project.metrics.map((metric, i) => (
-                                            <div
-                                                key={i}
-                                                className="bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-colors group/metric"
-                                            >
-                                                <div className="text-2xl font-bold text-cyan-400 group-hover/metric:scale-110 transition-transform">
-                                                    {metric.value}
-                                                </div>
-                                                <div className="text-sm text-white/50 font-medium">
-                                                    {metric.label}
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-
                                     {/* Enhanced Tech stack */}
                                     <div className="flex flex-wrap gap-2 mb-6">
                                         {project.tech.map((tech) => (
                                             <span
                                                 key={tech}
-                                                className="px-3 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-white/70 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-colors"
+                                                className="px-3 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-white/70 hover:border-cyan-400/50 hover:bg-cyan-400/10 hover:scale-105 transition-all duration-300"
                                             >
                                                 {tech}
                                             </span>
                                         ))}
                                     </div>
 
+                                    {/* Project Highlights */}
+                                    {project.highlights && (
+                                        <div className="space-y-2 mb-6">
+                                            {project.highlights.map(
+                                                (highlight, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className="flex items-start gap-2"
+                                                    >
+                                                        <Zap className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-1" />
+                                                        <p className="text-white/60 text-sm leading-relaxed">
+                                                            {highlight}
+                                                        </p>
+                                                    </div>
+                                                )
+                                            )}
+                                        </div>
+                                    )}
+
                                     {/* Enhanced Links */}
                                     <div className="flex gap-4 mt-auto pt-4 border-t border-white/10">
-                                        {project.link && (
-                                            <a
-                                                href={project.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:gap-3 font-semibold"
-                                            >
-                                                <ExternalLink className="w-4 h-4" />
-                                                <span className="text-sm">
-                                                    Live Demo
-                                                </span>
-                                            </a>
-                                        )}
+                                        {project.link &&
+                                            project.link !== "#" && (
+                                                <a
+                                                    href={project.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:gap-3 font-semibold group/link"
+                                                >
+                                                    <ExternalLink className="w-4 h-4 group-hover/link:scale-110 transition-transform" />
+                                                    <span className="text-sm">
+                                                        Live Demo
+                                                    </span>
+                                                </a>
+                                            )}
                                         {project.github && (
                                             <a
                                                 href={project.github}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex items-center gap-2 text-white/60 hover:text-white transition-all duration-300 hover:gap-3 font-semibold"
+                                                className="flex items-center gap-2 text-white/60 hover:text-white transition-all duration-300 hover:gap-3 font-semibold group/link"
                                             >
-                                                <Github className="w-4 h-4" />
+                                                <Github className="w-4 h-4 group-hover/link:scale-110 transition-transform" />
                                                 <span className="text-sm">
                                                     Source Code
                                                 </span>
@@ -400,7 +514,7 @@ export default function Portfolio() {
                                     className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-cyan-500/30"
                                 >
                                     <div className="flex items-center gap-3 mb-4">
-                                        <div className="p-2 bg-cyan-500/20 rounded-lg">
+                                        <div className="p-2 bg-cyan-500/20 rounded-lg group-hover:scale-110 transition-transform">
                                             <SkillIcon category={category} />
                                         </div>
                                         <h3 className="text-xl font-bold text-cyan-400 capitalize">
@@ -413,7 +527,7 @@ export default function Portfolio() {
                                         {skills.map((skill) => (
                                             <span
                                                 key={skill}
-                                                className="px-3 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-white/80 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-colors"
+                                                className="px-3 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-white/80 hover:border-cyan-400/50 hover:bg-cyan-400/10 hover:scale-105 transition-all duration-300"
                                             >
                                                 {skill}
                                             </span>
@@ -429,10 +543,10 @@ export default function Portfolio() {
             {/* Enhanced Contact Section */}
             <section id="contact" className="relative py-32 px-6">
                 <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <div className="inline-flex items-center gap-3 px-6 py-3 bg-cyan-500/20 border border-cyan-500/30 rounded-full mb-8">
+                    <div className="inline-flex items-center gap-3 px-6 py-3 bg-cyan-500/20 border border-cyan-500/30 rounded-full mb-8 hover:scale-105 transition-transform cursor-pointer">
                         <div className="size-2 bg-cyan-400 rounded-full animate-pulse" />
                         <span className="text-cyan-400 font-medium">
-                            Let's Connect
+                            Let's Connect & Build
                         </span>
                     </div>
 
@@ -441,15 +555,15 @@ export default function Portfolio() {
                     </h2>
                     <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed">
                         I'm currently available for challenging engineering
-                        leadership roles, ambitious projects, and opportunities
-                        to drive technical innovation. Let's create something
+                        roles, ambitious projects, and opportunities to drive
+                        technical innovation. Let's create something
                         extraordinary together.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                         <a
                             href={`mailto:${data.personal.email}`}
-                            className="group flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105 hover:gap-4"
+                            className="group flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105 hover:gap-4 shadow-lg"
                         >
                             <Mail className="w-5 h-5" />
                             Start a Conversation
@@ -459,31 +573,31 @@ export default function Portfolio() {
                             href={data.personal.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                            className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-cyan-500/30"
                         >
                             <Linkedin className="w-5 h-5" />
                             Professional Network
+                            <ExternalLink className="w-4 h-4 opacity-60" />
                         </a>
                     </div>
 
-                    {/* Contact info with enhanced styling */}
+                    {/* Enhanced Contact info */}
                     <div className="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
-                        <div className="flex items-center justify-center gap-3 p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors">
-                            <MapPin className="w-5 h-5 text-cyan-400" />
-                            <span className="text-white/80">
-                                {data.personal.location}
-                            </span>
-                        </div>
-                        <div className="flex items-center justify-center gap-3 p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors">
-                            <Phone className="w-5 h-5 text-cyan-400" />
-                            <span className="text-white/80">
-                                {data.personal.phone}
-                            </span>
-                        </div>
-                        <div className="flex items-center justify-center gap-3 p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors">
-                            <Mail className="w-5 h-5 text-cyan-400" />
-                            <span className="text-white/80">Email</span>
-                        </div>
+                        {[
+                            { icon: MapPin, text: data.personal.location },
+                            { icon: Phone, text: data.personal.phone },
+                            { icon: Mail, text: data.personal.email },
+                        ].map((item, idx) => (
+                            <div
+                                key={idx}
+                                className="flex items-center justify-center gap-3 p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:scale-105 group"
+                            >
+                                <item.icon className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
+                                <span className="text-white/80">
+                                    {item.text}
+                                </span>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -498,40 +612,46 @@ export default function Portfolio() {
                                 {data.personal.name}
                             </p>
                             <p className="text-white/40 text-sm mt-2">
-                                Building dependable, scalable software — one
-                                project at a time.
+                                Crafting scalable, impactful software solutions
                             </p>
                         </div>
 
                         <div className="flex gap-6">
-                            <a
-                                href={data.personal.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-white/40 hover:text-cyan-400 transition-colors p-3 hover:bg-white/5 rounded-xl"
-                            >
-                                <Github className="w-6 h-6" />
-                            </a>
-                            <a
-                                href={data.personal.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-white/40 hover:text-cyan-400 transition-colors p-3 hover:bg-white/5 rounded-xl"
-                            >
-                                <Linkedin className="w-6 h-6" />
-                            </a>
-                            <a
-                                href={`mailto:${data.personal.email}`}
-                                className="text-white/40 hover:text-cyan-400 transition-colors p-3 hover:bg-white/5 rounded-xl"
-                            >
-                                <Mail className="w-6 h-6" />
-                            </a>
+                            {[
+                                { icon: Github, href: data.personal.github },
+                                {
+                                    icon: Linkedin,
+                                    href: data.personal.linkedin,
+                                },
+                                {
+                                    icon: Mail,
+                                    href: `mailto:${data.personal.email}`,
+                                },
+                            ].map((social, idx) => (
+                                <a
+                                    key={idx}
+                                    href={social.href}
+                                    target={
+                                        social.href.startsWith("http")
+                                            ? "_blank"
+                                            : undefined
+                                    }
+                                    rel={
+                                        social.href.startsWith("http")
+                                            ? "noopener noreferrer"
+                                            : undefined
+                                    }
+                                    className="text-white/40 hover:text-cyan-400 transition-all duration-300 p-3 hover:bg-white/5 rounded-xl hover:scale-110"
+                                >
+                                    <social.icon className="w-6 h-6" />
+                                </a>
+                            ))}
                         </div>
                     </div>
 
                     <div className="text-center mt-8 pt-6 border-t border-white/10">
                         <p className="text-white/30 text-sm">
-                            {/* Designed & developed by {data.personal.name}  */}
+                            Built with passion and cutting-edge technology
                         </p>
                     </div>
                 </div>

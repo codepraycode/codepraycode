@@ -1,110 +1,256 @@
 export const portfolioData = {
   personal: {
-    name: "codepraycode",
-    title: "Fullstack Software Engineer",
+    name: "Precious Olusola",
+    nickId: "codepraycode",
+    title: "Full-Stack Engineer & Technical Lead",
     location: "Lagos, Nigeria",
     email: "preciousbusiness10@gmail.com",
     phone: "+234 8122137834",
     github: "https://github.com/codepraycode",
     linkedin: "https://linkedin.com/in/codepraycode",
     summary:
-      "Software Engineer with over 5 years of experience building scalable, high-performance web and backend systems. Adept at leading projects from concept to production, mentoring engineers, and delivering robust, maintainable code. Skilled in TypeScript, JavaScript, and Python, with strong grounding in system design, cloud infrastructure, and DevOps automation.",
+      "Software engineer with deep experience across the full stack — from scalable web apps to backend infrastructure. Strong in TypeScript, Node.js, Python, and currently advancing into systems programming with Rust. Skilled in architecting maintainable systems, optimizing performance, and leading teams through technical execution. Passionate about building reliable, human-centered software that scales.",
   },
 
-  stats: [
-    { label: "Years of Experience", value: "5+" },
-    { label: "Projects Delivered", value: "20+" },
-    { label: "Developers Mentored", value: "10+" },
-    { label: "Performance Improvement", value: "30%" },
-  ],
-
   skills: {
-    languages: ["TypeScript", "JavaScript", "Python", "Rust", "Java", "C++"],
-    frameworks: ["Next.js", "React", "Node.js", "Express", "NestJS"],
-    databases: ["PostgreSQL", "MongoDB", "SQL"],
-    devops: ["Docker", "CI/CD", "AWS", "Vercel", "Digital Ocean", "Test Automation", "Observability"],
-    architecture: ["Microservices", "System Design", "WebSockets", "Cloud Infrastructure"],
-    algorithms: ["Tries", "Heaps", "Graphs", "Dynamic Programming", "Greedy Algorithms", "BFS/DFS", "Complexity Analysis"],
+    leadership: [
+      "Technical Leadership",
+      "System Architecture",
+      "Project Planning",
+      "Code Review",
+      "Mentoring",
+      "Team Collaboration",
+    ],
+    backend: [
+      "TypeScript",
+      "Node.js",
+      "Python",
+      "Express",
+      "Flask",
+      "REST APIs",
+      "WebSockets",
+      "API Design",
+    ],
+    frontend: [
+      "React",
+      "Next.js",
+      "React Native",
+      "Tailwind CSS",
+      "Responsive Design",
+      "UI/UX Optimization",
+    ],
+    mobile: ["React Native", "Cross-Platform Development"],
+    cloud: [
+      "AWS",
+      "Docker",
+      "CI/CD",
+      "Vercel",
+      "DigitalOcean",
+      "Cloudflare",
+      "Supabase",
+      "RunPod",
+    ],
+    databases: [
+      "PostgreSQL",
+      "MongoDB",
+      "Prisma",
+      "Database Design",
+      "Query Optimization",
+    ],
+    ai: [
+      "AI Pipeline Integration",
+      "Computer Vision",
+      "RunPod",
+      "Face Detection",
+      "Image Processing",
+    ],
+    architecture: [
+      "Microservices",
+      "System Design",
+      "API Design",
+      "Scalable Infrastructure",
+      "Performance Optimization",
+    ],
+    systems: ["Linux System Administration", "Bash Scripting", "Rust (in progress)", "Networking Fundamentals"],
   },
 
   experience: [
     {
-      company: "PODX",
-      industry: "Web3 Teleconferencing",
-      role: "Full-Stack Developer",
-      period: "Jan 2025 – Present",
+      company: "RCF FUTA",
+      industry: "Education / ICT Infrastructure",
+      role: "ICT Coordinator & Technical Lead",
+      period: "2022 – Present",
       highlights: [
-        "Improved video UI rendering latency by 20% through component refactoring.",
-        "Refactored authentication flows, reducing bugs by 30% and enhancing system security.",
-        "Collaborated across teams to design and deliver scalable, maintainable systems.",
+        "Led complete digital transformation for a 1000+ member fellowship",
+        "Architected multiple systems including Oracle (member management), FYB Hive (yearbook), and ICT Library (data & resource management)",
+        "Designed internal email, database, and reporting infrastructure",
+        "Built custom authentication and admin systems using Next.js and PostgreSQL",
+        "Mentored developers and managed deployments to production",
       ],
-      tags: ["Web3", "Video Streaming", "TypeScript", "Performance"],
+      metrics: [
+        { label: "User Base", value: "1000+ members" },
+        { label: "Systems", value: "5+ internal apps" },
+        { label: "Scope", value: "Full ICT ecosystem" },
+      ],
+      tags: [
+        "Technical Leadership",
+        "System Architecture",
+        "Next.js",
+        "Node.js",
+        "Python",
+        "Infrastructure",
+      ],
     },
     {
-      company: "Nobox Labs",
-      industry: "Digital Innovation",
-      role: "Lead Engineer",
-      period: "Oct 2023 – Nov 2024",
+      company: "Picsort",
+      industry: "AI / Computer Vision",
+      role: "Full-Stack & AI Integration Engineer",
+      period: "2024",
       highlights: [
-        "Led development of high-performance Next.js applications with SSR and performance optimization.",
-        "Mentored junior developers and promoted best practices, improving overall team efficiency.",
-        "Built an internal file upload service, eliminating third-party costs and improving system reliability.",
+        "Co-developed AI-powered photo organization platform using face detection and clustering",
+        "Integrated Google Drive APIs for direct folder access and album verification",
+        "Developed face recognition pipeline using InsightFace, HDBSCAN, and FAISS",
+        "Implemented Paystack payments, promo code logic, and optimized inference performance",
       ],
-      tags: ["Leadership", "Next.js", "System Architecture", "Team Building"],
+      metrics: [
+        { label: "Image Sources", value: "Google Drive, ZIP, Uploads" },
+        { label: "Processing Speed", value: "Optimized face clustering pipeline" },
+      ],
+      tags: ["Python", "Flask", "Next.js", "TypeScript", "RunPod", "AI Integration"],
+    },
+    {
+      company: "BCDEEs",
+      industry: "FinTech / P2P Trading",
+      role: "Full-Stack Developer",
+      period: "2023 – 2024",
+      highlights: [
+        "Developed peer-to-peer crypto trading backend supporting multiple currencies",
+        "Built secure transaction handling, escrow logic, and real-time order management",
+        "Implemented wallet management and admin dashboard for trade oversight",
+        "Ensured performance and compliance across financial operations",
+      ],
+      metrics: [
+        { label: "Supported Currencies", value: "NGN, USD, CAD, EUR, GBP" },
+        { label: "Core Features", value: "P2P Escrow, Wallets, Admin Panel" },
+      ],
+      tags: ["FinTech", "Node.js", "React Native", "PostgreSQL", "Prisma"],
     },
   ],
 
   projects: [
     {
-      name: "PicSort",
-      tagline: "AI-Powered Face Recognition Album Organizer",
+      name: "Dispacc",
+      tagline: "Wallet-as-a-Service Platform for Temporary Fund Collection",
       description:
-        "An AI-driven photo management system that automatically organizes Google Drive albums by recognized faces. Achieved 92% accuracy using OpenCV and InsightFace.",
-      tech: ["Next.js", "Python", "Supabase", "Google Drive API", "OpenCV", "InsightFace", "Flask"],
-      metrics: [
-        { label: "Recognition Accuracy", value: "92%" },
-        { label: "Processing Speed", value: "100+ photos/min" },
+        "An API-first wallet service that lets users create disposable wallets for single-use payments. Wallets automatically close and transfer funds to the creator with complete logs and PDF exports. Designed for integration with other systems.",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Payment APIs",
       ],
       highlights: [
-        "Developed an automated pipeline for face detection, clustering, and ZIP generation.",
-        "Integrated Supabase and email notifications for real-time user delivery.",
-        "Optimized inference pipeline for performance and scalability.",
+        "Architected wallet lifecycle automation system",
+        "Integrated secure payments and transaction logging",
+        "Built admin dashboard and analytics reporting",
+        "Designed for high reusability and third-party integration",
       ],
-      link: "https://picsort.app",
-      github: null,
       featured: true,
+      link: "#"
     },
     {
-      name: "EdgeRouteX",
-      tagline: "High-Performance HTTP Router Engine",
+      name: "Probify",
+      tagline: "E-learning Platform for Probability Education",
       description:
-        "A custom-built TypeScript HTTP router leveraging a radix tree (trie) for O(k) route lookup — achieving 2.5x performance over Express.js.",
-      tech: ["TypeScript", "Node.js", "Radix Tree", "Benchmarking"],
-      metrics: [
-        { label: "Performance vs Express.js", value: "2.5x Faster" },
-        { label: "Memory Efficiency", value: "40% Less" },
-      ],
+        "A gamified platform for teaching probability to students aged 13–16. Includes 12 structured modules, leaderboards, and timed exercises built with a focus on learning progression.",
+      tech: ["Next.js", "Tailwind CSS", "MDX", "KaTeX", "MobX", "Auth.js", "Nobox"],
       highlights: [
-        "Built a modular routing and middleware architecture from the ground up.",
-        "Developed a benchmarking suite to evaluate performance across frameworks.",
-        "Demonstrated expertise in algorithm design and performance engineering.",
+        "Designed modular e-learning flow with progress tracking",
+        "Implemented leaderboard ranking system with real-time updates",
+        "Created responsive MDX-based math content renderer",
       ],
-      link: null,
-      github: "https://github.com/codepraycode/edgeroutex",
+      github: "https://github.com/codepraycode/probify",
       featured: true,
+      link: "#"
+    },
+    {
+      name: "RCF FUTA ICT Portal",
+      tagline: "Comprehensive Student Fellowship Management System",
+      description:
+        "Central platform managing all ICT operations for the RCF FUTA fellowship, including member management, yearbooks, and digital libraries.",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
+      highlights: [
+        "Architected multi-module platform for organizational use",
+        "Implemented secure authentication and SSO verification",
+        "Developed reusable form and dashboard components",
+      ],
+      link: "#"
+    },
+    {
+      name: "InternCity",
+      tagline: "Mobile Internship Discovery Platform",
+      description:
+        "A React Native app connecting students to internship opportunities. Built for a client as a final-year project, featuring job listings, applications, and notifications.",
+      tech: ["React Native", "TypeScript", "Expo", "SQLite", "Axios"],
+      highlights: [
+        "Built cross-platform mobile UI for Android",
+        "Implemented authentication and API integration",
+        "Delivered production-ready app for student internships",
+      ],
+      github: "https://github.com/codepraycode/interncity",
+      link: "#"
     },
   ],
 
   education: {
-    institution: "Federal University of Technology, Akure",
+    institution: "Federal University of Technology, Akure (FUTA)",
     degree: "B.Tech, Software Engineering",
-    period: "Expected Nov 2025",
+    period: "Expected 2025",
     achievements: [
       {
-        title: "1st Place – Nobox Hackathon 2023",
-        description: "IoT & Real-Time Data Category",
-        icon: "🏆",
+        title: "ICT Coordinator – RCF FUTA",
+        description:
+          "Led digital transformation across fellowship operations and data systems.",
+        icon: "💻",
+      },
+      {
+        title: "Full-Stack Innovator",
+        description: "Developed and launched multiple independent and client projects.",
+        icon: "⚙️",
       },
     ],
   },
+
+  certifications: [
+    {
+      name: "Rust Systems Programming Certification",
+      status: "In Progress",
+      description:
+        "Expanding into systems programming and high-performance backend development.",
+    },
+    {
+      name: "AWS Cloud Practitioner",
+      status: "In Progress",
+      description:
+        "Building cloud architecture and deployment expertise for scalable systems.",
+    },
+  ],
+
+  philosophy: [
+    "Every system should outlive its creator — durability over flashiness.",
+    "Simplicity is not lack of depth; it’s mastery of clarity.",
+    "Build to understand — learning happens through creation.",
+    "Codebases are living things; maintain them with respect.",
+    "Systems programming is the next evolution of software craftsmanship.",
+  ],
+
+  learning: [
+    "Rust for systems and backend development",
+    "Cloud-native architecture & distributed systems",
+    "Performance tuning and observability at scale",
+    "Systems-level networking and concurrency models",
+    "Compiler internals and language design fundamentals",
+  ],
 };
