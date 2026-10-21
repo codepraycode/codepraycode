@@ -12,7 +12,6 @@ export const site = {
   links: [
     { label: "GitHub", href: "https://github.com/codepraycode" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/codepraycode/" },
-    { label: "X", href: "https://x.com/codepraycode" },
     {
       label: "Résumé",
       href: "https://docs.google.com/document/d/1QptSYKa2e3M7xk-DPDG-5qw2syPmh97HkA31vKJaDCA/edit?usp=sharing",

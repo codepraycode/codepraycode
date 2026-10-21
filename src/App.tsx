@@ -18,33 +18,34 @@ const nav = [
   { href: "#contact", label: "Contact" },
 ];
 
-type Theme = "system" | "light" | "dark";
-const themes: Theme[] = ["system", "light", "dark"];
-const themeIcons = { system: Monitor, light: Sun, dark: Moon };
+type Theme = "light" | "dark" | "system";
+const themes: Theme[] = ["light", "dark", "system"];
+const themeIcons = { light: Sun, dark: Moon, system: Monitor };
 
 function readSavedTheme(): Theme {
   try {
     const saved = localStorage.getItem("theme");
-    return saved === "light" || saved === "dark" ? saved : "system";
+    return saved === "dark" || saved === "system" ? saved : "light";
   } catch {
-    return "system"; // storage blocked: just follow the system
+    return "light"; // storage blocked: stay on the default
   }
 }
 
-// Cycles System → Light → Dark. Starts as "system" so the prerendered HTML matches the first
-// client render; the saved choice is read after hydration (index.html already applied it before paint).
+// Cycles Light → Dark → System. Light is the default, so it needs no data-theme and nothing saved.
+// Starts as "light" so the prerendered HTML matches the first client render; the saved choice is
+// read after hydration (index.html already applied it before paint).
 function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("system");
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => setTheme(readSavedTheme()), []);
 
   function cycle() {
     const next = themes[(themes.indexOf(theme) + 1) % themes.length];
     setTheme(next);
-    if (next === "system") delete document.documentElement.dataset.theme;
+    if (next === "light") delete document.documentElement.dataset.theme;
     else document.documentElement.dataset.theme = next;
     try {
-      if (next === "system") localStorage.removeItem("theme");
+      if (next === "light") localStorage.removeItem("theme");
       else localStorage.setItem("theme", next);
     } catch {
       // storage blocked: the choice still applies for this visit

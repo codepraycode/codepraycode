@@ -9,7 +9,7 @@
     <script>
       try {
         var theme = localStorage.getItem("theme");
-        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+        if (theme === "dark" || theme === "system") document.documentElement.dataset.theme = theme;
       } catch (e) {}
     </script>
     
@@ -36,7 +36,6 @@
     <meta name="twitter:title" content="Precious Olusola (codepraycode) · I build smart software that solves real problems" />
     <meta name="twitter:description" content="AI software engineer in Lagos. I build AI products end to end, and the reliable systems around them, for the web, mobile and beyond." />
     <meta name="twitter:image" content="https://codepraycode.vercel.app/og-image.png" />
-    <meta name="twitter:creator" content="@codepraycode" />
 
     <!-- Tells search engines who this site is about -->
     <script type="application/ld+json">
@@ -52,7 +51,6 @@
         "sameAs": [
           "https://github.com/codepraycode",
           "https://www.linkedin.com/in/codepraycode/",
-          "https://x.com/codepraycode",
           "https://www.npmjs.com/package/receipt-ocr-ng"
         ]
       }
