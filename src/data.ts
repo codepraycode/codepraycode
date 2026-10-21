@@ -1,291 +1,194 @@
-export const portfolioData = {
-  personal: {
-    name: "Precious Olusola",
-    nickId: "codepraycode",
-    title: "Full-Stack Engineer & Technical Lead",
-    location: "Lagos, Nigeria",
-    email: "preciousbusiness10@gmail.com",
-    phone: "+234 8122137834",
-    github: "https://github.com/codepraycode",
-    linkedin: "https://linkedin.com/in/codepraycode",
-    summary:
-      "Software engineer with deep experience across the full stack — from scalable web apps to backend infrastructure. Strong in TypeScript, Node.js, Python, and currently advancing into systems programming with Rust. Skilled in architecting maintainable systems, optimizing performance, and leading teams through technical execution. Passionate about building reliable, human-centered software that scales.",
-  },
-
-  skills: {
-    leadership: [
-      "Technical Leadership",
-      "System Architecture",
-      "Project Planning",
-      "Code Review",
-      "Mentoring",
-      "Team Collaboration",
-    ],
-    backend: [
-      "TypeScript",
-      "Node.js",
-      "Python",
-      "Express",
-      "Flask",
-      "REST APIs",
-      "WebSockets",
-      "API Design",
-    ],
-    frontend: [
-      "React",
-      "Next.js",
-      "React Native",
-      "Tailwind CSS",
-      "Responsive Design",
-      "UI/UX Optimization",
-    ],
-    mobile: ["React Native", "Cross-Platform Development"],
-    cloud: [
-      "AWS",
-      "Docker",
-      "CI/CD",
-      "Vercel",
-      "DigitalOcean",
-      "Cloudflare",
-      "Supabase",
-      "RunPod",
-    ],
-    databases: [
-      "PostgreSQL",
-      "MongoDB",
-      "Prisma",
-      "Database Design",
-      "Query Optimization",
-    ],
-    ai: [
-      "AI Pipeline Integration",
-      "Computer Vision",
-      "RunPod",
-      "Face Detection",
-      "Image Processing",
-    ],
-    architecture: [
-      "Microservices",
-      "System Design",
-      "API Design",
-      "Scalable Infrastructure",
-      "Performance Optimization",
-    ],
-    systems: ["Linux System Administration", "Bash Scripting", "Rust (in progress)", "Networking Fundamentals"],
-  },
-
-  experience: [
+export const site = {
+  name: "Precious Olusola",
+  handle: "codepraycode",
+  role: "AI Software Engineer",
+  headline: "I build smart software that solves real problems.",
+  headlineEmphasis: "real problems.", // set in italic accent on the page
+  intro:
+    "I build AI products end to end: the model, and everything around it that makes it dependable, from the API and background workers to the web and mobile apps. I want to be able to take any idea and turn it into a working, intelligent product, on a phone, on the web, on a desktop or on a piece of hardware.",
+  location: "Lagos, Nigeria",
+  availability: "Open to roles and collaborations",
+  email: "preciousbusiness10@gmail.com",
+  links: [
+    { label: "GitHub", href: "https://github.com/codepraycode" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/codepraycode/" },
     {
-      company: "RCF FUTA",
-      industry: "Education / ICT Infrastructure",
-      role: "ICT Coordinator & Technical Lead",
-      period: "2022 – Present",
-      highlights: [
-        "Led complete digital transformation for a 1000+ member fellowship",
-        "Architected multiple systems including Oracle (member management), FYB Hive (yearbook), and ICT Library (data & resource management)",
-        "Designed internal email, database, and reporting infrastructure",
-        "Built custom authentication and admin systems using Next.js and PostgreSQL",
-        "Mentored developers and managed deployments to production",
-      ],
-      metrics: [
-        { label: "User Base", value: "1000+ members" },
-        { label: "Systems", value: "5+ internal apps" },
-        { label: "Scope", value: "Full ICT ecosystem" },
-      ],
-      tags: [
-        "Technical Leadership",
-        "System Architecture",
-        "Next.js",
-        "Node.js",
-        "Python",
-        "Infrastructure",
-      ],
+      label: "Résumé",
+      href: "https://docs.google.com/document/d/1QptSYKa2e3M7xk-DPDG-5qw2syPmh97HkA31vKJaDCA/edit?usp=sharing",
     },
-    {
-      company: "Picsort",
-      industry: "AI / Computer Vision",
-      role: "Full-Stack & AI Integration Engineer",
-      period: "2024",
-      highlights: [
-        "Co-developed AI-powered photo organization platform using face detection and clustering",
-        "Integrated Google Drive APIs for direct folder access and album verification",
-        "Developed face recognition pipeline using InsightFace, HDBSCAN, and FAISS",
-        "Implemented Paystack payments, promo code logic, and optimized inference performance",
-      ],
-      metrics: [
-        { label: "Image Sources", value: "Google Drive, ZIP, Uploads" },
-        { label: "Processing Speed", value: "Optimized face clustering pipeline" },
-      ],
-      tags: ["Python", "Flask", "Next.js", "TypeScript", "RunPod", "AI Integration"],
-    },
-    {
-      company: "BCDEEs",
-      industry: "FinTech / P2P Trading",
-      role: "Full-Stack Developer",
-      period: "2023 – 2024",
-      highlights: [
-        "Developed peer-to-peer crypto trading backend supporting multiple currencies",
-        "Built secure transaction handling, escrow logic, and real-time order management",
-        "Implemented wallet management and admin dashboard for trade oversight",
-        "Ensured performance and compliance across financial operations",
-      ],
-      metrics: [
-        { label: "Supported Currencies", value: "NGN, USD, CAD, EUR, GBP" },
-        { label: "Core Features", value: "P2P Escrow, Wallets, Admin Panel" },
-      ],
-      tags: ["FinTech", "Node.js", "React Native", "PostgreSQL", "Prisma"],
-    },
-  ],
-
-  projects: [
-    {
-      name: "Dispacc",
-      tagline: "Wallet-as-a-Service Platform for Temporary Fund Collection",
-      description:
-        "An API-first wallet service that lets users create disposable wallets for single-use payments. Wallets automatically close and transfer funds to the creator with complete logs and PDF exports. Designed for integration with other systems.",
-      tech: [
-        "Next.js",
-        "TypeScript",
-        "Node.js",
-        "Express",
-        "PostgreSQL",
-        "Payment APIs",
-      ],
-      highlights: [
-        "Architected wallet lifecycle automation system",
-        "Integrated secure payments and transaction logging",
-        "Built admin dashboard and analytics reporting",
-        "Designed for high reusability and third-party integration",
-      ],
-      featured: true,
-      link: "#"
-    },
-    {
-      name: "Probify",
-      tagline: "E-learning Platform for Probability Education",
-      description:
-        "A gamified platform for teaching probability to students aged 13–16. Includes 12 structured modules, leaderboards, and timed exercises built with a focus on learning progression.",
-      tech: ["Next.js", "Tailwind CSS", "MDX", "KaTeX", "MobX", "Auth.js", "Nobox"],
-      highlights: [
-        "Designed modular e-learning flow with progress tracking",
-        "Implemented leaderboard ranking system with real-time updates",
-        "Created responsive MDX-based math content renderer",
-      ],
-      github: "https://github.com/codepraycode/probify",
-      featured: true,
-      link: "probify.vercel.app"
-    },
-    {
-  name: "RCF FUTA ICT Portal",
-  tagline: "Digital Infrastructure Ecosystem for Fellowship Management",
-  description:
-    "A comprehensive ICT ecosystem built for The Redeemed Christian Fellowship, FUTA Chapter — serving over 1,000 members. The platform powers all internal digital operations, including member databases, email infrastructure, and dashboard. It represents a complete digital transformation effort within the fellowship.",
-  tech: [
-    "Next.js",
-    "TypeScript",
-    "Node.js",
-    "Python",
-    "Tailwind CSS",
-    "Prisma",
-    "PostgreSQL"
-  ],
-  highlights: [
-    "Spearheaded the ICT transformation for the entire fellowship community",
-    "Developed multiple interconnected systems — Oracle (member management), FYB Hive (yearbook), ICT Lib (data management), and internal email system",
-    "Architected and maintained centralized databases, authentication, and admin tools",
-    "Led a small technical team to ensure system reliability",
-    "Integrated custom SSO verification and reusable admin UI components for scalability"
-  ],
-  link: "https://ict.rcffuta.com",
-  featured: true
-}
-,
-    {
-    name: "EdgerRouteX",
-    tagline: "Edge Computing Advisory Framework for Transportation",
-    description:
-      "A web-based advisory tool that helps transportation stakeholders explore and plan edge computing implementations through tailored recommendations and roadmaps. The system captures user goals, constraints, and infrastructure details to generate actionable strategies and downloadable roadmaps for deployment.",
-    tech: [
-      "Next.js 15",
-      "TypeScript",
-      "Supabase",
-      "Tailwind CSS",
-      "React",
-      "Vercel"
-    ],
-    highlights: [
-      "Developed multi-step advisory form with validation and data persistence",
-      "Built recommendation engine mapping goals to tailored edge strategies",
-      "Implemented roadmap generator with PDF export and case study integration",
-      "Designed domain-driven architecture based on transportation research requirements"
-    ],
-    github: "https://github.com/codepraycode/edgeroutex",
-    link: "https://edgerx.vercel.app/", // (or live link when available)
-    featured: true
-},
-    {
-      name: "InternCity",
-      tagline: "Mobile Internship Discovery Platform",
-      description:
-        "A React Native app connecting students to internship opportunities. Built for a client as a final-year project, featuring job listings, applications, and notifications.",
-      tech: ["React Native", "TypeScript", "Expo", "SQLite", "Axios"],
-      highlights: [
-        "Built cross-platform mobile UI for Android",
-        "Implemented authentication and API integration",
-        "Delivered production-ready app for student internships",
-      ],
-      github: "https://github.com/codepraycode/interncity",
-      link: "#"
-    },
-  ],
-
-  education: {
-    institution: "Federal University of Technology, Akure (FUTA)",
-    degree: "B.Tech, Software Engineering",
-    period: "Expected 2025",
-    achievements: [
-      {
-        title: "ICT Coordinator – RCF FUTA",
-        description:
-          "Led digital transformation across fellowship operations and data systems.",
-        icon: "💻",
-      },
-      {
-        title: "Full-Stack Innovator",
-        description: "Developed and launched multiple independent and client projects.",
-        icon: "⚙️",
-      },
-    ],
-  },
-
-  certifications: [
-    {
-      name: "Rust Systems Programming Certification",
-      status: "In Progress",
-      description:
-        "Expanding into systems programming and high-performance backend development.",
-    },
-    {
-      name: "AWS Cloud Practitioner",
-      status: "In Progress",
-      description:
-        "Building cloud architecture and deployment expertise for scalable systems.",
-    },
-  ],
-
-  philosophy: [
-    "Every system should outlive its creator — durability over flashiness.",
-    "Simplicity is not lack of depth; it’s mastery of clarity.",
-    "Build to understand — learning happens through creation.",
-    "Codebases are living things; maintain them with respect.",
-    "Systems programming is the next evolution of software craftsmanship.",
-  ],
-
-  learning: [
-    "Rust for systems and backend development",
-    "Cloud-native architecture & distributed systems",
-    "Performance tuning and observability at scale",
-    "Systems-level networking and concurrency models",
-    "Compiler internals and language design fundamentals",
   ],
 };
+
+export type AiSystem = {
+  name: string;
+  summary: string;
+  pipeline: string[];
+  notes: string[];
+  next?: string;
+  stack: string[];
+  live?: string;
+  code?: string;
+  example?: { label: string; code: string };
+};
+
+// Each entry describes how the system really works (checked against its source code).
+export const aiSystems: AiSystem[] = [
+  {
+    name: "receipt-ocr-ng",
+    summary:
+      "Turns a photo of a Nigerian bank or fintech receipt (OPay, PalmPay, Kuda, Moniepoint, GTBank and more) into structured transaction data. Open source on npm, about 1,000 downloads.",
+    pipeline: [
+      "Receipt image",
+      "Vision model on Groq, temperature 0, JSON mode",
+      "Normalise enums, coerce numbers",
+      "Typed TransactionRecord",
+    ],
+    notes: [
+      "An unreadable field comes back as null, never a misleading 0.",
+      "If parsing fails, the raw model output is returned so the caller can debug or retry.",
+    ],
+    next: "An evaluation set of real receipts to measure field-level accuracy per bank.",
+    stack: ["TypeScript", "Groq", "Qwen 3.6"],
+    live: "https://www.npmjs.com/package/receipt-ocr-ng",
+    code: "https://github.com/codepraycode/dispacc-receipt-ocr",
+    example: {
+      label: "Output shape (sample values)",
+      code: `{
+  "amount": 25000,
+  "currency": "NGN",
+  "platform": "opay",
+  "transaction_type": "transfer",
+  "status": "successful",
+  "recipient_account": "0123456789",
+  "reference": "250114010100xxxx",
+  "transaction_date": "2025-01-14T10:42:00+01:00",
+  "narration": null
+}`,
+    },
+  },
+  {
+    name: "OracleSage",
+    summary:
+      "Ask a question about the Bible in plain language and get an answer with chapter-and-verse references. Runs entirely on Cloudflare's edge.",
+    pipeline: [
+      "Question",
+      "Recent conversation from KV",
+      "Llama 3.3 70B on Workers AI, citation-first prompt",
+      "Answer with references highlighted",
+    ],
+    notes: ["Keeps conversation context per session, trimmed to the recent turns that matter."],
+    next: "Retrieve verses from the Bible text itself, so every citation can be checked instead of trusted.",
+    stack: ["Cloudflare Workers AI", "KV", "React"],
+    live: "https://cf-ai-oraclesage.pages.dev",
+    code: "https://github.com/codepraycode/cf_ai_oraclesage",
+  },
+  {
+    name: "Picsort",
+    summary:
+      "Sorts a large photo collection by the people in it, so everyone can find every photo they appear in. Co-built.",
+    pipeline: [
+      "Photos from Google Drive, ZIP or upload",
+      "InsightFace face embeddings",
+      "HDBSCAN clusters faces into people",
+      "FAISS index finds every photo of a person",
+    ],
+    notes: ["HDBSCAN needs no fixed number of people up front: it finds the groups in the data."],
+    stack: ["Python", "InsightFace", "HDBSCAN", "FAISS"],
+  },
+];
+
+// Where I'm going. Honest about being early: this is direction, not a claim.
+export const direction = {
+  note: "I haven't built the thing that defines this yet. I'm building toward it in the open.",
+  items: [
+    {
+      title: "AI that holds up in production",
+      body: "Agents, retrieval and structured extraction, plus the evaluation work that shows whether an AI feature actually works.",
+    },
+    {
+      title: "Beyond the screen",
+      body: "On-device models, embedded systems and hardware, so smart software can live where the problem is.",
+    },
+    {
+      title: "Products people use",
+      body: "Whatever the platform, the measure is the same: real users and real problems solved.",
+    },
+  ],
+};
+
+export type Project = {
+  name: string;
+  area: string;
+  summary: string;
+  stack: string[];
+  live?: string;
+  code?: string;
+};
+
+// The products that make AI dependable: payments, queues, mobile apps, real users.
+export const projects: Project[] = [
+  {
+    name: "BCDees",
+    area: "Fintech",
+    summary:
+      "Helps Nigerians in the diaspora exchange naira for foreign currency safely. The naira is locked in escrow, the foreign currency moves outside the app, and the naira is released only when the user confirms it arrived. BCDees never holds foreign currency itself.",
+    stack: ["Node.js", "Prisma", "PostgreSQL", "BullMQ", "Redis"],
+  },
+  {
+    name: "Hivark",
+    area: "Proptech",
+    summary:
+      "Lets Nigerian tenants save toward yearly rent monthly, and gives landlords and caretakers one place to run their properties. Never holds funds itself.",
+    stack: ["Expo", "React Native", "Express", "PostgreSQL"],
+  },
+  {
+    name: "Movio",
+    area: "Mobility",
+    summary:
+      "Real-time GPS tracking and NFC tap-to-pay for FUTA's campus shuttle, keke and cab. Started as my final-year project.",
+    stack: ["React", "TypeScript", "GPS", "NFC"],
+    live: "https://movioapp.vercel.app",
+    code: "https://github.com/codepraycode/movio-page",
+  },
+  {
+    name: "Probify",
+    area: "Education",
+    summary:
+      "Learn probability as a game: twelve modules, streaks and leaderboards for secondary school students.",
+    stack: ["Next.js", "MDX", "KaTeX"],
+    live: "https://probify.vercel.app",
+    code: "https://github.com/codepraycode/probify",
+  },
+];
+
+export const experience = [
+  {
+    role: "Full-Stack Developer",
+    org: "BCDEEs",
+    period: "2023 – Present",
+    summary:
+      "Built the backend: naira escrow and release, admin tools, and BullMQ workers for transactions, KYC and reconciliation. Integrated Paystack and Veriff.",
+  },
+  {
+    role: "ICT Coordinator & Technical Lead",
+    org: "RCF FUTA",
+    period: "2022 – Present",
+    summary:
+      "Lead a small team running the digital systems of a 1,000+ member fellowship: member management, yearbook, library and internal email.",
+  },
+  {
+    role: "Full-Stack & AI Integration Engineer",
+    org: "Picsort",
+    period: "2024",
+    summary:
+      "Co-built the face-recognition pipeline and the product around it: Google Drive import, Paystack payments, and faster inference.",
+  },
+];
+
+export const education = "B.Tech, Software Engineering · Federal University of Technology, Akure";
+
+export const principles = [
+  "Find the root cause before fixing anything, and prove the fix works.",
+  "Measure AI, don't just demo it: know how often it's right, and what happens when it's wrong.",
+  "Design for failure: retries, clean shutdowns, and no surprises where money moves.",
+];

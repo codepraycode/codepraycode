@@ -5,37 +5,62 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Apply a saved theme before first paint (see ThemeToggle in src/App.tsx) -->
+    <script>
+      try {
+        var theme = localStorage.getItem("theme");
+        if (theme === "dark" || theme === "system") document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    </script>
     
     <!-- Primary Meta Tags -->
-    <title>codepraycode - Lead Software Engineer</title>
-    <meta name="title" content="codepraycode - Software Engineer" />
-    <meta name="description" content="Software Engineer with 5+ years of experience building scalable web systems. Expert in TypeScript, JavaScript, Python, and system architecture." />
-    <meta name="keywords" content="codepraycode,software engineer, lead developer, full-stack, typescript, javascript, python, react, nextjs, web3" />
-    <meta name="author" content="codepraycode" />
+    <title>Precious Olusola (codepraycode) · I build smart software that solves real problems</title>
+    <meta name="title" content="Precious Olusola (codepraycode) · I build smart software that solves real problems" />
+    <meta name="description" content="AI software engineer in Lagos. I build AI products end to end, and the reliable systems around them, for the web, mobile and beyond." />
+    <meta name="author" content="Precious Olusola" />
     <meta name="robots" content="index, follow" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://codepraycode.vercel.app/" />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://codepraycode.vercel.app/" />
-    <meta property="og:title" content="codepraycode - Software Engineer" />
-    <meta property="og:description" content="5+ years of experience architecting and building scalable systems that power real-world applications." />
+    <meta property="og:title" content="Precious Olusola (codepraycode) · I build smart software that solves real problems" />
+    <meta property="og:description" content="AI software engineer in Lagos. I build AI products end to end, and the reliable systems around them, for the web, mobile and beyond." />
     <meta property="og:image" content="https://codepraycode.vercel.app/og-image.png" />
-    
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Precious Olusola: I build smart software that solves real problems." />
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://codepraycode.vercel.app/" />
-    <meta property="twitter:title" content="codepraycode - Lead Software Engineer" />
-    <meta property="twitter:description" content="5+ years of experience architecting and building scalable systems that power real-world applications." />
-    <meta property="twitter:image" content="https://codepraycode.vercel.app/og-image.png" />
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Precious Olusola (codepraycode) · I build smart software that solves real problems" />
+    <meta name="twitter:description" content="AI software engineer in Lagos. I build AI products end to end, and the reliable systems around them, for the web, mobile and beyond." />
+    <meta name="twitter:image" content="https://codepraycode.vercel.app/og-image.png" />
+
+    <!-- Tells search engines who this site is about -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Precious Olusola",
+        "alternateName": "codepraycode",
+        "jobTitle": "AI Software Engineer",
+        "url": "https://codepraycode.vercel.app/",
+        "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+        "knowsAbout": ["TypeScript", "Node.js", "React Native", "Expo", "PostgreSQL", "Redis", "Large language models", "Fintech"],
+        "sameAs": [
+          "https://github.com/codepraycode",
+          "https://www.linkedin.com/in/codepraycode/",
+          "https://www.npmjs.com/package/receipt-ocr-ng"
+        ]
+      }
+    </script>
+
     <!-- Theme Color -->
-    <meta name="theme-color" content="#000000" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    
-    <!-- Additional Meta -->
-    <meta name="twitter:creator" content="@codepraycode" />
-  </head>
-  <body class="bg-black">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fdfdfc" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c0a09" />
+      </head>
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
