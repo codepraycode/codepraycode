@@ -1,8 +1,8 @@
 # Hi, I'm Precious Olusola (codepraycode)
 
-**I build smart software that solves real problems.** Lagos, Nigeria.
+**AI Software Engineer · Lagos, Nigeria**
 
-Full-stack engineer heading deeper into AI. I want to be able to take any idea and turn it into a working, intelligent product: on the web, on a phone, on a desktop, or on a piece of hardware. Everything below is the groundwork.
+**I build smart software that solves real problems.** I build AI products end to end: the model, and everything around it that makes it dependable. I want to be able to take any idea and turn it into a working, intelligent product: on the web, on a phone, on a desktop, or on a piece of hardware. Everything below is the groundwork.
 
 ## Where I'm going
 
@@ -46,7 +46,7 @@ As ICT coordinator I lead the fellowship's apps: member management, yearbook, li
 ## Stack
 
 **Daily:** TypeScript, Node.js (Express), Next.js, React, Expo / React Native, PostgreSQL, Prisma, Redis, BullMQ, Docker
-**AI:** LLM APIs (Groq, Cloudflare Workers AI), vision models, structured extraction, retrieval
+**AI:** LLM APIs (Groq, Cloudflare Workers AI), vision models, structured extraction, face embeddings and clustering
 **Also:** Python (Flask), Supabase, Cloudflare, Vercel, AWS. Learning Rust.
 
 ## Open to

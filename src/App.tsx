@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { direction, education, experience, principles, projects, site } from "./data";
+import { aiSystems, direction, education, experience, principles, projects, site, type AiSystem } from "./data";
 
 function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
   return (
@@ -31,6 +31,75 @@ function Section({ id, title, children }: { id: string; title: string; children:
   );
 }
 
+function Pipeline({ steps }: { steps: string[] }) {
+  return (
+    <ol aria-label="How it works" className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-0">
+      {steps.map((step, i) => (
+        <li key={step} className="flex items-center sm:flex-1">
+          <span className="flex h-full w-full items-center rounded-md border border-line px-3 py-2 font-mono text-xs leading-snug">
+            <span aria-hidden="true" className="mr-2 text-accent">
+              {i + 1}
+            </span>
+            {step}
+          </span>
+          {i < steps.length - 1 && (
+            <span aria-hidden="true" className="hidden px-1.5 text-muted sm:inline">
+              →
+            </span>
+          )}
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function AiSystemEntry({ system }: { system: AiSystem }) {
+  return (
+    <article className="py-10 first:pt-0">
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <h3 className="text-xl font-semibold tracking-tight">{system.name}</h3>
+        <div className="flex gap-4 text-sm text-muted">
+          {system.live && <ExternalLink href={system.live}>Live</ExternalLink>}
+          {system.code && <ExternalLink href={system.code}>Code</ExternalLink>}
+        </div>
+      </div>
+      <p className="mt-2 text-pretty leading-relaxed text-muted">{system.summary}</p>
+
+      <Pipeline steps={system.pipeline} />
+
+      <ul className="mt-5 space-y-1.5 text-sm leading-relaxed">
+        {system.notes.map((note) => (
+          <li key={note} className="flex gap-2">
+            <span aria-hidden="true" className="text-accent">
+              ✓
+            </span>
+            {note}
+          </li>
+        ))}
+        {system.next && (
+          <li className="flex gap-2 text-muted">
+            <span aria-hidden="true">→</span>
+            <span>
+              <span className="font-medium text-fg">Next:</span> {system.next}
+            </span>
+          </li>
+        )}
+      </ul>
+
+      {system.example && (
+        <figure className="mt-5">
+          <figcaption className="mb-2 font-mono text-xs text-muted">{system.example.label}</figcaption>
+          <pre className="overflow-x-auto rounded-md border border-line bg-fg/[0.03] p-4 font-mono text-xs leading-relaxed">
+            <code>{system.example.code}</code>
+          </pre>
+        </figure>
+      )}
+
+      <p className="mt-5 font-mono text-xs text-muted">{system.stack.join(" · ")}</p>
+    </article>
+  );
+}
+
 export default function App() {
   return (
     <>
@@ -46,7 +115,8 @@ export default function App() {
           <h1 className="text-base font-medium">
             {site.name} <span className="font-normal text-muted">· {site.handle}</span>
           </h1>
-          <p className="mt-8 text-balance text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
+          <p className="mt-8 font-mono text-xs uppercase tracking-widest text-accent">{site.role}</p>
+          <p className="mt-3 text-balance text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
             {site.headline}
           </p>
           <p className="mt-6 text-pretty text-lg leading-relaxed text-muted">{site.intro}</p>
@@ -76,6 +146,14 @@ export default function App() {
         </header>
 
         <main id="main">
+          <Section id="ai" title="AI systems">
+            <div className="divide-y divide-line">
+              {aiSystems.map((system) => (
+                <AiSystemEntry key={system.name} system={system} />
+              ))}
+            </div>
+          </Section>
+
           <Section id="direction" title="Where I'm going">
             <ul className="space-y-6">
               {direction.items.map((item) => (
@@ -88,7 +166,7 @@ export default function App() {
             <p className="mt-8 border-l-2 border-accent pl-4 text-muted">{direction.note}</p>
           </Section>
 
-          <Section id="work" title="Selected work">
+          <Section id="work" title="Product work">
             <ul className="divide-y divide-line border-y border-line">
               {projects.map((project) => (
                 <li key={project.name} className="grid gap-2 py-6 sm:grid-cols-[6.5rem_1fr] sm:gap-6">

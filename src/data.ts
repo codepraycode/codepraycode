@@ -1,9 +1,10 @@
 export const site = {
   name: "Precious Olusola",
   handle: "codepraycode",
+  role: "AI Software Engineer",
   headline: "I build smart software that solves real problems.",
   intro:
-    "Full-stack engineer in Lagos, heading deeper into AI. I want to be able to take any idea and turn it into a working, intelligent product: on the web, on a phone, on a desktop, or on a piece of hardware. Everything below is the groundwork.",
+    "I build AI products end to end: the model, and everything around it that makes it dependable, from the API and background workers to the web and mobile apps. I want to be able to take any idea and turn it into a working, intelligent product, on a phone, on the web, on a desktop or on a piece of hardware.",
   location: "Lagos, Nigeria",
   availability: "Open to roles and collaborations",
   email: "preciousbusiness10@gmail.com",
@@ -17,6 +18,84 @@ export const site = {
     },
   ],
 };
+
+export type AiSystem = {
+  name: string;
+  summary: string;
+  pipeline: string[];
+  notes: string[];
+  next?: string;
+  stack: string[];
+  live?: string;
+  code?: string;
+  example?: { label: string; code: string };
+};
+
+// Each entry describes how the system really works (checked against its source code).
+export const aiSystems: AiSystem[] = [
+  {
+    name: "receipt-ocr-ng",
+    summary:
+      "Turns a photo of a Nigerian bank or fintech receipt (OPay, PalmPay, Kuda, Moniepoint, GTBank and more) into structured transaction data. Open source on npm, about 1,000 downloads.",
+    pipeline: [
+      "Receipt image",
+      "Vision model on Groq, temperature 0, JSON mode",
+      "Normalise enums, coerce numbers",
+      "Typed TransactionRecord",
+    ],
+    notes: [
+      "An unreadable field comes back as null, never a misleading 0.",
+      "If parsing fails, the raw model output is returned so the caller can debug or retry.",
+    ],
+    next: "An evaluation set of real receipts to measure field-level accuracy per bank.",
+    stack: ["TypeScript", "Groq", "Qwen 3.6"],
+    live: "https://www.npmjs.com/package/receipt-ocr-ng",
+    code: "https://github.com/codepraycode/dispacc-receipt-ocr",
+    example: {
+      label: "Output shape (sample values)",
+      code: `{
+  "amount": 25000,
+  "currency": "NGN",
+  "platform": "opay",
+  "transaction_type": "transfer",
+  "status": "successful",
+  "recipient_account": "0123456789",
+  "reference": "250114010100xxxx",
+  "transaction_date": "2025-01-14T10:42:00+01:00",
+  "narration": null
+}`,
+    },
+  },
+  {
+    name: "OracleSage",
+    summary:
+      "Ask a question about the Bible in plain language and get an answer with chapter-and-verse references. Runs entirely on Cloudflare's edge.",
+    pipeline: [
+      "Question",
+      "Recent conversation from KV",
+      "Llama 3.3 70B on Workers AI, citation-first prompt",
+      "Answer with references highlighted",
+    ],
+    notes: ["Keeps conversation context per session, trimmed to the recent turns that matter."],
+    next: "Retrieve verses from the Bible text itself, so every citation can be checked instead of trusted.",
+    stack: ["Cloudflare Workers AI", "KV", "React"],
+    live: "https://cf-ai-oraclesage.pages.dev",
+    code: "https://github.com/codepraycode/cf_ai_oraclesage",
+  },
+  {
+    name: "Picsort",
+    summary:
+      "Sorts a large photo collection by the people in it, so everyone can find every photo they appear in. Co-built.",
+    pipeline: [
+      "Photos from Google Drive, ZIP or upload",
+      "InsightFace face embeddings",
+      "HDBSCAN clusters faces into people",
+      "FAISS index finds every photo of a person",
+    ],
+    notes: ["HDBSCAN needs no fixed number of people up front: it finds the groups in the data."],
+    stack: ["Python", "InsightFace", "HDBSCAN", "FAISS"],
+  },
+];
 
 // Where I'm going. Honest about being early: this is direction, not a claim.
 export const direction = {
@@ -46,16 +125,8 @@ export type Project = {
   code?: string;
 };
 
+// The products that make AI dependable: payments, queues, mobile apps, real users.
 export const projects: Project[] = [
-  {
-    name: "receipt-ocr-ng",
-    area: "AI",
-    summary:
-      "Reads OPay, PalmPay, Kuda, Moniepoint and bank receipts into structured data with a vision model. Open source on npm, about 1,000 downloads.",
-    stack: ["TypeScript", "Groq", "Llama 4 Vision"],
-    live: "https://www.npmjs.com/package/receipt-ocr-ng",
-    code: "https://github.com/codepraycode/dispacc-receipt-ocr",
-  },
   {
     name: "BCDees",
     area: "Fintech",
@@ -78,15 +149,6 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "GPS", "NFC"],
     live: "https://movioapp.vercel.app",
     code: "https://github.com/codepraycode/movio-page",
-  },
-  {
-    name: "OracleSage",
-    area: "AI",
-    summary:
-      "Ask a question about the Bible in plain language and get a verse-grounded answer. Runs on Cloudflare's edge with conversation memory.",
-    stack: ["Workers AI", "Llama 3.3", "React"],
-    live: "https://cf-ai-oraclesage.pages.dev",
-    code: "https://github.com/codepraycode/cf_ai_oraclesage",
   },
   {
     name: "Probify",
@@ -119,7 +181,7 @@ export const experience = [
     org: "Picsort",
     period: "2024",
     summary:
-      "Co-built an AI photo organiser: face detection and clustering (InsightFace, HDBSCAN, FAISS), Google Drive import and Paystack payments.",
+      "Co-built the face-recognition pipeline and the product around it: Google Drive import, Paystack payments, and faster inference.",
   },
 ];
 
@@ -127,6 +189,6 @@ export const education = "B.Tech, Software Engineering · Federal University of 
 
 export const principles = [
   "Find the root cause before fixing anything, and prove the fix works.",
+  "Measure AI, don't just demo it: know how often it's right, and what happens when it's wrong.",
   "Design for failure: retries, clean shutdowns, and no surprises where money moves.",
-  "Keep it simple enough that the next person can pick it up.",
 ];
