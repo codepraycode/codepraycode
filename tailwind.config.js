@@ -7,6 +7,7 @@ export default {
     extend: {
       colors: {
         bg: token("bg"),
+        surface: token("surface"),
         fg: token("fg"),
         muted: token("muted"),
         line: token("line"),

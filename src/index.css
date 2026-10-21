@@ -4,10 +4,11 @@
 
 /* Colours as RGB channels so Tailwind opacity modifiers work (see tailwind.config.js). */
 :root {
-  --bg: 250 250 249;
-  --fg: 28 25 23;
-  --muted: 87 83 78;
-  --line: 231 229 228;
+  --bg: 253 253 252;
+  --surface: 246 247 248;
+  --fg: 17 24 28;
+  --muted: 75 85 99;
+  --line: 229 231 235;
   --accent: 15 118 110;
   color-scheme: light;
 }
@@ -15,6 +16,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: 12 10 9;
+    --surface: 24 22 21;
     --fg: 245 245 244;
     --muted: 168 162 158;
     --line: 41 37 36;
