@@ -6,7 +6,7 @@
 </a>
 
 <p>
-  <a href="https://codepraycode.vercel.app"><img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-0f766e?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+  <a href="https://codepraycode.vercel.app"><img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-0f766e?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
   <a href="https://www.linkedin.com/in/codepraycode/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
   <a href="https://docs.google.com/document/d/1QptSYKa2e3M7xk-DPDG-5qw2syPmh97HkA31vKJaDCA/edit?usp=sharing"><img alt="Résumé" src="https://img.shields.io/badge/Résumé-4285F4?style=for-the-badge&logo=google-docs&logoColor=white" /></a>
   <a href="mailto:preciousbusiness10@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
