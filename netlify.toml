@@ -1,0 +1,3 @@
+[build]
+  command = "npm exec --yes --package=pnpm@10.20.0 -- pnpm install --frozen-lockfile --prod=false && npm run build"
+  publish = "dist"
