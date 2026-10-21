@@ -1,75 +1,54 @@
-# 👋 Lo!, I'm Precious Olusola (codepraycode)
+# Hi, I'm Precious Olusola (codepraycode)
 
+**I build smart software that solves real problems.** Lagos, Nigeria.
+
+Full-stack engineer heading deeper into AI. I want to be able to take any idea and turn it into a working, intelligent product: on the web, on a phone, on a desktop, or on a piece of hardware. Everything below is the groundwork.
+
+## Where I'm going
+
+- **AI that holds up in production:** agents, retrieval and structured extraction, plus the evaluation work that shows whether an AI feature actually works.
+- **Beyond the screen:** on-device models, embedded systems and hardware, so smart software can live where the problem is.
+- **Products people use:** whatever the platform, real users and real problems solved.
+
+I haven't built the thing that defines this yet. I'm building toward it in the open.
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://codepraycode.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/codepraycode/)
 [![Resume](https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logo=google-docs&logoColor=white)](https://docs.google.com/document/d/1QptSYKa2e3M7xk-DPDG-5qw2syPmh97HkA31vKJaDCA/edit?usp=sharing)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:preciousbusiness10@gmail.com)
 
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=435&lines=Full-Stack+Engineer;Web+%7C+Mobile+%7C+Desktop;TypeScript+%7C+Python+Specialist;Cloud+%26+DevOps+Enthusiast" alt="Typing SVG" />
-</div>
+## What I've built
 
-## 🚀 About Me
+**[receipt-ocr-ng](https://www.npmjs.com/package/receipt-ocr-ng)**: AI receipt reader for Nigerian fintech apps
+Turns a photo of an OPay, PalmPay, Kuda, Moniepoint or bank receipt into structured JSON (amount, sender, recipient, reference, date, status) using a vision model on Groq. Published on npm, with about 1,000 downloads. Demo: [dispacc-ocr.vercel.app](https://dispacc-ocr.vercel.app)
 
-I’m a **Full-stack Engineer** with 5+ years of experience crafting scalable web applications using **JavaScript, TypeScript, Next.js, and modern backend stacks**.  
+**BCDees**: cross-border P2P currency exchange (backend)
+Multi-currency wallets, escrow that locks funds during a trade, real-time chat and dispute handling. Built on Node.js, Prisma and PostgreSQL, with BullMQ workers for transactions, KYC and reconciliation. Integrates Paystack and Veriff.
 
-I enjoy turning ideas into production-ready systems — from designing architecture to polishing the final UI. Over the years, I’ve:  
-- 🚀 Led engineering efforts on large projects, improving usability and performance.  
-- 🛠 Built platforms (check my pins bellow).
-- 📈 Helped teams ship faster with clean, maintainable code and thoughtful tooling.  
+**Hivark**: rent-saving and property operations for Nigerian renters
+Tenants save toward a yearly rent monthly, landlords get payouts, caretakers close maintenance jobs with photo proof. Hivark never holds funds itself. Expo / React Native app, plus an Express, Prisma, PostgreSQL and Redis API.
 
-When I’m not coding, I enjoy mentoring developers, contributing to open-source, and exploring new tech like **Rust** and scalable backend design.  
+**[Movio](https://movioapp.vercel.app)**: smart campus transport for FUTA
+Real-time GPS tracking and NFC tap-to-pay across the campus shuttle, keke and cab. Started as my final-year project, validated with a student survey and waitlist.
 
-### 💡 My Engineering Philosophy  
-- 🔧 **Precision Engineering** → Code should be clean, maintainable, and future-proof.  
-- 🎨 **UX-First Development** → Interfaces that delight users without sacrificing speed.  
-- ☁️ **Cloud-Native Mindset** → Systems that scale from day one.  
-- 🤝 **Collaborative Approach** → Strong communication and team synergy win every time.  
+**[OracleSage](https://cf-ai-oraclesage.pages.dev)**: AI Bible Q&A on Cloudflare's edge
+Verse-grounded answers using Llama 3.3 on Workers AI, with conversation memory in KV.
 
+**[RCF FUTA ICT](https://ict.rcffuta.com)**: digital systems for a 1,000+ member fellowship
+As ICT coordinator I lead the fellowship's apps: member management, yearbook, library and internal email.
 
-## 🛠️ Technical Arsenal
+## How I work
 
-### **Core Stack**
-| Category       | Technologies |
-|----------------|-------------|
-| **Frontend**   | ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black) ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss&logoColor=white) |
-| **Backend**    | ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white) ![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white) ![Django](https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white) |
-| **Mobile**     | ![React Native](https://img.shields.io/badge/React_Native-61DAFB?logo=react&logoColor=black) |
-| **Desktop**    | ![Electron](https://img.shields.io/badge/Electron-47848F?logo=electron&logoColor=white) |
+- I find the root cause before I fix anything, and prove the fix with a test or a reproduction.
+- I design for failure: retries, idempotency, graceful shutdown, and no surprises on money paths.
+- I keep things simple and write down why decisions were made.
 
-### **Data Layer**
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white)
+## Stack
 
-### **DevOps & Cloud**
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white)
-![DigitalOcean](https://img.shields.io/badge/Digital_Ocean-0080FF?logo=digitalocean&logoColor=white)
+**Daily:** TypeScript, Node.js (Express), Next.js, React, Expo / React Native, PostgreSQL, Prisma, Redis, BullMQ, Docker
+**AI:** LLM APIs (Groq, Cloudflare Workers AI), vision models, structured extraction, retrieval
+**Also:** Python (Flask), Supabase, Cloudflare, Vercel, AWS. Learning Rust.
 
-## 🏆 Notable Achievements
+## Open to
 
-- **Scalable Learning Platform**: Built an advanced educational system
-- **Performance Optimization**: Improved application load times by 300% through architectural refinements
-- **Cross-Platform Expertise**: Delivered unified codebases for web, mobile, and desktop deployments
-- **Open Source Contributions**: Still at it, ig you've got something interesting, email me.
-
-## 📊 GitHub Insights
-
-<div align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=codepraycode&show_icons=true&theme=radical" />
-  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=codepraycode&theme=react&border=61dafb" />
-</div>
-<br/>
-<div align="center">
-  <img width="60%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=codepraycode&layout=compact&theme=aura&langs_count=8" />
-</div>
-
-## 🤝 Let's Build Something Amazing
-
-I'm always open to:
-- Exciting **job opportunities**
-- Innovative **collaborations**
-- Challenging **open-source projects**
-- Insightful **technical discussions**
-
-📫 **Reach out**: [Email](mailto:preciousbusiness10@gmail.com) | [LinkedIn](https://www.linkedin.com/in/codepraycode/)
+Engineering roles and collaborations on products that solve real problems, especially where AI does the hard part. [Email me](mailto:preciousbusiness10@gmail.com).
