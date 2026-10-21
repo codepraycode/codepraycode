@@ -13,8 +13,10 @@
   color-scheme: light;
 }
 
+/* Dark follows the system unless the visitor picked light; a picked dark always wins.
+   The choice is set as data-theme on <html> by the inline script in index.html. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: 12 10 9;
     --surface: 24 22 21;
     --fg: 245 245 244;
@@ -25,6 +27,16 @@
   }
 }
 
+:root[data-theme="dark"] {
+  --bg: 12 10 9;
+  --surface: 24 22 21;
+  --fg: 245 245 244;
+  --muted: 168 162 158;
+  --line: 41 37 36;
+  --accent: 45 212 191;
+  color-scheme: dark;
+}
+
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
@@ -32,7 +44,6 @@
   }
   body {
     @apply bg-bg text-fg antialiased;
-    font-feature-settings: "ss01", "cv11";
   }
   ::selection {
     @apply bg-accent/20;

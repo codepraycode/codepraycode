@@ -14,8 +14,10 @@ export default {
         accent: token("accent"),
       },
       fontFamily: {
-        sans: ["ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
-        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
+        // Self-hosted via Fontsource (imported in src/main.tsx); system fonts are the fallback.
+        sans: ['"Geist Variable"', "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+        mono: ['"Geist Mono Variable"', "ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
+        display: ['"Instrument Serif"', "ui-serif", "Georgia", "serif"],
       },
     },
   },

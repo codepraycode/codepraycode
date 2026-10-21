@@ -22,8 +22,8 @@ I haven't built the thing that defines this yet. I'm building toward it in the o
 **[receipt-ocr-ng](https://www.npmjs.com/package/receipt-ocr-ng)**: AI receipt reader for Nigerian fintech apps
 Turns a photo of an OPay, PalmPay, Kuda, Moniepoint or bank receipt into structured JSON (amount, sender, recipient, reference, date, status) using a vision model on Groq. Published on npm, with about 1,000 downloads. Demo: [dispacc-ocr.vercel.app](https://dispacc-ocr.vercel.app)
 
-**BCDees**: cross-border P2P currency exchange (backend)
-Multi-currency wallets, escrow that locks funds during a trade, real-time chat and dispute handling. Built on Node.js, Prisma and PostgreSQL, with BullMQ workers for transactions, KYC and reconciliation. Integrates Paystack and Veriff.
+**BCDees**: safer naira exchange for Nigerians in the diaspora (backend)
+The naira is locked in escrow, the foreign currency moves outside the app, and the naira is released only when the user confirms it arrived. BCDees never holds foreign currency itself. Real-time chat and dispute handling. Built on Node.js, Prisma and PostgreSQL, with BullMQ workers for transactions, KYC and reconciliation. Integrates Paystack and Veriff.
 
 **Hivark**: rent-saving and property operations for Nigerian renters
 Tenants save toward a yearly rent monthly, landlords get payouts, caretakers close maintenance jobs with photo proof. Hivark never holds funds itself. Expo / React Native app, plus an Express, Prisma, PostgreSQL and Redis API.

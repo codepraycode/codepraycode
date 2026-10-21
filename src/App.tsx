@@ -1,6 +1,15 @@
-import type { ReactNode } from "react";
-import { ArrowUpRight } from "lucide-react";
-import { aiSystems, direction, education, experience, principles, projects, site, type AiSystem } from "./data";
+import { useEffect, useState, type ReactNode } from "react";
+import { ArrowUpRight, Monitor, Moon, Sun } from "lucide-react";
+import {
+  aiSystems,
+  direction,
+  education,
+  experience,
+  principles,
+  projects,
+  site,
+  type AiSystem,
+} from "./data";
 
 const nav = [
   { href: "#ai", label: "AI systems" },
@@ -9,7 +18,61 @@ const nav = [
   { href: "#contact", label: "Contact" },
 ];
 
-function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
+type Theme = "system" | "light" | "dark";
+const themes: Theme[] = ["system", "light", "dark"];
+const themeIcons = { system: Monitor, light: Sun, dark: Moon };
+
+function readSavedTheme(): Theme {
+  try {
+    const saved = localStorage.getItem("theme");
+    return saved === "light" || saved === "dark" ? saved : "system";
+  } catch {
+    return "system"; // storage blocked: just follow the system
+  }
+}
+
+// Cycles System → Light → Dark. Starts as "system" so the prerendered HTML matches the first
+// client render; the saved choice is read after hydration (index.html already applied it before paint).
+function ThemeToggle() {
+  const [theme, setTheme] = useState<Theme>("system");
+
+  useEffect(() => setTheme(readSavedTheme()), []);
+
+  function cycle() {
+    const next = themes[(themes.indexOf(theme) + 1) % themes.length];
+    setTheme(next);
+    if (next === "system") delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = next;
+    try {
+      if (next === "system") localStorage.removeItem("theme");
+      else localStorage.setItem("theme", next);
+    } catch {
+      // storage blocked: the choice still applies for this visit
+    }
+  }
+
+  const Icon = themeIcons[theme];
+  const label = theme[0].toUpperCase() + theme.slice(1);
+  return (
+    <button
+      type="button"
+      onClick={cycle}
+      aria-label={`Theme: ${label}. Switch theme`}
+      title={`Theme: ${label}`}
+      className="inline-flex size-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-fg/5 hover:text-fg"
+    >
+      <Icon aria-hidden="true" className="size-4" />
+    </button>
+  );
+}
+
+function ExternalLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) {
   return (
     <a
       href={href}
@@ -28,7 +91,15 @@ function ExternalLink({ href, children }: { href: string; children: ReactNode })
 }
 
 // Wide sections: the label sits in a sticky left column, content takes the rest.
-function Section({ id, title, children }: { id: string; title: string; children: ReactNode }) {
+function Section({
+  id,
+  title,
+  children,
+}: {
+  id: string;
+  title: string;
+  children: ReactNode;
+}) {
   return (
     <section
       id={id}
@@ -48,7 +119,10 @@ function Section({ id, title, children }: { id: string; title: string; children:
 
 function Pipeline({ steps }: { steps: string[] }) {
   return (
-    <ol aria-label="How it works" className="mt-6 grid gap-2 sm:grid-cols-4 sm:gap-3">
+    <ol
+      aria-label="How it works"
+      className="mt-6 grid gap-2 sm:grid-cols-4 sm:gap-3"
+    >
       {steps.map((step, i) => (
         <li
           key={step}
@@ -82,11 +156,15 @@ function AiSystemEntry({ system }: { system: AiSystem }) {
           {system.code && <ExternalLink href={system.code}>Code</ExternalLink>}
         </div>
       </div>
-      <p className="mt-3 max-w-2xl text-pretty leading-relaxed text-muted">{system.summary}</p>
+      <p className="mt-3 max-w-2xl text-pretty leading-relaxed text-muted">
+        {system.summary}
+      </p>
 
       <Pipeline steps={system.pipeline} />
 
-      <div className={`mt-6 grid gap-6 ${system.example ? "md:grid-cols-2" : ""}`}>
+      <div
+        className={`mt-6 grid gap-6 ${system.example ? "md:grid-cols-2" : ""}`}
+      >
         <div>
           <ul className="space-y-2 text-sm leading-relaxed">
             {system.notes.map((note) => (
@@ -101,17 +179,22 @@ function AiSystemEntry({ system }: { system: AiSystem }) {
               <li className="flex gap-2 text-muted">
                 <span aria-hidden="true">→</span>
                 <span>
-                  <span className="font-medium text-fg">Next:</span> {system.next}
+                  <span className="font-medium text-fg">Next:</span>{" "}
+                  {system.next}
                 </span>
               </li>
             )}
           </ul>
-          <p className="mt-5 font-mono text-xs text-muted">{system.stack.join(" · ")}</p>
+          <p className="mt-5 font-mono text-xs text-muted">
+            {system.stack.join(" · ")}
+          </p>
         </div>
 
         {system.example && (
           <figure className="min-w-0">
-            <figcaption className="mb-2 font-mono text-xs text-muted">{system.example.label}</figcaption>
+            <figcaption className="mb-2 font-mono text-xs text-muted">
+              {system.example.label}
+            </figcaption>
             <pre className="overflow-x-auto rounded-lg border border-line bg-surface p-4 font-mono text-xs leading-relaxed">
               <code>{system.example.code}</code>
             </pre>
@@ -137,28 +220,44 @@ export default function App() {
           <a href="#top" className="font-mono text-sm font-medium">
             {site.handle}
           </a>
-          <nav aria-label="Sections">
-            <ul className="flex gap-6 text-sm text-muted">
-              {nav.map((item) => (
-                <li key={item.href} className={item.href === "#contact" ? "" : "hidden sm:block"}>
-                  <a href={item.href} className="transition-colors hover:text-fg">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="flex items-center gap-4 sm:gap-6">
+            <nav aria-label="Sections">
+              <ul className="flex gap-6 text-sm text-muted">
+                {nav.map((item) => (
+                  <li
+                    key={item.href}
+                    className={
+                      item.href === "#contact" ? "" : "hidden sm:block"
+                    }
+                  >
+                    <a
+                      href={item.href}
+                      className="transition-colors hover:text-fg"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
 
       <div id="top" className="mx-auto max-w-6xl px-6 sm:px-10">
         <header className="py-20 sm:py-28">
           <h1 className="text-base font-medium">{site.name}</h1>
-          <p className="mt-10 font-mono text-xs uppercase tracking-widest text-accent">{site.role}</p>
-          <p className="mt-4 max-w-4xl text-balance text-5xl font-semibold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
-            {site.headline}
+          <p className="mt-10 font-mono text-xs uppercase tracking-widest text-accent">
+            {site.role}
           </p>
-          <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">{site.intro}</p>
+          <p className="mt-4 max-w-5xl text-balance font-display text-6xl leading-[0.98] tracking-tight sm:text-7xl lg:text-8xl">
+            {site.headline.replace(site.headlineEmphasis, "")}
+            <em className="text-accent">{site.headlineEmphasis}</em>
+          </p>
+          <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">
+            {site.intro}
+          </p>
 
           <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
             <a
@@ -167,7 +266,10 @@ export default function App() {
             >
               Email me
             </a>
-            <ul aria-label="Elsewhere" className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            <ul
+              aria-label="Elsewhere"
+              className="flex flex-wrap gap-x-6 gap-y-3 text-sm"
+            >
               {site.links.map((link) => (
                 <li key={link.label}>
                   <ExternalLink href={link.href}>{link.label}</ExternalLink>
@@ -177,7 +279,10 @@ export default function App() {
           </div>
 
           <p className="mt-8 flex items-center gap-2 text-sm text-muted">
-            <span aria-hidden="true" className="size-2 rounded-full bg-accent" />
+            <span
+              aria-hidden="true"
+              className="size-2 rounded-full bg-accent"
+            />
             {site.availability} · {site.location}
           </p>
         </header>
@@ -196,27 +301,41 @@ export default function App() {
               {direction.items.map((item) => (
                 <li key={item.title}>
                   <h3 className="font-medium">{item.title}</h3>
-                  <p className="mt-2 text-pretty leading-relaxed text-muted">{item.body}</p>
+                  <p className="mt-2 text-pretty leading-relaxed text-muted">
+                    {item.body}
+                  </p>
                 </li>
               ))}
             </ul>
-            <p className="mt-10 max-w-2xl border-l-2 border-accent pl-4 text-muted">{direction.note}</p>
+            <p className="mt-10 max-w-2xl border-l-2 border-accent pl-4 text-muted">
+              {direction.note}
+            </p>
           </Section>
 
           <Section id="work" title="Product work">
             <ul className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
               {projects.map((project) => (
                 <li key={project.name}>
-                  <p className="font-mono text-xs uppercase tracking-wider text-accent">{project.area}</p>
+                  <p className="font-mono text-xs uppercase tracking-wider text-accent">
+                    {project.area}
+                  </p>
                   <div className="mt-2 flex flex-wrap items-baseline gap-x-4 gap-y-1">
                     <h3 className="text-lg font-medium">{project.name}</h3>
                     <div className="flex gap-4 text-sm text-muted">
-                      {project.live && <ExternalLink href={project.live}>Live</ExternalLink>}
-                      {project.code && <ExternalLink href={project.code}>Code</ExternalLink>}
+                      {project.live && (
+                        <ExternalLink href={project.live}>Live</ExternalLink>
+                      )}
+                      {project.code && (
+                        <ExternalLink href={project.code}>Code</ExternalLink>
+                      )}
                     </div>
                   </div>
-                  <p className="mt-2 text-pretty leading-relaxed text-muted">{project.summary}</p>
-                  <p className="mt-3 font-mono text-xs text-muted">{project.stack.join(" · ")}</p>
+                  <p className="mt-2 text-pretty leading-relaxed text-muted">
+                    {project.summary}
+                  </p>
+                  <p className="mt-3 font-mono text-xs text-muted">
+                    {project.stack.join(" · ")}
+                  </p>
                 </li>
               ))}
             </ul>
@@ -225,37 +344,57 @@ export default function App() {
           <Section id="experience" title="Experience">
             <ul className="space-y-10">
               {experience.map((job) => (
-                <li key={job.org} className="grid gap-2 sm:grid-cols-[9rem_1fr] sm:gap-8">
-                  <p className="font-mono text-xs text-muted sm:pt-1">{job.period}</p>
+                <li
+                  key={job.org}
+                  className="grid gap-2 sm:grid-cols-[9rem_1fr] sm:gap-8"
+                >
+                  <p className="font-mono text-xs text-muted sm:pt-1">
+                    {job.period}
+                  </p>
                   <div className="max-w-2xl">
                     <h3 className="font-medium">
-                      {job.role} <span className="font-normal text-muted">· {job.org}</span>
+                      {job.role}{" "}
+                      <span className="font-normal text-muted">
+                        · {job.org}
+                      </span>
                     </h3>
-                    <p className="mt-2 text-pretty leading-relaxed text-muted">{job.summary}</p>
+                    <p className="mt-2 text-pretty leading-relaxed text-muted">
+                      {job.summary}
+                    </p>
                   </div>
                 </li>
               ))}
             </ul>
-            <p className="mt-10 text-sm text-muted sm:pl-[11rem]">{education}</p>
+            <p className="mt-10 text-sm text-muted sm:pl-[11rem]">
+              {education}
+            </p>
           </Section>
 
           <Section id="principles" title="How I work">
             <ol className="grid gap-8 sm:grid-cols-3">
               {principles.map((principle, i) => (
                 <li key={principle}>
-                  <span aria-hidden="true" className="font-mono text-xs text-accent">
+                  <span
+                    aria-hidden="true"
+                    className="font-mono text-xs text-accent"
+                  >
                     0{i + 1}
                   </span>
-                  <p className="mt-2 text-pretty leading-relaxed">{principle}</p>
+                  <p className="mt-2 text-pretty leading-relaxed">
+                    {principle}
+                  </p>
                 </li>
               ))}
             </ol>
           </Section>
         </main>
 
-        <footer id="contact" className="scroll-mt-20 border-t border-line py-20 sm:py-28">
-          <p className="max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-            Have a problem worth solving?
+        <footer
+          id="contact"
+          className="scroll-mt-20 border-t border-line py-20 sm:py-28"
+        >
+          <p className="max-w-3xl text-balance font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
+            Have a problem <em className="text-accent">worth solving?</em>
           </p>
           <p className="mt-5 text-lg text-muted">
             I'd like to hear about it.{" "}
@@ -267,7 +406,8 @@ export default function App() {
             </a>
           </p>
           <p className="mt-16 font-mono text-xs text-muted">
-            © <span suppressHydrationWarning>{new Date().getFullYear()}</span> {site.name} · {site.location}
+            © <span suppressHydrationWarning>{new Date().getFullYear()}</span>{" "}
+            {site.name} · {site.location}
           </p>
         </footer>
       </div>

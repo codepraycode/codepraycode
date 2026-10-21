@@ -3,6 +3,7 @@ export const site = {
   handle: "codepraycode",
   role: "AI Software Engineer",
   headline: "I build smart software that solves real problems.",
+  headlineEmphasis: "real problems.", // set in italic accent on the page
   intro:
     "I build AI products end to end: the model, and everything around it that makes it dependable, from the API and background workers to the web and mobile apps. I want to be able to take any idea and turn it into a working, intelligent product, on a phone, on the web, on a desktop or on a piece of hardware.",
   location: "Lagos, Nigeria",
@@ -131,7 +132,7 @@ export const projects: Project[] = [
     name: "BCDees",
     area: "Fintech",
     summary:
-      "Cross-border P2P currency exchange: escrow during trades, multi-currency wallets, identity checks, real-time chat, and background workers for transactions and reconciliation.",
+      "Helps Nigerians in the diaspora exchange naira for foreign currency safely. The naira is locked in escrow, the foreign currency moves outside the app, and the naira is released only when the user confirms it arrived. BCDees never holds foreign currency itself.",
     stack: ["Node.js", "Prisma", "PostgreSQL", "BullMQ", "Redis"],
   },
   {
@@ -167,7 +168,7 @@ export const experience = [
     org: "BCDEEs",
     period: "2023 – Present",
     summary:
-      "Built the P2P trading backend: escrow, wallets, admin tools, and BullMQ workers for transactions, KYC and reconciliation. Integrated Paystack and Veriff.",
+      "Built the backend: naira escrow and release, admin tools, and BullMQ workers for transactions, KYC and reconciliation. Integrated Paystack and Veriff.",
   },
   {
     role: "ICT Coordinator & Technical Lead",
