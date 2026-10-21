@@ -1,4 +1,5 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type MouseEvent, type ReactNode } from "react";
+import { flushSync } from "react-dom";
 import { ArrowUpRight, Monitor, Moon, Sun } from "lucide-react";
 import {
   aiSystems,
@@ -10,6 +11,11 @@ import {
   site,
   type AiSystem,
 } from "./data";
+import { Atmosphere } from "./Atmosphere";
+
+// Section divider: the plain border, with a teal line that fades out drawn over it.
+const divider =
+  "relative border-t border-line before:absolute before:inset-x-0 before:-top-px before:h-px before:bg-gradient-to-r before:from-accent before:via-accent/30 before:to-transparent";
 
 const nav = [
   { href: "#ai", label: "AI systems" },
@@ -39,8 +45,7 @@ function ThemeToggle() {
 
   useEffect(() => setTheme(readSavedTheme()), []);
 
-  function cycle() {
-    const next = themes[(themes.indexOf(theme) + 1) % themes.length];
+  function apply(next: Theme) {
     setTheme(next);
     if (next === "light") delete document.documentElement.dataset.theme;
     else document.documentElement.dataset.theme = next;
@@ -50,6 +55,48 @@ function ThemeToggle() {
     } catch {
       // storage blocked: the choice still applies for this visit
     }
+  }
+
+  // The new theme spreads out in a circle from the button. Browsers without view
+  // transitions, and visitors who prefer reduced motion, just switch instantly.
+  function cycle(event: MouseEvent<HTMLButtonElement>) {
+    const next = themes[(themes.indexOf(theme) + 1) % themes.length];
+    if (
+      !document.startViewTransition ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      apply(next);
+      return;
+    }
+
+    const { left, top, width, height } =
+      event.currentTarget.getBoundingClientRect();
+    const x = left + width / 2;
+    const y = top + height / 2;
+    const radius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+
+    // flushSync so the icon has changed by the time the browser snapshots the new page.
+    const transition = document.startViewTransition(() =>
+      flushSync(() => apply(next)),
+    );
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${radius}px at ${x}px ${y}px)`,
+          ],
+        },
+        {
+          duration: 550,
+          easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+          pseudoElement: "::view-transition-new(root)",
+        },
+      );
+    });
   }
 
   const Icon = themeIcons[theme];
@@ -105,7 +152,7 @@ function Section({
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      className="scroll-mt-20 border-t border-line py-16 sm:py-20 lg:grid lg:grid-cols-12 lg:gap-x-10"
+      className={`${divider} scroll-mt-20 py-16 sm:py-20 lg:grid lg:grid-cols-12 lg:gap-x-10`}
     >
       <h2
         id={`${id}-title`}
@@ -246,8 +293,9 @@ export default function App() {
         </div>
       </div>
 
-      <div id="top" className="mx-auto max-w-6xl px-6 sm:px-10">
-        <header className="py-20 sm:py-28">
+      <div id="top" className="relative isolate">
+        <Atmosphere variant="hero" />
+        <header className="mx-auto max-w-6xl px-6 py-20 sm:px-10 sm:py-28">
           <h1 className="text-base font-medium">{site.name}</h1>
           <p className="mt-10 font-mono text-xs uppercase tracking-widest text-accent">
             {site.role}
@@ -263,7 +311,7 @@ export default function App() {
           <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
             <a
               href={`mailto:${site.email}`}
-              className="inline-flex w-fit items-center rounded-full bg-fg px-5 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-85"
+              className="inline-flex w-fit items-center rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-bg shadow-[0_8px_28px_-6px_rgb(var(--accent)/0.55)] transition-opacity hover:opacity-90"
             >
               Email me
             </a>
@@ -287,7 +335,9 @@ export default function App() {
             {site.availability} · {site.location}
           </p>
         </header>
+      </div>
 
+      <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <main id="main">
           <Section id="ai" title="AI systems">
             <div className="divide-y divide-line">
@@ -389,27 +439,32 @@ export default function App() {
             </ol>
           </Section>
         </main>
+      </div>
 
+      <div className="relative isolate">
+        <Atmosphere variant="footer" />
         <footer
           id="contact"
-          className="scroll-mt-20 border-t border-line py-20 sm:py-28"
+          className="mx-auto max-w-6xl scroll-mt-20 px-6 sm:px-10"
         >
-          <p className="max-w-3xl text-balance font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-            Have a problem <em className="text-accent">worth solving?</em>
-          </p>
-          <p className="mt-5 text-lg text-muted">
-            I'd like to hear about it.{" "}
-            <a
-              href={`mailto:${site.email}`}
-              className="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
-            >
-              {site.email}
-            </a>
-          </p>
-          <p className="mt-16 font-mono text-xs text-muted">
-            © <span suppressHydrationWarning>{new Date().getFullYear()}</span>{" "}
-            {site.name} · {site.location}
-          </p>
+          <div className={`${divider} py-20 sm:py-28`}>
+            <p className="max-w-3xl text-balance font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
+              Have a problem <em className="text-accent">worth solving?</em>
+            </p>
+            <p className="mt-5 text-lg text-muted">
+              I'd like to hear about it.{" "}
+              <a
+                href={`mailto:${site.email}`}
+                className="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+              >
+                {site.email}
+              </a>
+            </p>
+            <p className="mt-16 font-mono text-xs text-muted">
+              © <span suppressHydrationWarning>{new Date().getFullYear()}</span>{" "}
+              {site.name} · {site.location}
+            </p>
+          </div>
         </footer>
       </div>
     </>

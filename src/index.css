@@ -10,6 +10,15 @@
   --muted: 75 85 99;
   --line: 229 231 235;
   --accent: 15 118 110;
+  /* Background look (see src/Atmosphere.tsx), as full colours since they carry their own alpha. */
+  --glow-teal: rgb(45 212 191 / 0.28);
+  --glow-emerald: rgb(110 231 183 / 0.26);
+  --glow-amber: rgb(251 191 36 / 0.16);
+  --glow-violet: rgb(167 139 250 / 0.2);
+  --dot: rgb(15 118 110 / 0.16);
+  --net-line: rgb(15 118 110 / 0.24);
+  --net-node: rgb(15 118 110 / 0.45);
+  --net-lit: rgb(13 148 136);
   color-scheme: light;
 }
 
@@ -23,6 +32,14 @@
     --muted: 168 162 158;
     --line: 41 37 36;
     --accent: 45 212 191;
+    --glow-teal: rgb(45 212 191 / 0.24);
+    --glow-emerald: rgb(16 185 129 / 0.16);
+    --glow-amber: rgb(251 191 36 / 0.1);
+    --glow-violet: rgb(139 92 246 / 0.2);
+    --dot: rgb(255 255 255 / 0.09);
+    --net-line: rgb(153 246 228 / 0.2);
+    --net-node: rgb(204 251 241 / 0.45);
+    --net-lit: rgb(94 234 212);
     color-scheme: dark;
   }
 }
@@ -34,7 +51,109 @@
   --muted: 168 162 158;
   --line: 41 37 36;
   --accent: 45 212 191;
+  --glow-teal: rgb(45 212 191 / 0.24);
+  --glow-emerald: rgb(16 185 129 / 0.16);
+  --glow-amber: rgb(251 191 36 / 0.1);
+  --glow-violet: rgb(139 92 246 / 0.2);
+  --dot: rgb(255 255 255 / 0.09);
+  --net-line: rgb(153 246 228 / 0.2);
+  --net-node: rgb(204 251 241 / 0.45);
+  --net-lit: rgb(94 234 212);
   color-scheme: dark;
+}
+
+/* Background look: glows, dot grid and node network (see src/Atmosphere.tsx). */
+.atmos-glow-hero,
+.atmos-glow-footer,
+.atmos-dots,
+.atmos-fade-bottom,
+.atmos-fade-top {
+  position: absolute;
+  inset: 0;
+}
+.atmos-glow-hero {
+  background:
+    radial-gradient(40rem 30rem at 92% 0%, var(--glow-teal), transparent 70%),
+    radial-gradient(
+      36rem 28rem at -8% -10%,
+      var(--glow-emerald),
+      transparent 70%
+    ),
+    radial-gradient(
+      32rem 24rem at 70% 100%,
+      var(--glow-amber),
+      transparent 70%
+    ),
+    radial-gradient(
+      28rem 26rem at 104% 70%,
+      var(--glow-violet),
+      transparent 70%
+    );
+}
+.atmos-glow-footer {
+  background:
+    radial-gradient(36rem 26rem at 4% 100%, var(--glow-teal), transparent 70%),
+    radial-gradient(
+      30rem 22rem at 40% 110%,
+      var(--glow-amber),
+      transparent 70%
+    ),
+    radial-gradient(
+      30rem 24rem at 100% 100%,
+      var(--glow-violet),
+      transparent 70%
+    );
+}
+.atmos-dots {
+  background-image: radial-gradient(var(--dot) 1.2px, transparent 1.3px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(70% 80% at 75% 30%, #000, transparent 75%);
+}
+.atmos-glow-footer + .atmos-dots {
+  mask-image: radial-gradient(60% 90% at 80% 100%, #000, transparent 75%);
+}
+/* Blend the edge into the page so there is no visible seam. */
+.atmos-fade-bottom {
+  top: auto;
+  height: 8rem;
+  background: linear-gradient(to bottom, transparent, rgb(var(--bg)));
+}
+.atmos-fade-top {
+  bottom: auto;
+  height: 6rem;
+  background: linear-gradient(to top, transparent, rgb(var(--bg)));
+}
+.atmos-net {
+  mask-image: radial-gradient(closest-side, #000 55%, transparent);
+}
+.atmos-net .net-lines line {
+  stroke: var(--net-line);
+  stroke-width: 1.2;
+}
+.atmos-net .net-node {
+  fill: var(--net-node);
+}
+.atmos-net .net-lit {
+  fill: var(--net-lit);
+  filter: drop-shadow(0 0 6px var(--net-lit));
+  animation: net-pulse 4.5s ease-in-out infinite;
+}
+@keyframes net-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Theme switch: the new theme is revealed by a circle animated from JS (ThemeToggle in
+   src/App.tsx), so the browser's default cross-fade is turned off. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 @layer base {
@@ -61,5 +180,8 @@
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+  }
+  .atmos-net .net-lit {
+    animation: none;
   }
 }
